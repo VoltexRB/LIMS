@@ -1,0 +1,41 @@
+{
+    "general": {
+        "default_export_path": "/tmp/export",
+        "wait_for_manual_data": false,
+        "use_rag_data": "VOLATILE",
+        "default_rag_data": {},
+        "default_system_prompt": "Hello",
+        "send_conversation_history": false
+    },
+    "handlers": {
+        "langchain": {
+            "token": "YOUR_TOGETHERAI_API_TOKEN",
+            "model": "langchain-test"
+        },
+        "huggingface": {
+            "model": "hf-test",
+            "token": "YOUR_HUGGINGFACE_TOKEN"
+        },
+        "postgres": {
+            "host": "localhost",
+            "port": 5432,
+            "username": "user",
+            "password": "pass",
+            "database": "mydb"
+        },
+        "chromadb": {
+            "client_type": "PERSISTENT",
+            "persistent_client_db_path": "/tmp/chroma"
+        },
+        "mongodb": {
+            "host": "localhost",
+            "port": 27017,
+            "database": "mydb"
+        }
+    },
+    "default_handlers": {
+        "llm": "huggingface",
+        "vector": "chromadb",
+        "persistent": "postgres"
+    }
+}

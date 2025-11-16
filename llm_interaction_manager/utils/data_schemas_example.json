@@ -1,0 +1,36 @@
+
+{
+  "conversation_id": "conv_001",
+  "created_at": "1730994923.123456",
+  "name": "gpt-5-mini",
+  "description": "Initial test conversation",
+  "metadata": {
+    "user_id": "user_123",
+    "session": "session_001",
+    "tags": ["test", "demo"]
+  },
+  "messages": [
+    {
+      "message_id": "msg_001",
+      "user_prompt": "Hello, how are you?",
+      "llm_response": "I am doing well, thank you!",
+      "timestamp": "1730994923.123456",
+      "user_comment": "Initial greeting",
+      "metadata": {
+        "temperature": 0.7,
+        "max_tokens": 150,
+        "runtime": 0.234
+      }
+    },
+    {
+      "message_id": "msg_002",
+      "user_prompt": "What's the weather like?",
+      "llm_response": "It looks sunny today.",
+      "timestamp": "1730994923.123456",
+      "metadata": {
+        "temperature": 0.7,
+        "runtime": 0.210
+      }
+    }
+  ]
+}
