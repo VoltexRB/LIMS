@@ -25,9 +25,8 @@ class VectorEnum(str, Enum):
 
 def _load_handler(handler_key: str):
     """
-    Lädt automatisch eine Handler-Klasse aus handlers/<handler_key>_handler.py
-    :param handler_key: Value eines Enum aus einem der drei HandlerEnums
-    :returns
+    Automatically loads a handler from handlers/<handler_key>_handler.py
+    :param handler_key: Value from an Enum from the 3 enum classes
     """
     module_name = f"{handler_key.lower()}_handler"
     class_name = f"{handler_key.title()}Handler"
@@ -43,10 +42,10 @@ def _load_handler(handler_key: str):
 
 def initialize(llm: LLMEnum = LLMEnum.SETTINGS, persistent: PersistentEnum = PersistentEnum.SETTINGS, vector: VectorEnum = VectorEnum.SETTINGS) -> InteractionManager:
     """
-    Erstellt einen neuen InteractionManager mit den angegebenen Ressourcen.
-    Wenn keine Schnittstellen angegeben werden oder SETTINGS bei den Enums ausgewählt werden,
-    wird die Standardeinstellung verwendet, falls vorhanden.
-    :return: Einen InteractionManager mit den Schnittstellenklassen
+    Creates a new InteractionManager with the specified resources.
+    If no interfaces are provided or SETTINGS is selected in the enums,
+    the default configuration will be used if available.
+    :return: An InteractionManager with the interface classes
     """
     # --- LLM ---
     if llm == LLMEnum.SETTINGS:
@@ -77,7 +76,7 @@ def initialize(llm: LLMEnum = LLMEnum.SETTINGS, persistent: PersistentEnum = Per
     else:
         vector_key = vector.value
 
-    # --- Handler laden ---
+    # --- load handlers ---
     persistent_handler = _load_handler(persistent_key)
     if persistent_key == vector_key:
         vector_handler = persistent_handler

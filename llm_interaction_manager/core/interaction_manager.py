@@ -351,5 +351,14 @@ class InteractionManager:
             raise RuntimeError("No conversation initialized yet. Use start_conversation() first.")
         return self.conversation.send_prompt(prompt)
 
+    def change_comment(self, comment: str):
+        """
+        Changes the comment on the last sent message
+        :param comment: Comment to add to the last sent message
+        """
+        if self.conversation is None:
+            raise RuntimeError("No conversation initialized yet. Use start_conversation() first.")
+        return self.conversation.change_comment(comment)
+
 
 

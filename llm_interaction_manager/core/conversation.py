@@ -151,8 +151,9 @@ class Conversation:
         Changes the comment to the last received response
         :param comment: The comment to be updated
         """
+        if len(self.conversation_history) == 0:
+            raise IndexError("No message sent or received yet")
         self.conversation_history[-1]["comment"] = comment
-
 
     def get_metadata(self, conversation: bool, id: int = None) -> dict:
         """

@@ -157,3 +157,11 @@ def send_prompt(prompt: str) -> dict:
     """
     if not _check_initialized(): return field(default_factory=dict)
     return interaction_manager.send_prompt(prompt)
+
+def change_comment(comment: str):
+    """
+    Changes the comment on the last sent message
+    :param comment: Comment to add to the last sent message
+    """
+    if not _check_initialized(): return
+    interaction_manager.change_comment(comment)
