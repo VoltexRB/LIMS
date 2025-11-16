@@ -15,12 +15,12 @@ pip install git+https://github.com/VoltexRB/LIMS.git
 1. High-level API (recommended for most users).
 This mode wraps the InteractionManager so you don’t need to deal with handlers directly.
 ```bash
-from llm_interaction_manager.api import initialize, start_conversation, send_prompt, set_rag_data
+import llm_interaction_manager.api as api
 
-initialize()  # initializes the InteractionManager
-start_conversation({"topic": "Test Conversation"})
-set_rag_data({"my_data": "value"}, volatile=True)
-response = send_prompt("Hello, LLM!")
+api.initialize()  # initializes the InteractionManager
+api.start_conversation({"topic": "Test Conversation"})
+api.set_rag_data({"my_data": "value"}, volatile=True)
+api.response = send_prompt("Hello, LLM!")
 print(response)
 ```
 2. Direct InteractionManager (advanced usage).
