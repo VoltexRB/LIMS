@@ -58,10 +58,11 @@ class LangchainHandler(LLMHandlerBase):
             raise ValueError("No Model defined or TogetherAI API token missing")
 
         self.token = data["token"]
-        if not self.validate_model_name(data["model"]):
-            raise ValueError(f"Model '{data["model"]}' not found in TogetherAI")
+        model = data["model"]
+        if not self.validate_model_name(model):
+            raise ValueError(f"Model '{model}' not found in TogetherAI")
         try:
-            self.llm = ChatTogether(api_key=data["token"], model=data["model"])
+            self.llm = ChatTogether(api_key=self.token, model=model)
         except Exception as e:
             raise Exception(f"Exception in runtime: {e}")
         self.auth = data

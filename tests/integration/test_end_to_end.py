@@ -12,12 +12,11 @@ def setup_api():
     """
     Initialize the API for all end-to-end tests.
     """
-    api.initialize(llm=LLMEnum.LANGCHAIN, vector=VectorEnum.CHROMADB, persistent=PersistentEnum.MONGODB)
+    api.initialize(llm=LLMEnum.HUGGINGFACE, vector=VectorEnum.CHROMADB, persistent=PersistentEnum.MONGODB)
 
     # Connection data
     llm_data = {
-        "token": "[REMOVED]",
-        "model": "moonshotai/Kimi-K2-Instruct-0905"
+        "model": "meta-llama/Llama-3.1-8B-Instruct"
     }
     vector_data = {
         "client_type": "PERSISTENT",
