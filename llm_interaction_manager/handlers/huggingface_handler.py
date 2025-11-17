@@ -42,8 +42,8 @@ class HuggingfaceHandler(LLMHandlerBase):
             login(token=data["token"])
         if not self.validate_model_name(data["model"]): return False
         try:
-            logging.set_verbosity_error()
-            huggingface_hub.logging.set_verbosity_error()
+            logging.set_verbosity(logging.ERROR)
+            huggingface_hub.logging.set_verbosity(logging.ERROR)
             self.llm = pipeline("text-generation", model=data["model"])
             self.auth = data
 
