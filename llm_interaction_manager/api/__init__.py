@@ -4,4 +4,4 @@ from . import lims_interface
 from . import interaction_manager_factory
 from interaction_manager_factory import LLMEnum, PersistentEnum, VectorEnum
 
-__all__ = ["lims_interface", "interaction_manager_factory", "LLMEnum", "PersistentEnum", "VectorEnum"]
+__all__ = ["LLMEnum", "PersistentEnum", "VectorEnum"]
