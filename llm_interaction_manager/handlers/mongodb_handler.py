@@ -39,7 +39,7 @@ class MongodbHandler(PersistentDataHandlerBase):
 
         self.db["conversations"].update_one(
             {"_id": conv_id},
-            {"$setOnInsert": conversation},
+            {"$set": conversation},
             upsert=True)
 
         # Process each message

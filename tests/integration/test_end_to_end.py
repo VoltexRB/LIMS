@@ -16,7 +16,8 @@ def setup_api():
 
     # Connection data
     llm_data = {
-        "model": "meta-llama/Llama-3.1-8B-Instruct"
+        "model": "meta-llama/Llama-3.1-8B-Instruct",
+        "token": "[Removed]"
     }
     vector_data = {
         "client_type": "PERSISTENT",

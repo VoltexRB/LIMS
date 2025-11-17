@@ -206,7 +206,7 @@ class Conversation:
         """
         last_msg = self.conversation_history[-1]
         self.persistent_handler.save_record(
-            conversation={"conversation_id": self.conversation_id, **self.conversation_metadata},
+            conversation={"conversation_id": self.conversation_id, "created_at": self.created_at, **self.conversation_metadata},
             messages=[{
                 "message_id": last_msg["message_id"],
                 "user_prompt": last_msg["prompt"],

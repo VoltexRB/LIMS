@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="changed HF log-behaviour">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/huggingface_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/huggingface_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/core/conversation.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/core/conversation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/mongodb_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/mongodb_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/integration/test_end_to_end.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration/test_end_to_end.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,75 +48,75 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests for test_chromadb_handler.test_load_nonexistent_vector_raises.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_chromadb_handler.test_metadata_preservation.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_chromadb_handler.test_nearest_search.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_chromadb_handler.test_save_and_load_vector.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_chromadb_handler.test_save_vector_without_prompt_or_response_raises.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_end_to_end.test_conversation_workflow.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_end_to_end.test_export_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_end_to_end.test_persistent_storage.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_end_to_end.test_vector_database_search.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_end_to_end_changed.test_conversation_workflow.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_end_to_end_changed.test_export_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_end_to_end_changed.test_persistent_storage.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_end_to_end_changed.test_vector_database_search.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_huggingface_handler.test_connect_without_model_raises.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_huggingface_handler.test_is_connected.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_huggingface_handler.test_send_prompt_basic.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_huggingface_handler.test_send_prompt_with_rag.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_huggingface_handler.test_send_prompt_without_connect_raises.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_interaction_manager.test_interaction_manager_init_with_defaults.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_interaction_manager_integration.test_conversation_history.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_interaction_manager_integration.test_persistent_storage_mongodb.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_interaction_manager_integration.test_rag_data_integration.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_interaction_manager_integration.test_send_prompt_with_llm.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_interaction_manager_integration.test_vector_storage_chroma.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_langchain_handler.test_is_connected.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_langchain_handler.test_send_prompt_basic.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_langchain_handler.test_send_prompt_with_rag.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_langchain_handler.test_validate_model_name.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_mongodb_handler.test_append_new_message.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_mongodb_handler.test_connection.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_mongodb_handler.test_filtering_by_message_content.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_mongodb_handler.test_reconnect_and_ping.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_mongodb_handler.test_save_and_retrieve_conversation.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_mongodb_handler.test_update_existing_message.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_postgres_handler.test_connection.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_postgres_handler.test_imported_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_postgres_handler.test_nearest_search.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_postgres_handler.test_save_and_get_record.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_postgres_handler.test_save_vector_and_load.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_settings_handler.TestSettingsHandler.test_set_and_get_connection_llm.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_settings_handler.test_initialize_settings_object.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_settings_handler.test_set_and_get_connection.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_settings_handler.test_write_and_read_general_section.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_settings_handler.test_write_and_read_specific_key.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_chromadb_handler.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_conversation.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_huggingface_handler.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_interaction_manager.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_interaction_manager_integration.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_langchain_handler.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_mongodb_handler.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_postgres_handler.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_settings_handler.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.huggingface_handler.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.langchain_handler.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.mongodb_handler.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Shuff/PycharmProjects/LIMS&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python tests.Python tests for test_chromadb_handler.test_load_nonexistent_vector_raises.executor": "Run",
+    "Python tests.Python tests for test_chromadb_handler.test_metadata_preservation.executor": "Run",
+    "Python tests.Python tests for test_chromadb_handler.test_nearest_search.executor": "Run",
+    "Python tests.Python tests for test_chromadb_handler.test_save_and_load_vector.executor": "Run",
+    "Python tests.Python tests for test_chromadb_handler.test_save_vector_without_prompt_or_response_raises.executor": "Run",
+    "Python tests.Python tests for test_end_to_end.test_conversation_workflow.executor": "Run",
+    "Python tests.Python tests for test_end_to_end.test_export_data.executor": "Run",
+    "Python tests.Python tests for test_end_to_end.test_persistent_storage.executor": "Run",
+    "Python tests.Python tests for test_end_to_end.test_vector_database_search.executor": "Run",
+    "Python tests.Python tests for test_end_to_end_changed.test_conversation_workflow.executor": "Run",
+    "Python tests.Python tests for test_end_to_end_changed.test_export_data.executor": "Run",
+    "Python tests.Python tests for test_end_to_end_changed.test_persistent_storage.executor": "Run",
+    "Python tests.Python tests for test_end_to_end_changed.test_vector_database_search.executor": "Run",
+    "Python tests.Python tests for test_huggingface_handler.test_connect_without_model_raises.executor": "Run",
+    "Python tests.Python tests for test_huggingface_handler.test_is_connected.executor": "Run",
+    "Python tests.Python tests for test_huggingface_handler.test_send_prompt_basic.executor": "Run",
+    "Python tests.Python tests for test_huggingface_handler.test_send_prompt_with_rag.executor": "Run",
+    "Python tests.Python tests for test_huggingface_handler.test_send_prompt_without_connect_raises.executor": "Run",
+    "Python tests.Python tests for test_interaction_manager.test_interaction_manager_init_with_defaults.executor": "Run",
+    "Python tests.Python tests for test_interaction_manager_integration.test_conversation_history.executor": "Run",
+    "Python tests.Python tests for test_interaction_manager_integration.test_persistent_storage_mongodb.executor": "Run",
+    "Python tests.Python tests for test_interaction_manager_integration.test_rag_data_integration.executor": "Run",
+    "Python tests.Python tests for test_interaction_manager_integration.test_send_prompt_with_llm.executor": "Run",
+    "Python tests.Python tests for test_interaction_manager_integration.test_vector_storage_chroma.executor": "Run",
+    "Python tests.Python tests for test_langchain_handler.test_is_connected.executor": "Run",
+    "Python tests.Python tests for test_langchain_handler.test_send_prompt_basic.executor": "Run",
+    "Python tests.Python tests for test_langchain_handler.test_send_prompt_with_rag.executor": "Run",
+    "Python tests.Python tests for test_langchain_handler.test_validate_model_name.executor": "Run",
+    "Python tests.Python tests for test_mongodb_handler.test_append_new_message.executor": "Run",
+    "Python tests.Python tests for test_mongodb_handler.test_connection.executor": "Run",
+    "Python tests.Python tests for test_mongodb_handler.test_filtering_by_message_content.executor": "Run",
+    "Python tests.Python tests for test_mongodb_handler.test_reconnect_and_ping.executor": "Run",
+    "Python tests.Python tests for test_mongodb_handler.test_save_and_retrieve_conversation.executor": "Run",
+    "Python tests.Python tests for test_mongodb_handler.test_update_existing_message.executor": "Run",
+    "Python tests.Python tests for test_postgres_handler.test_connection.executor": "Run",
+    "Python tests.Python tests for test_postgres_handler.test_imported_data.executor": "Run",
+    "Python tests.Python tests for test_postgres_handler.test_nearest_search.executor": "Run",
+    "Python tests.Python tests for test_postgres_handler.test_save_and_get_record.executor": "Run",
+    "Python tests.Python tests for test_postgres_handler.test_save_vector_and_load.executor": "Run",
+    "Python tests.Python tests for test_settings_handler.TestSettingsHandler.test_set_and_get_connection_llm.executor": "Run",
+    "Python tests.Python tests for test_settings_handler.test_initialize_settings_object.executor": "Run",
+    "Python tests.Python tests for test_settings_handler.test_set_and_get_connection.executor": "Run",
+    "Python tests.Python tests for test_settings_handler.test_write_and_read_general_section.executor": "Run",
+    "Python tests.Python tests for test_settings_handler.test_write_and_read_specific_key.executor": "Run",
+    "Python tests.Python tests in test_chromadb_handler.py.executor": "Run",
+    "Python tests.Python tests in test_conversation.py.executor": "Run",
+    "Python tests.Python tests in test_huggingface_handler.py.executor": "Run",
+    "Python tests.Python tests in test_interaction_manager.py.executor": "Run",
+    "Python tests.Python tests in test_interaction_manager_integration.py.executor": "Run",
+    "Python tests.Python tests in test_langchain_handler.py.executor": "Run",
+    "Python tests.Python tests in test_mongodb_handler.py.executor": "Run",
+    "Python tests.Python tests in test_postgres_handler.py.executor": "Run",
+    "Python tests.Python tests in test_settings_handler.py.executor": "Run",
+    "Python.huggingface_handler.executor": "Debug",
+    "Python.langchain_handler.executor": "Debug",
+    "Python.mongodb_handler.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Shuff/PycharmProjects/LIMS",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Shuff\PycharmProjects\LIMS\tests\integration" />
@@ -124,7 +126,7 @@
       <recent name="C:\Users\Shuff\PycharmProjects\LIMS" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_end_to_end_changed.test_export_data">
+  <component name="RunManager" selected="Python tests.Python tests for test_end_to_end.test_conversation_workflow">
     <configuration name="Python tests for test_end_to_end_changed.test_conversation_workflow" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="LIMS" />
       <option name="ENV_FILES" value="" />
@@ -202,11 +204,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_end_to_end.test_conversation_workflow" />
         <item itemvalue="Python tests.Python tests for test_end_to_end_changed.test_export_data" />
         <item itemvalue="Python tests.Python tests for test_end_to_end_changed.test_vector_database_search" />
         <item itemvalue="Python tests.Python tests for test_end_to_end_changed.test_persistent_storage" />
         <item itemvalue="Python tests.Python tests for test_end_to_end_changed.test_conversation_workflow" />
-        <item itemvalue="Python tests.Python tests for test_end_to_end.test_conversation_workflow" />
       </list>
     </recent_temporary>
   </component>
@@ -418,7 +420,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763391837871</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="changed HF log-behaviour">
+      <option name="closed" value="true" />
+      <created>1763392508839</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1763392508839</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
