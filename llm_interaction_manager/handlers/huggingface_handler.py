@@ -44,9 +44,7 @@ class HuggingfaceHandler(LLMHandlerBase):
         try:
             logging.set_verbosity_error()
             huggingface_hub.logging.set_verbosity_error()
-            with contextlib.redirect_stdout(open(os.devnull, "w")), \
-                    contextlib.redirect_stderr(open(os.devnull, "w")):
-                self.llm = pipeline("text-generation", model=data["model"])
+            self.llm = pipeline("text-generation", model=data["model"])
             self.auth = data
 
         except Exception as e:
