@@ -33,3 +33,26 @@ manager.start_conversation({"topic": "Advanced Test"})
 response = manager.send_prompt("Hello, LLM!")
 print(response)
 ```
+
+Note: On first use, the configuration file has not yet been created, so connection parameters also have to be added, for example via:
+```bash
+api.initialize(llm=LLMEnum.HUGGINGFACE, vector=VectorEnum.CHROMADB, persistent=PersistentEnum.MONGODB)
+
+# Connection data
+llm_data = {
+    "model": "meta-llama/Llama-3.1-8B-Instruct"
+}
+vector_data = {
+    "client_type": "PERSISTENT",
+    "persistent_client_db_path": "D:/chroma"
+}
+persistent_data = {
+    "host": "localhost",
+    "port": 27017,
+    "database": "database"
+}
+
+api.connect(ConnectionType.LLM, llm_data)
+api.connect(ConnectionType.VECTOR, vector_data)
+api.connect(ConnectionType.PERSISTENT, persistent_data)
+```
