@@ -1,7 +1,7 @@
 from llm_interaction_manager.handlers.llm_handler_base import LLMHandlerBase
 from transformers import *
 from huggingface_hub import list_models, login
-import contextlib, os, huggingface_hub, logging
+import huggingface_hub, logging, transformers
 
 class HuggingfaceHandler(LLMHandlerBase):
 
@@ -42,8 +42,8 @@ class HuggingfaceHandler(LLMHandlerBase):
             login(token=data["token"])
         if not self.validate_model_name(data["model"]): return False
         try:
-            logging.set_verbosity(logging.ERROR)
-            huggingface_hub.logging.set_verbosity(logging.ERROR)
+            transformers.logging.set_verbosity_error()
+            huggingface_hub.logging.set_verbosity_error()
             self.llm = pipeline("text-generation", model=data["model"])
             self.auth = data
 
