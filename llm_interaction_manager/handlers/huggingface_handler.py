@@ -1,8 +1,7 @@
-import logging
-
 from llm_interaction_manager.handlers.llm_handler_base import LLMHandlerBase
 from transformers import *
 from huggingface_hub import list_models, login
+import contextlib, os, huggingface_hub, logging
 
 class HuggingfaceHandler(LLMHandlerBase):
 
@@ -43,9 +42,13 @@ class HuggingfaceHandler(LLMHandlerBase):
             login(token=data["token"])
         if not self.validate_model_name(data["model"]): return False
         try:
-            self.llm = pipeline("text-generation", model=data["model"])
+            logging.set_verbosity_error()
+            huggingface_hub.logging.set_verbosity_error()
+            with contextlib.redirect_stdout(open(os.devnull, "w")), \
+                    contextlib.redirect_stderr(open(os.devnull, "w")):
+                self.llm = pipeline("text-generation", model=data["model"])
             self.auth = data
-            logging.set_verbosity(logging.CRITICAL)
+
         except Exception as e:
             raise RuntimeError("The model you are trying to access might be private or restricted. Please provide an access token in your connection data")
 
