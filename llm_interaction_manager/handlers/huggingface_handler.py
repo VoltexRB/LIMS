@@ -13,6 +13,7 @@ class HuggingfaceHandler(LLMHandlerBase):
     def get_info(self) -> dict:
         """
         Returns connection-data to be saved in the Settings-Object
+
         :return: Dict containing authentication-data
         """
         return self.auth
@@ -20,6 +21,7 @@ class HuggingfaceHandler(LLMHandlerBase):
     def get_name(self) -> str:
         """
         Returns the name of the Handler for dynamic binding
+
         :return: String "huggingface"
         """
         return "huggingface"
@@ -27,6 +29,7 @@ class HuggingfaceHandler(LLMHandlerBase):
     def is_connected(self) -> bool:
         """
         As the model is run locally, only check if it is instantiated
+
         :return: true if model is instantiated
         """
         return self.llm is not None
@@ -34,6 +37,7 @@ class HuggingfaceHandler(LLMHandlerBase):
     def connect(self, data: dict):
         """
         As the model is run locally, create llm and pipeline objects to use for further usage
+
         :param data: Data to instantiate the llm pipeline with. must contain at least "token" and "model"
         """
         if "model" not in data:
@@ -53,6 +57,7 @@ class HuggingfaceHandler(LLMHandlerBase):
     def send_prompt(self, prompt: str, rag: list[str] =None) -> dict:
         """
         Sends the prompt with the optional RAG-Data to the external interface
+
         :param prompt: String-Object containing the Prompt
         :param rag: Optional RAG-Data to send
         :return: Dict containing prompt, response and possibly additional metadata
@@ -71,11 +76,12 @@ class HuggingfaceHandler(LLMHandlerBase):
         generated = result[0]["generated_text"]
         if generated.startswith(full_prompt):
             generated = generated[len(full_prompt):]  # cut off the prompt
-        return {"response": generated}
+        return {"response": generated, "prompt": full_prompt}
 
     def validate_model_name(self, model: str) -> bool:
         """
         Check if the model exists within huggingface. If not, prints a list of 5 close model names
+
         :param model: Model name to check against
         :return: True if the model exists
         """

@@ -13,6 +13,7 @@ class MongodbHandler(PersistentDataHandlerBase):
     def get_info(self) -> dict:
         """
         Returns the connection information to be saved in the settings
+
         :return: dict with the connection information
         """
         return {**self.auth, "host": self.host, "port": self.port}
@@ -20,6 +21,7 @@ class MongodbHandler(PersistentDataHandlerBase):
     def get_name(self) -> str:
         """
         Returns the name of the Handler for dynamic binding
+
         :return: String-Object "mongodb"
         """
         return "mongodb"
@@ -27,6 +29,7 @@ class MongodbHandler(PersistentDataHandlerBase):
     def save_record(self, conversation: dict, messages: list[dict]):
         """
         Save a conversation and its messages to MongoDB.
+
         :param conversation: dict containing conversation-level data. Must contain "conversation_id"
         :param messages: list of dicts containing message-level data. Must contain "message_id"
         """
@@ -74,6 +77,7 @@ class MongodbHandler(PersistentDataHandlerBase):
         Dynamically retrieve conversation and message data from MongoDB
         consistent with PostgresHandler.get_data() structure. May result in different attributes, depending on the keys in the database.
         Only returns conversations that have messages matching message-level filters if any are applied.
+
         :param filters: Optional dictionary of filter conditions.
         :return: List of conversations, each with a 'messages' list
         """
@@ -142,6 +146,7 @@ class MongodbHandler(PersistentDataHandlerBase):
     def connect(self, host: str, port: int, auth: dict = None) -> bool:
         """
         Connects to the mongodb instance specified by host, port and the authentication data
+
         :param host: Host to the MongoDB instance
         :param port: Port the MongoDB instance is running under
         :param auth: Authentication-Data like a mandatory database or optional Username and Password
@@ -187,6 +192,7 @@ class MongodbHandler(PersistentDataHandlerBase):
         """
         Selects or switches the active MongoDB database.
         Must be called after a successful connection.
+
         :param db_name: The name of the database to be selected
         """
         if not self.client:
@@ -201,6 +207,7 @@ class MongodbHandler(PersistentDataHandlerBase):
     def _fully_initialized(self) -> bool:
         """
         Check if the client is initialized and a database is selected
+
         :return: True if client connected and database selected
         """
         if self.client is not None and self.db is not None: return True

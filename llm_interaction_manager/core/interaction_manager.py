@@ -39,6 +39,7 @@ class InteractionManager:
         """
         Dynamically loads a llm handler class from llm_interaction_manager/handlers and initializes it with the provided configuration.
         Mostly used in __init__
+
         :param handler_name: Name of the handler (eg. huggingface) that should come from saved settings
         :return: Instantiated handler object
         """
@@ -59,6 +60,7 @@ class InteractionManager:
         """
         Initializes an InteractionManager object with Handlers that are either provided or received from the settings and created.
         Throws ValueErrors if Handlers are not provided and connection information is not found in the settings
+
         :param llm_handler: Optional LLMHandler to use
         :param persistent_handler: Optional PersistenDataHandler to use
         :param vector_handler: Optional VectorDataHandler to use
@@ -160,6 +162,7 @@ class InteractionManager:
     def start_conversation(self, conversation_metadata: dict = None):
         """
         Creates a new conversation object and possibly adds conversation-metadata to it
+
         :param conversation_metadata: data to add to the conversation-object
         """
         if not all([
@@ -176,6 +179,7 @@ class InteractionManager:
     def set_rag_data(self, data: dict, volatile: bool):
         """
         Adds new RAG-Data to the current run and sets the RAG-Mode accordingly, if volatile is set to false, RAG-data added will be saved to the config aswell
+
         :param data: data to be used as RAG-Data
         :param volatile: If the RAG-Data should be used on the fly or saved in the settings for further use
         """
@@ -190,6 +194,7 @@ class InteractionManager:
     def set_rag_mode(self, mode: RAGMode):
         """
         Sets the RAG-Mode of the application
+
         :param mode: The mode to set it to
         """
         self.settings.use_rag_data = mode
@@ -206,6 +211,7 @@ class InteractionManager:
     def nearest_search_vector(self, input: str, top_k: int, table: str) -> list[str]:
         """
         Searches the vector database for close matches of the input and returns the top_k results. May result in a combination of Prompt and Response lines depending on Interface
+
         :param input: String data to generate an embedding from to use nearest search for on the vector database.
         :param top_k: How many results should be returned
         :param table: Which table to do the nearest search on
@@ -218,6 +224,7 @@ class InteractionManager:
     def export_data(self, to: str, filters: dict[str, Any] | None = None):
         """
         Exports data from the persistent database to the specified path
+
         :param to: Path to export the data to
         :param filters: Filters to apply to the data. If no filters are specified, all available data will be exported
         """
@@ -256,6 +263,7 @@ class InteractionManager:
         """
         Adds a new persistent entry into the database handler.
         Must contain a conversation_id and at least one message with messageID. View data_schemas_example.json in utils for reference
+
         :param conversation: Conversation to be added to the database
         :param messages: list of Messages to be added to the database and linked to the conversation
         """
@@ -266,6 +274,7 @@ class InteractionManager:
     def add_vector_data(self, data: dict, table: str):
         """
         Adds a new entry into the vector database in reference to a persistent data entry
+
         :param data: Dict of data, must at least contain: message_id, prompt, and response
         :param table: Table to save the entry into (or collection in chromadb)
         """
@@ -276,6 +285,7 @@ class InteractionManager:
     def is_connected(self, target: ConnectionType) -> bool:
         """
         Check if the specified handler is connected
+
         :param target: ConnectionType-Enum, which handler should be checked
         :return: True if specified handler is connected, False else
         """
@@ -289,6 +299,7 @@ class InteractionManager:
     def connect(self, target: ConnectionType, data: dict):
         """
         Connect to the specified handlers endpoint
+
         :param target: ConnectionType-Enum, which handler should be checked
         :param data: Data to use for connection (eg. API tokens, routing information)
         """
@@ -312,6 +323,7 @@ class InteractionManager:
     def read_setting(self, key: str):
         """
         Reads a setting from the current Settings-Object
+
         :param key: Which setting to read
         :return: Requested Object from Settings
         """
@@ -323,6 +335,7 @@ class InteractionManager:
     def write_setting(self, key: str, value):
         """
         Updates a setting in the Settings Object and propagates to config.json
+
         :param key: Key to write into the settings
         :param value: Value to be changed
         """
@@ -334,6 +347,7 @@ class InteractionManager:
     def add_metadata(self, to_conversation: bool, data: dict):
         """
         Adds metadata to the last message that was sent/received or the current conversation-object
+
         :param to_conversation: If the metadata should be added to the conversation-object or the last message
         :param data: Data to add to the metadata
         """
@@ -344,6 +358,7 @@ class InteractionManager:
     def send_prompt(self, prompt: str) -> dict:
         """
         Sends a prompt to the LLM-Handler and thus to the specified LLM. Receives a response, saves the response persistently in the databases
+
         :param prompt: Prompt to send to the LLM-Handler. If RAG-Data is specified, Prompt and RAG-Data will be combined
         :return: Answer from LLM
         """
@@ -354,6 +369,7 @@ class InteractionManager:
     def change_comment(self, comment: str):
         """
         Changes the comment on the last sent message
+
         :param comment: Comment to add to the last sent message
         """
         if self.conversation is None:

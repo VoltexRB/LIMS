@@ -24,6 +24,7 @@ class SettingsHandler:
     def _read_json() -> Dict[str, Any]:
         """
         Reads the entire data from the config.json file
+
         :return: Data from config.json in a single dict
         """
         if not SettingsHandler.CONFIG_PATH.exists():
@@ -42,6 +43,7 @@ class SettingsHandler:
     def _write_json(data: Dict[str, Any]):
         """
         Writes the entire data dict into the config.json file
+
         :param data: new settings to be saved in config.json
         """
         try:
@@ -58,6 +60,7 @@ class SettingsHandler:
     def read_setting(section: SettingsSection, key: Optional[str] = None) -> Any:
         """
         Reads a specific section or a single key within that section.
+
         :param section: SettingsSection selection which setting to read
         :param key: Which Key to read from the section. If omitted, returns all keys
         """
@@ -76,6 +79,7 @@ class SettingsHandler:
         """
         Writes or updates a section in config.json by merging the provided dictionary.
         Creates the file if it does not exist.
+
         :param section: SettingsSection selection which setting to write to
         :param value: Which key and value to write into the section
         """
@@ -102,6 +106,7 @@ class SettingsHandler:
         """
         Retrieves stored configuration for a specific handler.
         Raises ValueError if handler not found.
+
         :param handler_name: Name of the handler to get the connection information for
         """
         handlers_block = SettingsHandler.read_setting(SettingsSection.HANDLERS)
@@ -114,6 +119,7 @@ class SettingsHandler:
         """
         Stores or updates the connection data for a specific handler.
         Existing keys are preserved if not overwritten.
+
         :param handler_name: Name of the handler to set the connection information for
         :param config: Config-Data to save
         """
@@ -138,6 +144,7 @@ class SettingsHandler:
         """
         Builds a Settings object dynamically from config.json.
         Missing sections or keys are initialized with "not set" placeholder values.
+
         :returns: Settings-Object instantiated with the settings from config.json
         """
         try:

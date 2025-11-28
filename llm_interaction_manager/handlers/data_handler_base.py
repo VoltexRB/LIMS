@@ -12,6 +12,7 @@ class DataHandlerBase(ABC):
     def is_connected(self) -> bool:
         """
         Check if the Data-Handler is connected to the external actor
+
         :return: True if the external actor is connected
         """
         pass
@@ -20,6 +21,7 @@ class DataHandlerBase(ABC):
     def connect(self, host: str, port: int, auth: dict = None) -> bool:
         """
         Connect to an external DataHander instance.
+
         :param host: Host-URL to connect to
         :param port: Port to connect to
         :param auth: Additional authentication, for example username or password
@@ -31,6 +33,7 @@ class DataHandlerBase(ABC):
     def get_info(self) -> dict:
         """
         Gets the current specific connection-info, so host, port, and auth for example
+
         :return: Dict-Object containing connection information
         """
         pass

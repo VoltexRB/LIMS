@@ -24,12 +24,28 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
     # --- DATABASE
 
     def get_info(self) -> dict:
+        """
+        Returns the connection information for the interface
+
+        :return: dict that contains connection information
+        """
         return {**self.auth, "host": self.host, "port": self.port}
 
     def get_name(self) -> str:
+        """
+        Returns the name of the interface for dynamic binding purposes
+
+        :return: returns "postgres"
+        """
         return "postgres"
 
     def save_record(self, conversation: dict, messages: list[dict]):
+        """
+        Saves a message linked to a conversation-object and the conversation-object if it does not exist yet.
+
+        :param conversation: object to link the message to
+        :param messages: message to save
+        """
         if not self.conn:
             raise ConnectionError("PostgreSQL connection not initialized. Call connect() first.")
 
@@ -90,6 +106,12 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
         self.conn.commit()
 
     def get_data(self, filters: dict[str, Any] | None = None) -> list[dict]:
+        """
+        Get Data from the database
+
+        :param filters: Which Data to search for, can specify common parameters like message_id or similar
+        :return: any data that matches the filters
+        """
         if not self.is_connected():
             raise ConnectionError("PostgreSQL connection not initialized. Call connect() first.")
 
@@ -164,6 +186,11 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
             raise RuntimeError(f"Failed to fetch data from PostgreSQL: {e}")
 
     def select_database(self, db_name: str):
+        """
+        Select a specific database
+
+        :param db_name: the name of the database to select
+        """
         if self.conn is None:
             raise ConnectionError("No existing connection. Call connect() first.")
         params = self.conn.get_dsn_parameters()
@@ -183,6 +210,12 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
     # --- VECTOR ---
 
     def save_vector(self, data: dict, table: str = "lims_embeddings"):
+        """
+        Saves a vector to the pgvector table
+
+        :param data: Vector to save
+        :param table: Table to save the vector to
+        """
         if not self.conn or self.conn.closed:
             raise ConnectionError("PostgreSQL connection is not initialized. Call connect() first.")
         if not self._vector_extension():
@@ -211,11 +244,24 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
         self.conn.commit()
 
     def _generate_embedding(self, text: str):
+        """
+        Generates embeddings from text
+
+        :param text: text to generate an embedding from
+        :return: generated embeddings
+        """
         if self.embedding_model is None:
             self.embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
         return self.embedding_model.encode(text).tolist()
 
     def load_vector(self, query: dict, table: str = "lims_embeddings") -> dict:
+        """
+        Load a specific vector from the vector table
+
+        :param query: which vector to search for
+        :param table: which table to search in
+        :return: any found vectors
+        """
         if not self.is_connected():
             raise RuntimeError("PostgreSQL connection not initialized.")
         if "id" not in query:
@@ -246,6 +292,14 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
             }
 
     def nearest_search(self, input: str, top_k: int, table: str = "lims_embeddings") -> list[str]:
+        """
+        Do a nearest search on the contents of the vector database.
+
+        :param input: String to do a nearest search with
+        :param top_k: How many results to find
+        :param table: On which table to do the nearest search
+        :return: top_k amount of closest results
+        """
         if not self.is_connected():
             raise RuntimeError("PostgreSQL connection not initialized.")
 
@@ -267,6 +321,13 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
             return results
 
     def import_vectors(self, table: str = "lims_embeddings", data: dict = None, path: str = None):
+        """
+        Imports vectors from outside into the vector database
+
+        :param table: Which table to import embeddings into, defaults to "lims_embeddings"
+        :param data: Data that should be added
+        :param path: Path to data that should be imported
+        """
         if not self.is_connected():
             raise ConnectionError("Client is not connected. Use 'connect' first.")
         if not self._vector_extension():
@@ -319,6 +380,11 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
     # --- CONNECTION ---
 
     def is_connected(self) -> bool:
+        """
+        If PostgreSQL is connected and responds to simple queries
+
+        :return: true if connected
+        """
         if not self.conn:
             return False
         try:
@@ -329,6 +395,15 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
             return False
 
     def connect(self, host: str, port: int, auth: dict = None) -> bool:
+        """
+        Connects to PostgreSQL Database server
+
+        :param host: Hostname of the server
+        :param port: Port of the server
+        :param auth: Authentication-Data like username or password
+        :return: true if connected successfully
+        """
+
         if not auth or "database" not in auth:
             raise ValueError("Authentication dictionary must contain at least 'database' key.")
         self.db = auth["database"]
@@ -351,6 +426,11 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
             raise RuntimeError(f"Unexpected error during PostgreSQL connection: {e}")
 
     def _vector_extension(self) -> bool:
+        """
+        Checks if pgvector is available in PostgreSQL
+
+        :return: true if pgvector is found
+        """
         if not self.conn:
             raise ConnectionError("PostgreSQL connection not established. Call connect() first.")
 
@@ -368,6 +448,9 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
             return False
 
     def _initialize_schema(self):
+        """
+        Initializes the database schema if it doesn't exist
+        """
         with self.conn.cursor() as cur:
             cur.execute("""
                 CREATE TABLE IF NOT EXISTS conversations (

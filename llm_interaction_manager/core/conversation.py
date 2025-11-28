@@ -23,6 +23,7 @@ class Conversation:
         Initializes a new conversation with the three handlers, the current settings object, and default configurations.
         If conversation metadata is provided during initialization, it will also be stored.
         Additionally, the conversation is created with its own unique conversation ID.
+
         :param llm: LLM handler object
         :param persistent: Persistent handler object
         :param vector: Vector handler object
@@ -41,9 +42,10 @@ class Conversation:
     def send_prompt(self, prompt: str) -> dict:
         """
         Sends the prompt to the LLM handler and retrieves the response.
-        If RAG data is stored in the settings, it will be included in the request.
+        If the usage of RAG-data is defined in the settings, the specified RAG-Data will also be sent.
         If manual user comments are enabled, the program flow will pause to allow comment input.
         Depending on the setting "send_conversation_history" previous messages in the conversation will also be sent to the LLM
+
         :param prompt: Prompt to be sent to the LLM handler
         :return: Dictionary object containing the prompt, response, optional user comment, RAG data, and additional metadata
         """
@@ -119,6 +121,7 @@ class Conversation:
     def get_last_response(self) -> str:
         """
         Returns the content of the last message-object as a strong, so the last Response from the LLM
+
         :return: "Content"-Value of the last Message-Object
         """
         if not self.conversation_history:
@@ -135,6 +138,7 @@ class Conversation:
     def add_metadata(self, conversation: bool, data: dict):
         """
         Adds Metadata either to the conversation-object or to the last received response
+
         :param conversation: If it should be saved to the conversation or the last response
         :param data: The data that should be updated in the metadata
         """
@@ -149,6 +153,7 @@ class Conversation:
     def change_comment(self, comment: str):
         """
         Changes the comment to the last received response
+
         :param comment: The comment to be updated
         """
         if len(self.conversation_history) == 0:
@@ -158,6 +163,7 @@ class Conversation:
     def get_metadata(self, conversation: bool, id: int = None) -> dict:
         """
         Returns Metadata for the conversation or for a specific message ID
+
         :param conversation: If metadata should be taken from the conversation or one message.
         :param id: Message ID to filter by
         :return: dict of Metadata extracted
@@ -173,6 +179,7 @@ class Conversation:
     def remove_metadata(self, conversation: bool,key: str,  id: str = None):
         """
         Removes specified metadata from either the conversation or a specific message indicated by the id
+
         :param conversation: True, if the metadata should be removed from the conversation
         :param key: Which metadata-entry should be removed
         :param id: Which message-id the metadata should be removed from

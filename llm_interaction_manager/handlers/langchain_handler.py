@@ -13,6 +13,7 @@ class LangchainHandler(LLMHandlerBase):
     def get_info(self) -> dict:
         """
         Returns connection-data to be saved in the Settings-Object
+
         :return: Dict containing authentication-data
         """
         return self.auth
@@ -20,6 +21,7 @@ class LangchainHandler(LLMHandlerBase):
     def get_name(self) -> str:
         """
         Returns the name of the Handler for dynamic binding
+
         :return: String "langchain"
         """
         return "langchain"
@@ -27,6 +29,7 @@ class LangchainHandler(LLMHandlerBase):
     def send_prompt(self, prompt: str, rag: list[str] =None) -> dict:
         """
         Sends the prompt with the optional RAG-Data to the external interface
+
         :param prompt: String-Object containing the Prompt
         :param rag: Optional RAG-Data to send
         :return: Dict containing prompt, response and possibly additional metadata
@@ -52,6 +55,7 @@ class LangchainHandler(LLMHandlerBase):
     def connect(self, data: dict) -> bool:
         """
         Connects to the external TogetherAI Service over Langchain
+
         :param data: Data to connect to the Service with, must contain at least "token" and "model"
         """
         if not {"model","token"} <= data.keys():
@@ -71,6 +75,7 @@ class LangchainHandler(LLMHandlerBase):
     def is_connected(self) -> bool:
         """
         Check if the service is connected, in which case the llm object will be initialized
+
         :return: True if the service is connected
         """
         if self.llm is None:
@@ -80,6 +85,7 @@ class LangchainHandler(LLMHandlerBase):
     def validate_model_name(self, model: str) -> bool:
         """
         Check if the model exists within TogetherAI.
+
         :param model: Model name to check against
         :return: True if the model exists
         """

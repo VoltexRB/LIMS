@@ -12,6 +12,7 @@ class VectorDataHandlerBase (DataHandlerBase, ABC):
             - "response": str
             - "id": str if the data is from the interface and from a specific message. External data does not have an ID
             - other keys: optional metadata
+
         :param data: Data to be saved
         :param table: Table to save the data to
         """
@@ -21,6 +22,7 @@ class VectorDataHandlerBase (DataHandlerBase, ABC):
     def load_vector(self, query: dict, table: str) -> dict:
         """
         finds vector by at least its id, can also provide more data in the query
+
         :param query: dict with values to query against, must at least contain an id
         :param table: chromadb collection
         :return: returns the matched vector
@@ -31,6 +33,7 @@ class VectorDataHandlerBase (DataHandlerBase, ABC):
     def nearest_search(self, input: str, top_k: int, table: str) -> list[str]:
         """
         Gets vectors from the connected database and specified connection based on the input prompt
+
         :param table: Which chromadb collection to search in
         :param input: prompt that the vector collection is searching against
         :param top_k: how many results to return.
@@ -44,6 +47,7 @@ class VectorDataHandlerBase (DataHandlerBase, ABC):
         """
         Adds vectors to the vector database, either from a dict structure or a file specified by a path.
         If they are imported without an ID, a special "imported" ID will be added
+
         :param table: Table to import the data into
         :param data: Data to be imported directly
         :param path: Path to the data that should be imported from external files

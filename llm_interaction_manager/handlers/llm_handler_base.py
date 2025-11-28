@@ -11,6 +11,7 @@ class LLMHandlerBase (ABC):
     def is_connected(self) -> bool:
         """
         Check if the service is connected
+
         :return: True if the service is connected
         """
         pass
@@ -19,6 +20,7 @@ class LLMHandlerBase (ABC):
     def connect(self, data: dict) -> bool:
         """
         Connects to the external LLM Service
+
         :param data: Data to connect to the Service with, must contain at least "token" and "model"
         """
         pass
@@ -31,6 +33,7 @@ class LLMHandlerBase (ABC):
     def validate_model_name(self, model: str) -> bool:
         """
         Check if the model exists within the LLM Service
+
         :param model: Model name to check against
         :return: True if the model exists
         """
@@ -40,6 +43,7 @@ class LLMHandlerBase (ABC):
     def get_info(self) -> dict:
         """
         Returns connection-data to be saved in the Settings-Object
+
         :return: Dict containing authentication-data
         """
         pass

@@ -20,15 +20,21 @@ release = '1.0.0'
 
 extensions = [
     "sphinx.ext.autodoc",
-    "sphinx.ext.napoleon",  # for Google/NumPy style docstrings
     "sphinx_autodoc_typehints",  # nice type annotations
 ]
+
+napoleon_google_docstring = False
+napoleon_numpy_docstring = False
+napoleon_use_param = True
+napoleon_use_rtype = True
 
 autodoc_default_options = {
     "members": True,
     "undoc-members": True,
     "show-inheritance": True,
 }
+# autodoc type hints
+autodoc_typehints = "description"
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']

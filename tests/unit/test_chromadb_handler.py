@@ -73,13 +73,10 @@ def test_metadata_preservation(chroma_handler):
         "category": "test",
         "source": "unit_test"
     }
-
     # Save the vector
-    assert chroma_handler.save_vector(data, table=table) is True
-
+    assert chroma_handler.save_vector(data, table=table)
     # Load the vector by ID
     result = chroma_handler.load_vector({"id": "vec_004"}, table=table)
-
     # Assertions to verify metadata is preserved
     assert result["metadata"] is not None
     assert result["metadata"]["category"] == "test"

@@ -31,6 +31,7 @@ class ChromadbHandler(VectorDataHandlerBase):
     def get_info(self) -> dict:
         """
         Returns the connection information to be saved in the settings
+
         :return: dict with the connection information
         """
         return {**self.auth, "host": self.host, "port": self.port}
@@ -38,6 +39,7 @@ class ChromadbHandler(VectorDataHandlerBase):
     def get_name(self) -> str:
         """
         Returns the name "chromadb" for dynamic binding purposes
+
         :return: String "chromadb"
         """
         return "chromadb"
@@ -79,6 +81,7 @@ class ChromadbHandler(VectorDataHandlerBase):
     def load_vector(self, query: dict, table: str) -> dict:
         """
         finds vector by at least its id, can also provide more data in the query
+
         :param query: dict with values to query against, must at least contain an id
         :param table: chromadb collection
         :return: returns the matched vector
@@ -100,16 +103,26 @@ class ChromadbHandler(VectorDataHandlerBase):
         if not results['ids']:
             raise ValueError(f"No vector found with ID '{vector_id}' and matching metadata.")
 
+        #separate prompt and response
+        vector_text = results['documents'][0]
+        prompt_start = vector_text.index("PROMPT:") + len("PROMPT:")
+        response_start = vector_text.index("RESPONSE:")
+
+        prompt = vector_text[prompt_start:response_start].strip()
+        response = vector_text[response_start + len("RESPONSE:"):].strip()
+
         # Return the first (and only) matching vector
         return {
             "id": results['ids'][0],
-            "vector": results['documents'][0],
+            "prompt": prompt,
+            "response": response,
             "metadata": results['metadatas'][0],
         }
 
     def nearest_search(self, input: str, top_k: int, table: str) -> list[str]:
         """
         Gets vectors from the connected database and specified connection based on the input prompt
+
         :param table: Which chromadb collection to search in
         :param input: prompt that the vector collection is searching against
         :param top_k: how many results to return.
@@ -138,6 +151,7 @@ class ChromadbHandler(VectorDataHandlerBase):
     def is_connected(self) -> bool:
         """
         Tries to check for a valid connection to chromaDB
+
         :return: True if chromadb instance can be reached via the builtin heartbeat() function
         """
         if self._client is None: return False
@@ -159,6 +173,7 @@ class ChromadbHandler(VectorDataHandlerBase):
 
         Raises KeyError if ClientType can not be found or the corresponding Keys for the selected ClientType are missing.
         Only connects to HTTP-Server-instances without authentication
+
         :param auth: Dictionary containing the required parameters to use ChromaDB.
         :param host: if using http-service to connect to a ChromaDB instance, supply hostname
         :param port: same usage as hostname, supply port
@@ -226,6 +241,7 @@ class ChromadbHandler(VectorDataHandlerBase):
         """
         Adds vectors to the vector database, either from a dict structure or a file specified by a path.
         If they are imported without an ID, a special "imported" ID will be added
+
         :param table: Table to import the data into
         :param data: Data to be imported directly
         :param path: Path to the data that should be imported from external files
@@ -260,6 +276,7 @@ class ChromadbHandler(VectorDataHandlerBase):
     def _collection_exists(self, name: str):
         """
         Check if the collection, ChromaDBs version of a Table, exists already
+
         :param name: Name of the collection to search for
         :return: True if the collection exists
         """

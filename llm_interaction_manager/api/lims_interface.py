@@ -11,6 +11,7 @@ interaction_manager: InteractionManager = None
 def initialize(llm: LLMEnum = LLMEnum.SETTINGS, persistent: PersistentEnum = PersistentEnum.SETTINGS, vector: VectorEnum = VectorEnum.SETTINGS):
     """
     Initializes a new InteractionManager Object with the 3 specified interfaces. For enum values, see InteractionManagerFactory
+
     :param llm: Enum which LLM interface should be used
     :param persistent: Enum which Persistent Data interface should be used
     :param vector: Enum which Vector Data interface should be used
@@ -22,6 +23,7 @@ def initialize(llm: LLMEnum = LLMEnum.SETTINGS, persistent: PersistentEnum = Per
 def _check_initialized()-> bool:
     """
     Checks if an InteractionManager Object was already initialized and is available locally
+
     :return: bool if InteractionManager Object exists
     """
     if interaction_manager is None:
@@ -31,6 +33,7 @@ def _check_initialized()-> bool:
 def start_conversation(conversation_metadata: dict = None):
     """
     Starts a new conversation in the InteractionManager with the Handlers of the interactionManager.
+
     :param conversation_metadata: Optional metadata that can immediately be added to the conversation
     """
     if not _check_initialized(): return
@@ -39,6 +42,7 @@ def start_conversation(conversation_metadata: dict = None):
 def set_rag_data(data: dict, volatile: bool):
     """
     Adds new RAG data to use for sending prompts. RAD-Data can either be saved in the config or just be used in the current session
+
     :param data: Data to be used as RAG data
     :param volatile: If the data should just persist for the current session
     """
@@ -48,6 +52,7 @@ def set_rag_data(data: dict, volatile: bool):
 def delete_rag_data():
     """
     Stops using RAG-Data in conversations with the LLMs from now on and deletes any RAG-Data, persistent or volatile
+
     :return:
     """
     if not _check_initialized(): return
@@ -56,6 +61,7 @@ def delete_rag_data():
 def nearest_search_vector(input: str, top_k: int, table: str) -> list[str]:
     """
     Searches the vector database for close matches of the input and returns the top_k results. May result in a combination of Prompt and Response lines depending on Interface
+
     :param input: String data to generate an embedding from to use nearest search for on the vector database.
     :param top_k: How many results should be returned
     :param table: Which table to do the nearest search on
@@ -68,6 +74,7 @@ def nearest_search_vector(input: str, top_k: int, table: str) -> list[str]:
 def export_data(to: str, filters: dict[str, Any] | None = None):
     """
     Exports data from the persistent database to the specified path
+
     :param to: Path to export the data to
     :param filters: Filters to apply to the data. If no filters are specified, all available data will be exported
     """
@@ -79,6 +86,7 @@ def add_persistent_data(conversation: dict, messages: list[dict]):
     """
     Adds new persistent data to the database. Data has to contain messages and conversations that align with the internal datastructure.
     Conversations must contain a conversation_id, messages must each contain a message_id
+
     :param conversation: Conversation Object with conversation_id that should be inserted
     :param messages: List of messages with message_ids that should be inserted and linked to the conversation
     """
@@ -88,6 +96,7 @@ def add_persistent_data(conversation: dict, messages: list[dict]):
 def add_vector_data(data: dict, table: str):
     """
     Adds new data to the vector-database
+
     :param data: Data to be added, must contain at least "prompt", "response" and "message_id" as message_id to link the data to a persistent message
     :param table: Which table the data should be saved in
     """
@@ -97,6 +106,7 @@ def add_vector_data(data: dict, table: str):
 def is_connected(target: ConnectionType) -> bool:
     """
     Check if the specified handler is connected
+
     :param target: ConnectionType-Enum, which handler should be checked
     :return: True if specified handler is connected, False else
     """
@@ -106,6 +116,7 @@ def is_connected(target: ConnectionType) -> bool:
 def connect(target: ConnectionType, data: dict):
     """
     Connect to the specified handlers endpoint
+
     :param target: ConnectionType-Enum, which handler should be checked
     :param data: Data to use for connection (eg. API tokens, routing information)
     """
@@ -115,6 +126,7 @@ def connect(target: ConnectionType, data: dict):
 def read_setting(key: str):
     """
     Reads a setting from the current Settings-Object
+
     :param key: Which setting to read
     :return: Requested Object from Settings
     """
@@ -124,6 +136,7 @@ def read_setting(key: str):
 def write_setting(key: str, value):
     """
     Updates a setting in the Settings Object and propagates to config.json
+
     :param key: Key to write into the settings
     :param value: Value to be changed
     """
@@ -133,6 +146,7 @@ def write_setting(key: str, value):
 def set_rag_mode(mode: RAGMode):
     """
     Sets the RAG-Mode of the application
+
     :param mode: The mode to set it to
     """
     if not _check_initialized(): return

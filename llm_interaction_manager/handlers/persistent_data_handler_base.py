@@ -9,6 +9,7 @@ class PersistentDataHandlerBase (DataHandlerBase, ABC):
         """
         Save conversation and messages to the persistent storage.
         Always requires both items to guarantee reference between messages and their conversation
+
         :param conversation: dict containing conversation-level data. Must contain "conversation_id"
         :param messages: list of dicts containing message-level data. Must contain "message_id"
         """
