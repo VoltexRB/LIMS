@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="added documentation folder">
+    <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="solved huggingface dependencies">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/huggingface_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/huggingface_handler.py" afterDir="false" />
     </list>
@@ -460,7 +460,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767456051455</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="solved huggingface dependencies">
+      <option name="closed" value="true" />
+      <created>1767457502951</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1767457502951</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -494,7 +502,8 @@
     <MESSAGE value="Reformatted docstrings to fit with sphinx" />
     <MESSAGE value="reformatted comments, various small fixes" />
     <MESSAGE value="added documentation folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="added documentation folder" />
+    <MESSAGE value="solved huggingface dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="solved huggingface dependencies" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

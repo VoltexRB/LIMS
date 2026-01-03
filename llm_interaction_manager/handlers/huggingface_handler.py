@@ -12,7 +12,7 @@ class HuggingfaceHandler(LLMHandlerBase):
 
     def get_info(self) -> dict:
         """
-        Returns connection-data to be saved in the Settings-Object
+        Returns connection-data to be saved in the local Settings-Object
 
         :return: Dict containing authentication-data
         """
