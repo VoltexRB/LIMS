@@ -197,11 +197,18 @@ class InteractionManager:
 
         :param mode: The mode to set it to
         """
+        if mode == RAGMode.VOLATILE:
+            if not self.settings.on_the_fly_data:
+                raise ValueError("Cannot set RAG mode to VOLATILE because no on-the-fly RAG data is available. Use set_rag_data() instead.")
+
+        elif mode == RAGMode.PERSISTENT:
+            if not self.settings.default_rag_data:
+                raise ValueError("Cannot set RAG mode to PERSISTENT because no persistent RAG data is available. Use set_rag_data() instead.")
         self.settings.use_rag_data = mode
 
     def delete_rag_data(self):
         """
-        Turns off RAG-Data usage and deletes any RAG-Data, persistent or volatile
+        Turns off RAG-Data usage and deletes any RAG-Data, persistent and volatile
         """
         self.settings.use_rag_data = RAGMode.NONE
         self.settings.on_the_fly_data = {}
@@ -331,7 +338,6 @@ class InteractionManager:
             raise KeyError(f"Setting {key} does not exist in Settings")
         return getattr(self, key)
 
-
     def write_setting(self, key: str, value):
         """
         Updates a setting in the Settings Object and propagates to config.json
@@ -362,9 +368,13 @@ class InteractionManager:
         :param prompt: Prompt to send to the LLM-Handler. If RAG-Data is specified, Prompt and RAG-Data will be combined
         :return: Answer from LLM
         """
+        full_prompt = prompt
         if self.conversation is None:
             raise RuntimeError("No conversation initialized yet. Use start_conversation() first.")
-        return self.conversation.send_prompt(prompt)
+
+        if self.settings.default_system_prompt != "-1":
+            full_prompt = "SYSTEM PROMPT: " + self.settings.default_system_prompt + " PROMPT: " + prompt
+        return self.conversation.send_prompt(full_prompt)
 
     def change_comment(self, comment: str):
         """

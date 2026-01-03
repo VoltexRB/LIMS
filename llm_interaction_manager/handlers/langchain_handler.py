@@ -45,7 +45,7 @@ class LangchainHandler(LLMHandlerBase):
             response = self.llm.invoke(full_prompt)
             content = getattr(response, "content", str(response))
             metadata = getattr(response, "response_metadata", None)
-            result = {"response": content}
+            result = {"response": content, "prompt": prompt}
             if metadata:
                 result["metadata"] = metadata
             return result

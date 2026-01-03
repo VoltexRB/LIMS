@@ -182,7 +182,7 @@ class ChromadbHandler(VectorDataHandlerBase):
         try:
             client_type = ClientType(auth["client_type"])
         except KeyError:
-            raise KeyError("Missing 'client_type' in auth dictionary")
+            raise KeyError("Missing or mismatched 'client_type' in auth dictionary")
 
         if client_type == ClientType.PERSISTENT:
             if "persistent_client_db_path" not in auth:

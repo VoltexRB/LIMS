@@ -24,7 +24,7 @@ class VectorDataHandlerBase (DataHandlerBase, ABC):
         finds vector by at least its id, can also provide more data in the query
 
         :param query: dict with values to query against, must at least contain an id
-        :param table: chromadb collection
+        :param table: table to find the vector in
         :return: returns the matched vector
         """
         pass
@@ -34,8 +34,8 @@ class VectorDataHandlerBase (DataHandlerBase, ABC):
         """
         Gets vectors from the connected database and specified connection based on the input prompt
 
-        :param table: Which chromadb collection to search in
-        :param input: prompt that the vector collection is searching against
+        :param table: Which table to search in
+        :param input: prompt that the vector is searching against
         :param top_k: how many results to return.
         returns
             list[str]: of Vector 'document' values

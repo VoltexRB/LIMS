@@ -4,24 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="added timestamp to mongodb conversations">
+    <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="Reformatted docstrings to fit with sphinx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/conf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/api/interaction_manager_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/api/interaction_manager_factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/api/lims_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/api/lims_interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm_interaction_manager/core/conversation.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/core/conversation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/chromadb_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/chromadb_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/data_handler_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/data_handler_base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/huggingface_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/huggingface_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/langchain_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/langchain_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/llm_handler_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/llm_handler_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/mongodb_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/mongodb_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/persistent_data_handler_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/persistent_data_handler_base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/postgres_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/postgres_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/vector_data_handler_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/vector_data_handler_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/utils/settings_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/utils/settings_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/test_chromadb_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/test_chromadb_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -449,7 +441,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763394304379</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Reformatted docstrings to fit with sphinx">
+      <option name="closed" value="true" />
+      <created>1764351121058</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1764351121058</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -480,10 +480,73 @@
     <MESSAGE value="cleaned factory init" />
     <MESSAGE value="changed HF log-behaviour" />
     <MESSAGE value="added timestamp to mongodb conversations" />
-    <option name="LAST_COMMIT_MESSAGE" value="added timestamp to mongodb conversations" />
+    <MESSAGE value="Reformatted docstrings to fit with sphinx" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformatted docstrings to fit with sphinx" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
+          <line>305</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
+          <line>291</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
+          <line>352</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
+          <line>378</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
+          <line>178</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
+          <line>193</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
+          <line>208</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
+          <line>217</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
+          <line>230</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
+          <line>161</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
+          <line>268</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
+          <line>280</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">

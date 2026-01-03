@@ -78,6 +78,9 @@ class Conversation:
             rag_list += self.vector_handler.nearest_search(prompt, 10, "lims_embeddings")
             self.vector_handler.get_info()
 
+        #use system prompt from settings
+
+
         # Send to LLM
         if rag_list:
             response = self.llm_handler.send_prompt(prompt, rag_list)
@@ -103,7 +106,7 @@ class Conversation:
             "prompt": prompt,
             "content": response["response"],
             "comment": comment,
-            "metadata": {k: v for k, v in response.items() if k not in ("content", "prompt")}
+            "metadata": {k: v for k, v in response.items() if k not in ("response", "prompt")}
         }
         if self.settings.use_rag_data == RAGMode.VOLATILE:
             response_obj["RAG-Data"] = _normalize_rag_data(self.settings.on_the_fly_data)

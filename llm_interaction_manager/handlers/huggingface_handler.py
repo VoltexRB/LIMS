@@ -76,7 +76,7 @@ class HuggingfaceHandler(LLMHandlerBase):
         generated = result[0]["generated_text"]
         if generated.startswith(full_prompt):
             generated = generated[len(full_prompt):]  # cut off the prompt
-        return {"response": generated, "prompt": full_prompt}
+        return {"response": generated, "prompt": prompt}
 
     def validate_model_name(self, model: str) -> bool:
         """

@@ -408,8 +408,8 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
             raise ValueError("Authentication dictionary must contain at least 'database' key.")
         self.db = auth["database"]
         conn_params = {"host": host, "port": port, "dbname": auth["database"]}
-        if "user" in auth:
-            conn_params["user"] = auth["user"]
+        if "username" in auth:
+            conn_params["user"] = auth["username"]
         if "password" in auth:
             conn_params["password"] = auth["password"]
 
