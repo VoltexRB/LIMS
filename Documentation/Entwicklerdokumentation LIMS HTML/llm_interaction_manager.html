@@ -1,0 +1,595 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>llm_interaction_manager package &mdash; LIMS 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="llm_interaction_manager.api package" href="llm_interaction_manager.api.html" />
+    <link rel="prev" title="llm_interaction_manager" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            LIMS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">llm_interaction_manager</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">llm_interaction_manager package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html">llm_interaction_manager.api package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html">llm_interaction_manager.core package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html">llm_interaction_manager.handlers package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html">llm_interaction_manager.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-llm_interaction_manager">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LIMS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">llm_interaction_manager</a></li>
+      <li class="breadcrumb-item active">llm_interaction_manager package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/llm_interaction_manager.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="llm-interaction-manager-package">
+<h1>llm_interaction_manager package<a class="headerlink" href="#llm-interaction-manager-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="llm_interaction_manager.api.html">llm_interaction_manager.api package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.api.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.api.html#module-llm_interaction_manager.api.interaction_manager_factory">llm_interaction_manager.api.interaction_manager_factory module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.interaction_manager_factory.LLMEnum"><code class="docutils literal notranslate"><span class="pre">LLMEnum</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.interaction_manager_factory.LLMEnum.HUGGINGFACE"><code class="docutils literal notranslate"><span class="pre">LLMEnum.HUGGINGFACE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.interaction_manager_factory.LLMEnum.LANGCHAIN"><code class="docutils literal notranslate"><span class="pre">LLMEnum.LANGCHAIN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.interaction_manager_factory.LLMEnum.SETTINGS"><code class="docutils literal notranslate"><span class="pre">LLMEnum.SETTINGS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.interaction_manager_factory.PersistentEnum"><code class="docutils literal notranslate"><span class="pre">PersistentEnum</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.interaction_manager_factory.PersistentEnum.MONGODB"><code class="docutils literal notranslate"><span class="pre">PersistentEnum.MONGODB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.interaction_manager_factory.PersistentEnum.POSTGRES"><code class="docutils literal notranslate"><span class="pre">PersistentEnum.POSTGRES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.interaction_manager_factory.PersistentEnum.SETTINGS"><code class="docutils literal notranslate"><span class="pre">PersistentEnum.SETTINGS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.interaction_manager_factory.VectorEnum"><code class="docutils literal notranslate"><span class="pre">VectorEnum</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.interaction_manager_factory.VectorEnum.CHROMADB"><code class="docutils literal notranslate"><span class="pre">VectorEnum.CHROMADB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.interaction_manager_factory.VectorEnum.POSTGRES"><code class="docutils literal notranslate"><span class="pre">VectorEnum.POSTGRES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.interaction_manager_factory.VectorEnum.SETTINGS"><code class="docutils literal notranslate"><span class="pre">VectorEnum.SETTINGS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.interaction_manager_factory.initialize"><code class="docutils literal notranslate"><span class="pre">initialize()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.api.html#module-llm_interaction_manager.api.lims_interface">llm_interaction_manager.api.lims_interface module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.add_metadata"><code class="docutils literal notranslate"><span class="pre">add_metadata()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.add_persistent_data"><code class="docutils literal notranslate"><span class="pre">add_persistent_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.add_vector_data"><code class="docutils literal notranslate"><span class="pre">add_vector_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.change_comment"><code class="docutils literal notranslate"><span class="pre">change_comment()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.connect"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.delete_rag_data"><code class="docutils literal notranslate"><span class="pre">delete_rag_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.export_data"><code class="docutils literal notranslate"><span class="pre">export_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.initialize"><code class="docutils literal notranslate"><span class="pre">initialize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.is_connected"><code class="docutils literal notranslate"><span class="pre">is_connected()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.nearest_search_vector"><code class="docutils literal notranslate"><span class="pre">nearest_search_vector()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.read_setting"><code class="docutils literal notranslate"><span class="pre">read_setting()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.send_prompt"><code class="docutils literal notranslate"><span class="pre">send_prompt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.set_rag_data"><code class="docutils literal notranslate"><span class="pre">set_rag_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.set_rag_mode"><code class="docutils literal notranslate"><span class="pre">set_rag_mode()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.start_conversation"><code class="docutils literal notranslate"><span class="pre">start_conversation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.lims_interface.write_setting"><code class="docutils literal notranslate"><span class="pre">write_setting()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.api.html#module-llm_interaction_manager.api">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.LLMEnum"><code class="docutils literal notranslate"><span class="pre">LLMEnum</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.LLMEnum.HUGGINGFACE"><code class="docutils literal notranslate"><span class="pre">LLMEnum.HUGGINGFACE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.LLMEnum.LANGCHAIN"><code class="docutils literal notranslate"><span class="pre">LLMEnum.LANGCHAIN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.LLMEnum.SETTINGS"><code class="docutils literal notranslate"><span class="pre">LLMEnum.SETTINGS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.PersistentEnum"><code class="docutils literal notranslate"><span class="pre">PersistentEnum</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.PersistentEnum.MONGODB"><code class="docutils literal notranslate"><span class="pre">PersistentEnum.MONGODB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.PersistentEnum.POSTGRES"><code class="docutils literal notranslate"><span class="pre">PersistentEnum.POSTGRES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.PersistentEnum.SETTINGS"><code class="docutils literal notranslate"><span class="pre">PersistentEnum.SETTINGS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.VectorEnum"><code class="docutils literal notranslate"><span class="pre">VectorEnum</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.VectorEnum.CHROMADB"><code class="docutils literal notranslate"><span class="pre">VectorEnum.CHROMADB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.VectorEnum.POSTGRES"><code class="docutils literal notranslate"><span class="pre">VectorEnum.POSTGRES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html#llm_interaction_manager.api.VectorEnum.SETTINGS"><code class="docutils literal notranslate"><span class="pre">VectorEnum.SETTINGS</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="llm_interaction_manager.core.html">llm_interaction_manager.core package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.core.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.core.html#module-llm_interaction_manager.core.conversation">llm_interaction_manager.core.conversation module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation"><code class="docutils literal notranslate"><span class="pre">Conversation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.add_metadata"><code class="docutils literal notranslate"><span class="pre">Conversation.add_metadata()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.change_comment"><code class="docutils literal notranslate"><span class="pre">Conversation.change_comment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.conversation_history"><code class="docutils literal notranslate"><span class="pre">Conversation.conversation_history</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.conversation_id"><code class="docutils literal notranslate"><span class="pre">Conversation.conversation_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.conversation_metadata"><code class="docutils literal notranslate"><span class="pre">Conversation.conversation_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.created_at"><code class="docutils literal notranslate"><span class="pre">Conversation.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.get_conversation_id"><code class="docutils literal notranslate"><span class="pre">Conversation.get_conversation_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.get_last_response"><code class="docutils literal notranslate"><span class="pre">Conversation.get_last_response()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.get_metadata"><code class="docutils literal notranslate"><span class="pre">Conversation.get_metadata()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.llm_handler"><code class="docutils literal notranslate"><span class="pre">Conversation.llm_handler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.persistent_handler"><code class="docutils literal notranslate"><span class="pre">Conversation.persistent_handler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.remove_metadata"><code class="docutils literal notranslate"><span class="pre">Conversation.remove_metadata()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.send_prompt"><code class="docutils literal notranslate"><span class="pre">Conversation.send_prompt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.settings"><code class="docutils literal notranslate"><span class="pre">Conversation.settings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.conversation.Conversation.vector_handler"><code class="docutils literal notranslate"><span class="pre">Conversation.vector_handler</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.core.html#module-llm_interaction_manager.core.interaction_manager">llm_interaction_manager.core.interaction_manager module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.ConnectionType"><code class="docutils literal notranslate"><span class="pre">ConnectionType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.ConnectionType.LLM"><code class="docutils literal notranslate"><span class="pre">ConnectionType.LLM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.ConnectionType.PERSISTENT"><code class="docutils literal notranslate"><span class="pre">ConnectionType.PERSISTENT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.ConnectionType.VECTOR"><code class="docutils literal notranslate"><span class="pre">ConnectionType.VECTOR</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager"><code class="docutils literal notranslate"><span class="pre">InteractionManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.add_metadata"><code class="docutils literal notranslate"><span class="pre">InteractionManager.add_metadata()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.add_persistent_data"><code class="docutils literal notranslate"><span class="pre">InteractionManager.add_persistent_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.add_vector_data"><code class="docutils literal notranslate"><span class="pre">InteractionManager.add_vector_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.change_comment"><code class="docutils literal notranslate"><span class="pre">InteractionManager.change_comment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.connect"><code class="docutils literal notranslate"><span class="pre">InteractionManager.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.conversation"><code class="docutils literal notranslate"><span class="pre">InteractionManager.conversation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.delete_rag_data"><code class="docutils literal notranslate"><span class="pre">InteractionManager.delete_rag_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.export_data"><code class="docutils literal notranslate"><span class="pre">InteractionManager.export_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.is_connected"><code class="docutils literal notranslate"><span class="pre">InteractionManager.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.llm_handler"><code class="docutils literal notranslate"><span class="pre">InteractionManager.llm_handler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.nearest_search_vector"><code class="docutils literal notranslate"><span class="pre">InteractionManager.nearest_search_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.persistent_handler"><code class="docutils literal notranslate"><span class="pre">InteractionManager.persistent_handler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.read_setting"><code class="docutils literal notranslate"><span class="pre">InteractionManager.read_setting()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.send_prompt"><code class="docutils literal notranslate"><span class="pre">InteractionManager.send_prompt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.set_rag_data"><code class="docutils literal notranslate"><span class="pre">InteractionManager.set_rag_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.set_rag_mode"><code class="docutils literal notranslate"><span class="pre">InteractionManager.set_rag_mode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.settings"><code class="docutils literal notranslate"><span class="pre">InteractionManager.settings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.start_conversation"><code class="docutils literal notranslate"><span class="pre">InteractionManager.start_conversation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.vector_handler"><code class="docutils literal notranslate"><span class="pre">InteractionManager.vector_handler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.interaction_manager.InteractionManager.write_setting"><code class="docutils literal notranslate"><span class="pre">InteractionManager.write_setting()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.core.html#module-llm_interaction_manager.core">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation"><code class="docutils literal notranslate"><span class="pre">Conversation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.add_metadata"><code class="docutils literal notranslate"><span class="pre">Conversation.add_metadata()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.change_comment"><code class="docutils literal notranslate"><span class="pre">Conversation.change_comment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.conversation_history"><code class="docutils literal notranslate"><span class="pre">Conversation.conversation_history</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.conversation_id"><code class="docutils literal notranslate"><span class="pre">Conversation.conversation_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.conversation_metadata"><code class="docutils literal notranslate"><span class="pre">Conversation.conversation_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.created_at"><code class="docutils literal notranslate"><span class="pre">Conversation.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.get_conversation_id"><code class="docutils literal notranslate"><span class="pre">Conversation.get_conversation_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.get_last_response"><code class="docutils literal notranslate"><span class="pre">Conversation.get_last_response()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.get_metadata"><code class="docutils literal notranslate"><span class="pre">Conversation.get_metadata()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.llm_handler"><code class="docutils literal notranslate"><span class="pre">Conversation.llm_handler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.persistent_handler"><code class="docutils literal notranslate"><span class="pre">Conversation.persistent_handler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.remove_metadata"><code class="docutils literal notranslate"><span class="pre">Conversation.remove_metadata()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.send_prompt"><code class="docutils literal notranslate"><span class="pre">Conversation.send_prompt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.settings"><code class="docutils literal notranslate"><span class="pre">Conversation.settings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.Conversation.vector_handler"><code class="docutils literal notranslate"><span class="pre">Conversation.vector_handler</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager"><code class="docutils literal notranslate"><span class="pre">InteractionManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.add_metadata"><code class="docutils literal notranslate"><span class="pre">InteractionManager.add_metadata()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.add_persistent_data"><code class="docutils literal notranslate"><span class="pre">InteractionManager.add_persistent_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.add_vector_data"><code class="docutils literal notranslate"><span class="pre">InteractionManager.add_vector_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.change_comment"><code class="docutils literal notranslate"><span class="pre">InteractionManager.change_comment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.connect"><code class="docutils literal notranslate"><span class="pre">InteractionManager.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.conversation"><code class="docutils literal notranslate"><span class="pre">InteractionManager.conversation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.delete_rag_data"><code class="docutils literal notranslate"><span class="pre">InteractionManager.delete_rag_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.export_data"><code class="docutils literal notranslate"><span class="pre">InteractionManager.export_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.is_connected"><code class="docutils literal notranslate"><span class="pre">InteractionManager.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.llm_handler"><code class="docutils literal notranslate"><span class="pre">InteractionManager.llm_handler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.nearest_search_vector"><code class="docutils literal notranslate"><span class="pre">InteractionManager.nearest_search_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.persistent_handler"><code class="docutils literal notranslate"><span class="pre">InteractionManager.persistent_handler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.read_setting"><code class="docutils literal notranslate"><span class="pre">InteractionManager.read_setting()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.send_prompt"><code class="docutils literal notranslate"><span class="pre">InteractionManager.send_prompt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.set_rag_data"><code class="docutils literal notranslate"><span class="pre">InteractionManager.set_rag_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.set_rag_mode"><code class="docutils literal notranslate"><span class="pre">InteractionManager.set_rag_mode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.settings"><code class="docutils literal notranslate"><span class="pre">InteractionManager.settings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.start_conversation"><code class="docutils literal notranslate"><span class="pre">InteractionManager.start_conversation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.vector_handler"><code class="docutils literal notranslate"><span class="pre">InteractionManager.vector_handler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html#llm_interaction_manager.core.InteractionManager.write_setting"><code class="docutils literal notranslate"><span class="pre">InteractionManager.write_setting()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="llm_interaction_manager.handlers.html">llm_interaction_manager.handlers package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.handlers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.handlers.html#module-llm_interaction_manager.handlers.chromadb_handler">llm_interaction_manager.handlers.chromadb_handler module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.connect"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.get_info"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.get_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.get_name"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.import_vectors"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.import_vectors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.is_connected"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.load_vector"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.load_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.nearest_search"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.nearest_search()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.save_vector"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.save_vector()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.chromadb_handler.ClientType"><code class="docutils literal notranslate"><span class="pre">ClientType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.chromadb_handler.ClientType.CHROMA_CLOUD"><code class="docutils literal notranslate"><span class="pre">ClientType.CHROMA_CLOUD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.chromadb_handler.ClientType.HTTP_SERVER"><code class="docutils literal notranslate"><span class="pre">ClientType.HTTP_SERVER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.chromadb_handler.ClientType.PERSISTENT"><code class="docutils literal notranslate"><span class="pre">ClientType.PERSISTENT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.chromadb_handler.ClientType.VOLATILE"><code class="docutils literal notranslate"><span class="pre">ClientType.VOLATILE</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.handlers.html#module-llm_interaction_manager.handlers.data_handler_base">llm_interaction_manager.handlers.data_handler_base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.auth"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.auth</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.connect"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.default_parameters"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.default_parameters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.get_info"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.get_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.get_name"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.host"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.host</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.is_connected"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.port"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.port</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.handlers.html#module-llm_interaction_manager.handlers.huggingface_handler">llm_interaction_manager.handlers.huggingface_handler module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler"><code class="docutils literal notranslate"><span class="pre">HuggingfaceHandler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.connect"><code class="docutils literal notranslate"><span class="pre">HuggingfaceHandler.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.get_info"><code class="docutils literal notranslate"><span class="pre">HuggingfaceHandler.get_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.get_name"><code class="docutils literal notranslate"><span class="pre">HuggingfaceHandler.get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.is_connected"><code class="docutils literal notranslate"><span class="pre">HuggingfaceHandler.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.send_prompt"><code class="docutils literal notranslate"><span class="pre">HuggingfaceHandler.send_prompt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.validate_model_name"><code class="docutils literal notranslate"><span class="pre">HuggingfaceHandler.validate_model_name()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.handlers.html#module-llm_interaction_manager.handlers.langchain_handler">llm_interaction_manager.handlers.langchain_handler module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.langchain_handler.LangchainHandler"><code class="docutils literal notranslate"><span class="pre">LangchainHandler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.langchain_handler.LangchainHandler.connect"><code class="docutils literal notranslate"><span class="pre">LangchainHandler.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.langchain_handler.LangchainHandler.get_info"><code class="docutils literal notranslate"><span class="pre">LangchainHandler.get_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.langchain_handler.LangchainHandler.get_name"><code class="docutils literal notranslate"><span class="pre">LangchainHandler.get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.langchain_handler.LangchainHandler.is_connected"><code class="docutils literal notranslate"><span class="pre">LangchainHandler.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.langchain_handler.LangchainHandler.send_prompt"><code class="docutils literal notranslate"><span class="pre">LangchainHandler.send_prompt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.langchain_handler.LangchainHandler.validate_model_name"><code class="docutils literal notranslate"><span class="pre">LangchainHandler.validate_model_name()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.handlers.html#module-llm_interaction_manager.handlers.llm_handler_base">llm_interaction_manager.handlers.llm_handler_base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.auth"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.auth</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.connect"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.default_parameters"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.default_parameters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.get_info"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.get_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.get_name"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.host"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.host</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.is_connected"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.model_name"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.model_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.port"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.port</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.send_prompt"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.send_prompt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.validate_model_name"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.validate_model_name()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.handlers.html#module-llm_interaction_manager.handlers.mongodb_handler">llm_interaction_manager.handlers.mongodb_handler module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler"><code class="docutils literal notranslate"><span class="pre">MongodbHandler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.connect"><code class="docutils literal notranslate"><span class="pre">MongodbHandler.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.get_data"><code class="docutils literal notranslate"><span class="pre">MongodbHandler.get_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.get_info"><code class="docutils literal notranslate"><span class="pre">MongodbHandler.get_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.get_name"><code class="docutils literal notranslate"><span class="pre">MongodbHandler.get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.is_connected"><code class="docutils literal notranslate"><span class="pre">MongodbHandler.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.save_record"><code class="docutils literal notranslate"><span class="pre">MongodbHandler.save_record()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.select_database"><code class="docutils literal notranslate"><span class="pre">MongodbHandler.select_database()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.handlers.html#module-llm_interaction_manager.handlers.persistent_data_handler_base">llm_interaction_manager.handlers.persistent_data_handler_base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase"><code class="docutils literal notranslate"><span class="pre">PersistentDataHandlerBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase.get_data"><code class="docutils literal notranslate"><span class="pre">PersistentDataHandlerBase.get_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase.save_record"><code class="docutils literal notranslate"><span class="pre">PersistentDataHandlerBase.save_record()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase.select_database"><code class="docutils literal notranslate"><span class="pre">PersistentDataHandlerBase.select_database()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.handlers.html#module-llm_interaction_manager.handlers.postgres_handler">llm_interaction_manager.handlers.postgres_handler module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.postgres_handler.PostgresHandler"><code class="docutils literal notranslate"><span class="pre">PostgresHandler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.connect"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.get_data"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.get_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.get_info"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.get_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.get_name"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.import_vectors"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.import_vectors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.is_connected"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.load_vector"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.load_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.nearest_search"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.nearest_search()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.save_record"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.save_record()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.save_vector"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.save_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.select_database"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.select_database()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.handlers.html#module-llm_interaction_manager.handlers.vector_data_handler_base">llm_interaction_manager.handlers.vector_data_handler_base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase"><code class="docutils literal notranslate"><span class="pre">VectorDataHandlerBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase.import_vectors"><code class="docutils literal notranslate"><span class="pre">VectorDataHandlerBase.import_vectors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase.load_vector"><code class="docutils literal notranslate"><span class="pre">VectorDataHandlerBase.load_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase.nearest_search"><code class="docutils literal notranslate"><span class="pre">VectorDataHandlerBase.nearest_search()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase.save_vector"><code class="docutils literal notranslate"><span class="pre">VectorDataHandlerBase.save_vector()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.handlers.html#module-llm_interaction_manager.handlers">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.ChromadbHandler"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.ChromadbHandler.connect"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.ChromadbHandler.get_info"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.get_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.ChromadbHandler.get_name"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.ChromadbHandler.import_vectors"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.import_vectors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.ChromadbHandler.is_connected"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.ChromadbHandler.load_vector"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.load_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.ChromadbHandler.nearest_search"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.nearest_search()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.ChromadbHandler.save_vector"><code class="docutils literal notranslate"><span class="pre">ChromadbHandler.save_vector()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.ClientType"><code class="docutils literal notranslate"><span class="pre">ClientType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.ClientType.CHROMA_CLOUD"><code class="docutils literal notranslate"><span class="pre">ClientType.CHROMA_CLOUD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.ClientType.HTTP_SERVER"><code class="docutils literal notranslate"><span class="pre">ClientType.HTTP_SERVER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.ClientType.PERSISTENT"><code class="docutils literal notranslate"><span class="pre">ClientType.PERSISTENT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.ClientType.VOLATILE"><code class="docutils literal notranslate"><span class="pre">ClientType.VOLATILE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.DataHandlerBase"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.DataHandlerBase.auth"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.auth</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.DataHandlerBase.connect"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.DataHandlerBase.default_parameters"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.default_parameters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.DataHandlerBase.get_info"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.get_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.DataHandlerBase.get_name"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.DataHandlerBase.host"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.host</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.DataHandlerBase.is_connected"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.DataHandlerBase.port"><code class="docutils literal notranslate"><span class="pre">DataHandlerBase.port</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.HuggingfaceHandler"><code class="docutils literal notranslate"><span class="pre">HuggingfaceHandler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.HuggingfaceHandler.connect"><code class="docutils literal notranslate"><span class="pre">HuggingfaceHandler.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.HuggingfaceHandler.get_info"><code class="docutils literal notranslate"><span class="pre">HuggingfaceHandler.get_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.HuggingfaceHandler.get_name"><code class="docutils literal notranslate"><span class="pre">HuggingfaceHandler.get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.HuggingfaceHandler.is_connected"><code class="docutils literal notranslate"><span class="pre">HuggingfaceHandler.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.HuggingfaceHandler.send_prompt"><code class="docutils literal notranslate"><span class="pre">HuggingfaceHandler.send_prompt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.HuggingfaceHandler.validate_model_name"><code class="docutils literal notranslate"><span class="pre">HuggingfaceHandler.validate_model_name()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LLMHandlerBase"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LLMHandlerBase.auth"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.auth</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LLMHandlerBase.connect"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LLMHandlerBase.default_parameters"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.default_parameters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LLMHandlerBase.get_info"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.get_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LLMHandlerBase.get_name"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LLMHandlerBase.host"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.host</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LLMHandlerBase.is_connected"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LLMHandlerBase.model_name"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.model_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LLMHandlerBase.port"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.port</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LLMHandlerBase.send_prompt"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.send_prompt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LLMHandlerBase.validate_model_name"><code class="docutils literal notranslate"><span class="pre">LLMHandlerBase.validate_model_name()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LangchainHandler"><code class="docutils literal notranslate"><span class="pre">LangchainHandler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LangchainHandler.connect"><code class="docutils literal notranslate"><span class="pre">LangchainHandler.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LangchainHandler.get_info"><code class="docutils literal notranslate"><span class="pre">LangchainHandler.get_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LangchainHandler.get_name"><code class="docutils literal notranslate"><span class="pre">LangchainHandler.get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LangchainHandler.is_connected"><code class="docutils literal notranslate"><span class="pre">LangchainHandler.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LangchainHandler.send_prompt"><code class="docutils literal notranslate"><span class="pre">LangchainHandler.send_prompt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.LangchainHandler.validate_model_name"><code class="docutils literal notranslate"><span class="pre">LangchainHandler.validate_model_name()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.PostgresHandler"><code class="docutils literal notranslate"><span class="pre">PostgresHandler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.PostgresHandler.connect"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.PostgresHandler.get_data"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.get_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.PostgresHandler.get_info"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.get_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.PostgresHandler.get_name"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.PostgresHandler.import_vectors"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.import_vectors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.PostgresHandler.is_connected"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.PostgresHandler.load_vector"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.load_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.PostgresHandler.nearest_search"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.nearest_search()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.PostgresHandler.save_record"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.save_record()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.PostgresHandler.save_vector"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.save_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.PostgresHandler.select_database"><code class="docutils literal notranslate"><span class="pre">PostgresHandler.select_database()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.VectorDataHandlerBase"><code class="docutils literal notranslate"><span class="pre">VectorDataHandlerBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.VectorDataHandlerBase.import_vectors"><code class="docutils literal notranslate"><span class="pre">VectorDataHandlerBase.import_vectors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.VectorDataHandlerBase.load_vector"><code class="docutils literal notranslate"><span class="pre">VectorDataHandlerBase.load_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.VectorDataHandlerBase.nearest_search"><code class="docutils literal notranslate"><span class="pre">VectorDataHandlerBase.nearest_search()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.VectorDataHandlerBase.save_vector"><code class="docutils literal notranslate"><span class="pre">VectorDataHandlerBase.save_vector()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="llm_interaction_manager.utils.html">llm_interaction_manager.utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.utils.html#module-llm_interaction_manager.utils.settings">llm_interaction_manager.utils.settings module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.RAGMode"><code class="docutils literal notranslate"><span class="pre">RAGMode</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.RAGMode.DYNAMIC"><code class="docutils literal notranslate"><span class="pre">RAGMode.DYNAMIC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.RAGMode.NONE"><code class="docutils literal notranslate"><span class="pre">RAGMode.NONE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.RAGMode.PERSISTENT"><code class="docutils literal notranslate"><span class="pre">RAGMode.PERSISTENT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.RAGMode.VOLATILE"><code class="docutils literal notranslate"><span class="pre">RAGMode.VOLATILE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings"><code class="docutils literal notranslate"><span class="pre">Settings</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings.default_export_path"><code class="docutils literal notranslate"><span class="pre">Settings.default_export_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings.default_handlers"><code class="docutils literal notranslate"><span class="pre">Settings.default_handlers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings.default_rag_data"><code class="docutils literal notranslate"><span class="pre">Settings.default_rag_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings.default_system_prompt"><code class="docutils literal notranslate"><span class="pre">Settings.default_system_prompt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings.handlers"><code class="docutils literal notranslate"><span class="pre">Settings.handlers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings.on_the_fly_data"><code class="docutils literal notranslate"><span class="pre">Settings.on_the_fly_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings.send_conversation_history"><code class="docutils literal notranslate"><span class="pre">Settings.send_conversation_history</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings.use_rag_data"><code class="docutils literal notranslate"><span class="pre">Settings.use_rag_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings.wait_for_manual_data"><code class="docutils literal notranslate"><span class="pre">Settings.wait_for_manual_data</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.utils.html#module-llm_interaction_manager.utils.settings_handler">llm_interaction_manager.utils.settings_handler module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings_handler.SettingsHandler"><code class="docutils literal notranslate"><span class="pre">SettingsHandler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings_handler.SettingsHandler.CONFIG_PATH"><code class="docutils literal notranslate"><span class="pre">SettingsHandler.CONFIG_PATH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings_handler.SettingsHandler.get_connection"><code class="docutils literal notranslate"><span class="pre">SettingsHandler.get_connection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings_handler.SettingsHandler.initialize_settings_object"><code class="docutils literal notranslate"><span class="pre">SettingsHandler.initialize_settings_object()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings_handler.SettingsHandler.read_setting"><code class="docutils literal notranslate"><span class="pre">SettingsHandler.read_setting()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings_handler.SettingsHandler.set_connection"><code class="docutils literal notranslate"><span class="pre">SettingsHandler.set_connection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings_handler.SettingsHandler.write_setting"><code class="docutils literal notranslate"><span class="pre">SettingsHandler.write_setting()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings_handler.SettingsSection"><code class="docutils literal notranslate"><span class="pre">SettingsSection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings_handler.SettingsSection.DEFAULT_HANDLERS"><code class="docutils literal notranslate"><span class="pre">SettingsSection.DEFAULT_HANDLERS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings_handler.SettingsSection.GENERAL"><code class="docutils literal notranslate"><span class="pre">SettingsSection.GENERAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings_handler.SettingsSection.HANDLERS"><code class="docutils literal notranslate"><span class="pre">SettingsSection.HANDLERS</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llm_interaction_manager.utils.html#module-llm_interaction_manager.utils">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.RAGMode"><code class="docutils literal notranslate"><span class="pre">RAGMode</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.RAGMode.DYNAMIC"><code class="docutils literal notranslate"><span class="pre">RAGMode.DYNAMIC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.RAGMode.NONE"><code class="docutils literal notranslate"><span class="pre">RAGMode.NONE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.RAGMode.PERSISTENT"><code class="docutils literal notranslate"><span class="pre">RAGMode.PERSISTENT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.RAGMode.VOLATILE"><code class="docutils literal notranslate"><span class="pre">RAGMode.VOLATILE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.Settings"><code class="docutils literal notranslate"><span class="pre">Settings</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.Settings.default_export_path"><code class="docutils literal notranslate"><span class="pre">Settings.default_export_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.Settings.default_handlers"><code class="docutils literal notranslate"><span class="pre">Settings.default_handlers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.Settings.default_rag_data"><code class="docutils literal notranslate"><span class="pre">Settings.default_rag_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.Settings.default_system_prompt"><code class="docutils literal notranslate"><span class="pre">Settings.default_system_prompt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.Settings.handlers"><code class="docutils literal notranslate"><span class="pre">Settings.handlers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.Settings.on_the_fly_data"><code class="docutils literal notranslate"><span class="pre">Settings.on_the_fly_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.Settings.send_conversation_history"><code class="docutils literal notranslate"><span class="pre">Settings.send_conversation_history</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.Settings.use_rag_data"><code class="docutils literal notranslate"><span class="pre">Settings.use_rag_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.Settings.wait_for_manual_data"><code class="docutils literal notranslate"><span class="pre">Settings.wait_for_manual_data</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.SettingsHandler"><code class="docutils literal notranslate"><span class="pre">SettingsHandler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.SettingsHandler.CONFIG_PATH"><code class="docutils literal notranslate"><span class="pre">SettingsHandler.CONFIG_PATH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.SettingsHandler.get_connection"><code class="docutils literal notranslate"><span class="pre">SettingsHandler.get_connection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.SettingsHandler.initialize_settings_object"><code class="docutils literal notranslate"><span class="pre">SettingsHandler.initialize_settings_object()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.SettingsHandler.read_setting"><code class="docutils literal notranslate"><span class="pre">SettingsHandler.read_setting()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.SettingsHandler.set_connection"><code class="docutils literal notranslate"><span class="pre">SettingsHandler.set_connection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.SettingsHandler.write_setting"><code class="docutils literal notranslate"><span class="pre">SettingsHandler.write_setting()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.SettingsSection"><code class="docutils literal notranslate"><span class="pre">SettingsSection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.SettingsSection.DEFAULT_HANDLERS"><code class="docutils literal notranslate"><span class="pre">SettingsSection.DEFAULT_HANDLERS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.SettingsSection.GENERAL"><code class="docutils literal notranslate"><span class="pre">SettingsSection.GENERAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.SettingsSection.HANDLERS"><code class="docutils literal notranslate"><span class="pre">SettingsSection.HANDLERS</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="module-llm_interaction_manager">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-llm_interaction_manager" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="llm_interaction_manager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="llm_interaction_manager.api.html" class="btn btn-neutral float-right" title="llm_interaction_manager.api package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Marvin Emrich.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,2068 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>llm_interaction_manager.handlers package &mdash; LIMS 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="llm_interaction_manager.utils package" href="llm_interaction_manager.utils.html" />
+    <link rel="prev" title="llm_interaction_manager.core package" href="llm_interaction_manager.core.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            LIMS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">llm_interaction_manager</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="llm_interaction_manager.html">llm_interaction_manager package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="llm_interaction_manager.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.api.html">llm_interaction_manager.api package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.core.html">llm_interaction_manager.core package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">llm_interaction_manager.handlers package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="llm_interaction_manager.utils.html">llm_interaction_manager.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm_interaction_manager.html#module-llm_interaction_manager">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LIMS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">llm_interaction_manager</a></li>
+          <li class="breadcrumb-item"><a href="llm_interaction_manager.html">llm_interaction_manager package</a></li>
+      <li class="breadcrumb-item active">llm_interaction_manager.handlers package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/llm_interaction_manager.handlers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="llm-interaction-manager-handlers-package">
+<h1>llm_interaction_manager.handlers package<a class="headerlink" href="#llm-interaction-manager-handlers-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-llm_interaction_manager.handlers.chromadb_handler">
+<span id="llm-interaction-manager-handlers-chromadb-handler-module"></span><h2>llm_interaction_manager.handlers.chromadb_handler module<a class="headerlink" href="#module-llm_interaction_manager.handlers.chromadb_handler" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.chromadb_handler.</span></span><span class="sig-name descname"><span class="pre">ChromadbHandler</span></span><a class="headerlink" href="#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="source/llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase" title="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorDataHandlerBase</span></code></a></p>
+<p>Handles connection with ChromaDB</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.connect" title="Link to this definition"></a></dt>
+<dd><p>Connects to ChromaDB.
+The required keys in <cite>auth</cite> depend on the chosen client type:</p>
+<ul class="simple">
+<li><p>ClientType.VOLATILE: no keys required</p></li>
+<li><p>ClientType.PERSISTENT: requires ‘persistent_client_db_path’</p></li>
+<li><p>ClientType.HTTP_SERVER: no keys required</p></li>
+<li><p>ClientType.CHROMA_CLOUD: requires ‘cloud_tenant’, ‘cloud_database’, ‘cloud_key’</p></li>
+</ul>
+<p>Raises KeyError if ClientType can not be found or the corresponding Keys for the selected ClientType are missing.
+Only connects to HTTP-Server-instances without authentication</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth</strong> – Dictionary containing the required parameters to use ChromaDB.</p></li>
+<li><p><strong>host</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – if using http-service to connect to a ChromaDB instance, supply hostname</p></li>
+<li><p><strong>port</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – same usage as hostname, supply port</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool if connected successfully</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.get_info">
+<span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.get_info" title="Link to this definition"></a></dt>
+<dd><p>Returns the connection information to be saved in the settings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict with the connection information</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.get_name" title="Link to this definition"></a></dt>
+<dd><p>Returns the name “chromadb” for dynamic binding purposes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>String “chromadb”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.import_vectors">
+<span class="sig-name descname"><span class="pre">import_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.import_vectors" title="Link to this definition"></a></dt>
+<dd><p>Adds vectors to the vector database, either from a dict structure or a file specified by a path.
+If they are imported without an ID, a special “imported” ID will be added</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Table to import the data into</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to be imported directly</p></li>
+<li><p><strong>path</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Path to the data that should be imported from external files</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.is_connected" title="Link to this definition"></a></dt>
+<dd><p>Tries to check for a valid connection to chromaDB</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if chromadb instance can be reached via the builtin heartbeat() function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.load_vector">
+<span class="sig-name descname"><span class="pre">load_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.load_vector" title="Link to this definition"></a></dt>
+<dd><p>finds vector by at least its id, can also provide more data in the query</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – dict with values to query against, must at least contain an id</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – chromadb collection</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>returns the matched vector</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.nearest_search">
+<span class="sig-name descname"><span class="pre">nearest_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.nearest_search" title="Link to this definition"></a></dt>
+<dd><p>Gets vectors from the connected database and specified connection based on the input prompt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Which chromadb collection to search in</p></li>
+<li><p><strong>input</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – prompt that the vector collection is searching against</p></li>
+<li><p><strong>top_k</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – how many results to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>returns</dt><dd><p>list[str]: of Vector ‘document’ values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.save_vector">
+<span class="sig-name descname"><span class="pre">save_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.chromadb_handler.ChromadbHandler.save_vector" title="Link to this definition"></a></dt>
+<dd><p>Save a single vector (prompt + response) to a collection.</p>
+<dl class="simple">
+<dt>Expected keys in data:</dt><dd><ul class="simple">
+<li><p>“prompt”: str</p></li>
+<li><p>“response”: str</p></li>
+<li><p>“id”: str if the data is from the interface and from a specific message. External data does not have an ID</p></li>
+<li><p>other keys: optional metadata</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>dict</em>)</p></li>
+<li><p><strong>table</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.chromadb_handler.ClientType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.chromadb_handler.</span></span><span class="sig-name descname"><span class="pre">ClientType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.chromadb_handler.ClientType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>different types of Chroma Client locations. Either create a volatile local database, address or create a persistent local database or use webservices
+Attributes:</p>
+<blockquote>
+<div><p>VOLATILE: An in-memory, ephemeral client. Data is not persistent.
+PERSISTENT: A local persistent database on disk, addressed by path.
+HTTP_SERVER: Connects to a self-hosted or otherwise accessible Chroma server over HTTP.
+CHROMA_CLOUD: Connects to the Chroma Cloud service if you have an active subscription.</p>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.chromadb_handler.ClientType.CHROMA_CLOUD">
+<span class="sig-name descname"><span class="pre">CHROMA_CLOUD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'CHROMA_CLOUD'</span></em><a class="headerlink" href="#llm_interaction_manager.handlers.chromadb_handler.ClientType.CHROMA_CLOUD" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.chromadb_handler.ClientType.HTTP_SERVER">
+<span class="sig-name descname"><span class="pre">HTTP_SERVER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'HTTP_SERVER'</span></em><a class="headerlink" href="#llm_interaction_manager.handlers.chromadb_handler.ClientType.HTTP_SERVER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.chromadb_handler.ClientType.PERSISTENT">
+<span class="sig-name descname"><span class="pre">PERSISTENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PERSISTENT'</span></em><a class="headerlink" href="#llm_interaction_manager.handlers.chromadb_handler.ClientType.PERSISTENT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.chromadb_handler.ClientType.VOLATILE">
+<span class="sig-name descname"><span class="pre">VOLATILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'VOLATILE'</span></em><a class="headerlink" href="#llm_interaction_manager.handlers.chromadb_handler.ClientType.VOLATILE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-llm_interaction_manager.handlers.data_handler_base">
+<span id="llm-interaction-manager-handlers-data-handler-base-module"></span><h2>llm_interaction_manager.handlers.data_handler_base module<a class="headerlink" href="#module-llm_interaction_manager.handlers.data_handler_base" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.data_handler_base.DataHandlerBase">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.data_handler_base.</span></span><span class="sig-name descname"><span class="pre">DataHandlerBase</span></span><a class="headerlink" href="#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.auth">
+<span class="sig-name descname"><span class="pre">auth</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.auth" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.connect">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.connect" title="Link to this definition"></a></dt>
+<dd><p>Connect to an external DataHander instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Host-URL to connect to</p></li>
+<li><p><strong>port</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – Port to connect to</p></li>
+<li><p><strong>auth</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Additional authentication, for example username or password</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the service is successfully connected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.default_parameters">
+<span class="sig-name descname"><span class="pre">default_parameters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.default_parameters" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.get_info">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.get_info" title="Link to this definition"></a></dt>
+<dd><p>Gets the current specific connection-info, so host, port, and auth for example</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict-Object containing connection information</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.get_name">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.get_name" title="Link to this definition"></a></dt>
+<dd><p>Get the name of the interface to use for dynamic binding (eg. “huggingface”)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.host">
+<span class="sig-name descname"><span class="pre">host</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.host" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.is_connected">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.is_connected" title="Link to this definition"></a></dt>
+<dd><p>Check if the Data-Handler is connected to the external actor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the external actor is connected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.port">
+<span class="sig-name descname"><span class="pre">port</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase.port" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-llm_interaction_manager.handlers.huggingface_handler">
+<span id="llm-interaction-manager-handlers-huggingface-handler-module"></span><h2>llm_interaction_manager.handlers.huggingface_handler module<a class="headerlink" href="#module-llm_interaction_manager.handlers.huggingface_handler" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.huggingface_handler.</span></span><span class="sig-name descname"><span class="pre">HuggingfaceHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="source/llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase" title="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">LLMHandlerBase</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>dict</em>)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.connect" title="Link to this definition"></a></dt>
+<dd><p>As the model is run locally, create llm and pipeline objects to use for further usage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to instantiate the llm pipeline with. must contain at least “token” and “model”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.get_info">
+<span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.get_info" title="Link to this definition"></a></dt>
+<dd><p>Returns connection-data to be saved in the Settings-Object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict containing authentication-data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.get_name" title="Link to this definition"></a></dt>
+<dd><p>Returns the name of the Handler for dynamic binding</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>String “huggingface”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.is_connected" title="Link to this definition"></a></dt>
+<dd><p>As the model is run locally, only check if it is instantiated</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if model is instantiated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.send_prompt">
+<span class="sig-name descname"><span class="pre">send_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.send_prompt" title="Link to this definition"></a></dt>
+<dd><p>Sends the prompt with the optional RAG-Data to the external interface</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prompt</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – String-Object containing the Prompt</p></li>
+<li><p><strong>rag</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span>) – Optional RAG-Data to send</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict containing prompt, response and possibly additional metadata</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.validate_model_name">
+<span class="sig-name descname"><span class="pre">validate_model_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.huggingface_handler.HuggingfaceHandler.validate_model_name" title="Link to this definition"></a></dt>
+<dd><p>Check if the model exists within huggingface. If not, prints a list of 5 close model names</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Model name to check against</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the model exists</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-llm_interaction_manager.handlers.langchain_handler">
+<span id="llm-interaction-manager-handlers-langchain-handler-module"></span><h2>llm_interaction_manager.handlers.langchain_handler module<a class="headerlink" href="#module-llm_interaction_manager.handlers.langchain_handler" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.langchain_handler.LangchainHandler">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.langchain_handler.</span></span><span class="sig-name descname"><span class="pre">LangchainHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.langchain_handler.LangchainHandler" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="source/llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase" title="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">LLMHandlerBase</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>dict</em>)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.langchain_handler.LangchainHandler.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.langchain_handler.LangchainHandler.connect" title="Link to this definition"></a></dt>
+<dd><p>Connects to the external TogetherAI Service over Langchain</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to connect to the Service with, must contain at least “token” and “model”</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.langchain_handler.LangchainHandler.get_info">
+<span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.langchain_handler.LangchainHandler.get_info" title="Link to this definition"></a></dt>
+<dd><p>Returns connection-data to be saved in the Settings-Object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict containing authentication-data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.langchain_handler.LangchainHandler.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.langchain_handler.LangchainHandler.get_name" title="Link to this definition"></a></dt>
+<dd><p>Returns the name of the Handler for dynamic binding</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>String “langchain”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.langchain_handler.LangchainHandler.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.langchain_handler.LangchainHandler.is_connected" title="Link to this definition"></a></dt>
+<dd><p>Check if the service is connected, in which case the llm object will be initialized</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the service is connected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.langchain_handler.LangchainHandler.send_prompt">
+<span class="sig-name descname"><span class="pre">send_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.langchain_handler.LangchainHandler.send_prompt" title="Link to this definition"></a></dt>
+<dd><p>Sends the prompt with the optional RAG-Data to the external interface</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prompt</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – String-Object containing the Prompt</p></li>
+<li><p><strong>rag</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span>) – Optional RAG-Data to send</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict containing prompt, response and possibly additional metadata</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.langchain_handler.LangchainHandler.validate_model_name">
+<span class="sig-name descname"><span class="pre">validate_model_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.langchain_handler.LangchainHandler.validate_model_name" title="Link to this definition"></a></dt>
+<dd><p>Check if the model exists within TogetherAI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Model name to check against</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the model exists</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-llm_interaction_manager.handlers.llm_handler_base">
+<span id="llm-interaction-manager-handlers-llm-handler-base-module"></span><h2>llm_interaction_manager.handlers.llm_handler_base module<a class="headerlink" href="#module-llm_interaction_manager.handlers.llm_handler_base" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.llm_handler_base.</span></span><span class="sig-name descname"><span class="pre">LLMHandlerBase</span></span><a class="headerlink" href="#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.auth">
+<span class="sig-name descname"><span class="pre">auth</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.auth" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.connect">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.connect" title="Link to this definition"></a></dt>
+<dd><p>Connects to the external LLM Service</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to connect to the Service with, must contain at least “token” and “model”</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.default_parameters">
+<span class="sig-name descname"><span class="pre">default_parameters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.default_parameters" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.get_info">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.get_info" title="Link to this definition"></a></dt>
+<dd><p>Returns connection-data to be saved in the Settings-Object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict containing authentication-data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.get_name">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.get_name" title="Link to this definition"></a></dt>
+<dd><p>Get the name of the interface to use for dynamic binding (eg. “huggingface”)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.host">
+<span class="sig-name descname"><span class="pre">host</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.host" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.is_connected">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.is_connected" title="Link to this definition"></a></dt>
+<dd><p>Check if the service is connected</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the service is connected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.model_name">
+<span class="sig-name descname"><span class="pre">model_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.model_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.port">
+<span class="sig-name descname"><span class="pre">port</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.port" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.send_prompt">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.send_prompt" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>prompt</strong> (<em>str</em>)</p></li>
+<li><p><strong>rag</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.validate_model_name">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_model_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase.validate_model_name" title="Link to this definition"></a></dt>
+<dd><p>Check if the model exists within the LLM Service</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Model name to check against</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the model exists</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-llm_interaction_manager.handlers.mongodb_handler">
+<span id="llm-interaction-manager-handlers-mongodb-handler-module"></span><h2>llm_interaction_manager.handlers.mongodb_handler module<a class="headerlink" href="#module-llm_interaction_manager.handlers.mongodb_handler" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.mongodb_handler.MongodbHandler">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.mongodb_handler.</span></span><span class="sig-name descname"><span class="pre">MongodbHandler</span></span><a class="headerlink" href="#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="source/llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase" title="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">PersistentDataHandlerBase</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.connect" title="Link to this definition"></a></dt>
+<dd><p>Connects to the mongodb instance specified by host, port and the authentication data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Host to the MongoDB instance</p></li>
+<li><p><strong>port</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – Port the MongoDB instance is running under</p></li>
+<li><p><strong>auth</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Authentication-Data like a mandatory database or optional Username and Password</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if connection successfully established</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.get_data" title="Link to this definition"></a></dt>
+<dd><p>Dynamically retrieve conversation and message data from MongoDB
+consistent with PostgresHandler.get_data() structure. May result in different attributes, depending on the keys in the database.
+Only returns conversations that have messages matching message-level filters if any are applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filters</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>] | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Optional dictionary of filter conditions.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of conversations, each with a ‘messages’ list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.get_info">
+<span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.get_info" title="Link to this definition"></a></dt>
+<dd><p>Returns the connection information to be saved in the settings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict with the connection information</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.get_name" title="Link to this definition"></a></dt>
+<dd><p>Returns the name of the Handler for dynamic binding</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>String-Object “mongodb”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.is_connected" title="Link to this definition"></a></dt>
+<dd><p>Returns True if the MongoDB client is connected and reachable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.save_record">
+<span class="sig-name descname"><span class="pre">save_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conversation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">messages</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.save_record" title="Link to this definition"></a></dt>
+<dd><p>Save a conversation and its messages to MongoDB.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conversation</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – dict containing conversation-level data. Must contain “conversation_id”</p></li>
+<li><p><strong>messages</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</span>) – list of dicts containing message-level data. Must contain “message_id”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.select_database">
+<span class="sig-name descname"><span class="pre">select_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.mongodb_handler.MongodbHandler.select_database" title="Link to this definition"></a></dt>
+<dd><p>Selects or switches the active MongoDB database.
+Must be called after a successful connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>db_name</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – The name of the database to be selected</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-llm_interaction_manager.handlers.persistent_data_handler_base">
+<span id="llm-interaction-manager-handlers-persistent-data-handler-base-module"></span><h2>llm_interaction_manager.handlers.persistent_data_handler_base module<a class="headerlink" href="#module-llm_interaction_manager.handlers.persistent_data_handler_base" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.persistent_data_handler_base.</span></span><span class="sig-name descname"><span class="pre">PersistentDataHandlerBase</span></span><a class="headerlink" href="#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="source/llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase" title="llm_interaction_manager.handlers.data_handler_base.DataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataHandlerBase</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase.get_data">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase.get_data" title="Link to this definition"></a></dt>
+<dd><p>Gets one or more records from the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filters</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) – <p>Optional filters to select specific records.
+Example:</p>
+<blockquote>
+<div><p>{“conversation_id”: “conv123”}
+{“created_at”: {“$gte”: “2025-01-01”}}</p>
+</div></blockquote>
+<p>If None, all records are returned.</p>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of recovered records.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase.save_record">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conversation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">messages</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase.save_record" title="Link to this definition"></a></dt>
+<dd><p>Save conversation and messages to the persistent storage.
+Always requires both items to guarantee reference between messages and their conversation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conversation</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – dict containing conversation-level data. Must contain “conversation_id”</p></li>
+<li><p><strong>messages</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</span>) – list of dicts containing message-level data. Must contain “message_id”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase.select_database">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">select_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase.select_database" title="Link to this definition"></a></dt>
+<dd><p>Selects or switches the active database after connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>db_name</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-llm_interaction_manager.handlers.postgres_handler">
+<span id="llm-interaction-manager-handlers-postgres-handler-module"></span><h2>llm_interaction_manager.handlers.postgres_handler module<a class="headerlink" href="#module-llm_interaction_manager.handlers.postgres_handler" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.postgres_handler.PostgresHandler">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.postgres_handler.</span></span><span class="sig-name descname"><span class="pre">PostgresHandler</span></span><a class="headerlink" href="#llm_interaction_manager.handlers.postgres_handler.PostgresHandler" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="source/llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase" title="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">PersistentDataHandlerBase</span></code></a>, <a class="reference internal" href="source/llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase" title="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorDataHandlerBase</span></code></a></p>
+<p>Class to connect to a Postgres Instance. Offers persistent Database functionality.
+If PGVector is installed as well, Vector-Embedding functionality is also available.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.postgres_handler.PostgresHandler.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.connect" title="Link to this definition"></a></dt>
+<dd><p>Connects to PostgreSQL Database server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Hostname of the server</p></li>
+<li><p><strong>port</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – Port of the server</p></li>
+<li><p><strong>auth</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Authentication-Data like username or password</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if connected successfully</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.postgres_handler.PostgresHandler.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.get_data" title="Link to this definition"></a></dt>
+<dd><p>Get Data from the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filters</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>] | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Which Data to search for, can specify common parameters like message_id or similar</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>any data that matches the filters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.postgres_handler.PostgresHandler.get_info">
+<span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.get_info" title="Link to this definition"></a></dt>
+<dd><p>Returns the connection information for the interface</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict that contains connection information</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.postgres_handler.PostgresHandler.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.get_name" title="Link to this definition"></a></dt>
+<dd><p>Returns the name of the interface for dynamic binding purposes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>returns “postgres”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.postgres_handler.PostgresHandler.import_vectors">
+<span class="sig-name descname"><span class="pre">import_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lims_embeddings'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.import_vectors" title="Link to this definition"></a></dt>
+<dd><p>Imports vectors from outside into the vector database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Which table to import embeddings into, defaults to “lims_embeddings”</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data that should be added</p></li>
+<li><p><strong>path</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Path to data that should be imported</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.postgres_handler.PostgresHandler.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.is_connected" title="Link to this definition"></a></dt>
+<dd><p>If PostgreSQL is connected and responds to simple queries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if connected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.postgres_handler.PostgresHandler.load_vector">
+<span class="sig-name descname"><span class="pre">load_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lims_embeddings'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.load_vector" title="Link to this definition"></a></dt>
+<dd><p>Load a specific vector from the vector table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – which vector to search for</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – which table to search in</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>any found vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.postgres_handler.PostgresHandler.nearest_search">
+<span class="sig-name descname"><span class="pre">nearest_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lims_embeddings'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.nearest_search" title="Link to this definition"></a></dt>
+<dd><p>Do a nearest search on the contents of the vector database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – String to do a nearest search with</p></li>
+<li><p><strong>top_k</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – How many results to find</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – On which table to do the nearest search</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>top_k amount of closest results</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.postgres_handler.PostgresHandler.save_record">
+<span class="sig-name descname"><span class="pre">save_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conversation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">messages</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.save_record" title="Link to this definition"></a></dt>
+<dd><p>Saves a message linked to a conversation-object and the conversation-object if it does not exist yet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conversation</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – object to link the message to</p></li>
+<li><p><strong>messages</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</span>) – message to save</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.postgres_handler.PostgresHandler.save_vector">
+<span class="sig-name descname"><span class="pre">save_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lims_embeddings'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.save_vector" title="Link to this definition"></a></dt>
+<dd><p>Saves a vector to the pgvector table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Vector to save</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Table to save the vector to</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.postgres_handler.PostgresHandler.select_database">
+<span class="sig-name descname"><span class="pre">select_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.postgres_handler.PostgresHandler.select_database" title="Link to this definition"></a></dt>
+<dd><p>Select a specific database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>db_name</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – the name of the database to select</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-llm_interaction_manager.handlers.vector_data_handler_base">
+<span id="llm-interaction-manager-handlers-vector-data-handler-base-module"></span><h2>llm_interaction_manager.handlers.vector_data_handler_base module<a class="headerlink" href="#module-llm_interaction_manager.handlers.vector_data_handler_base" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.vector_data_handler_base.</span></span><span class="sig-name descname"><span class="pre">VectorDataHandlerBase</span></span><a class="headerlink" href="#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="source/llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase" title="llm_interaction_manager.handlers.data_handler_base.DataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataHandlerBase</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase.import_vectors">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">import_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase.import_vectors" title="Link to this definition"></a></dt>
+<dd><p>Adds vectors to the vector database, either from a dict structure or a file specified by a path.
+If they are imported without an ID, a special “imported” ID will be added</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Table to import the data into</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to be imported directly</p></li>
+<li><p><strong>path</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Path to the data that should be imported from external files</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase.load_vector">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase.load_vector" title="Link to this definition"></a></dt>
+<dd><p>finds vector by at least its id, can also provide more data in the query</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – dict with values to query against, must at least contain an id</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – chromadb collection</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>returns the matched vector</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase.nearest_search">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nearest_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase.nearest_search" title="Link to this definition"></a></dt>
+<dd><p>Gets vectors from the connected database and specified connection based on the input prompt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Which chromadb collection to search in</p></li>
+<li><p><strong>input</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – prompt that the vector collection is searching against</p></li>
+<li><p><strong>top_k</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – how many results to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>returns</dt><dd><p>list[str]: of Vector ‘document’ values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase.save_vector">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase.save_vector" title="Link to this definition"></a></dt>
+<dd><p>Save a single vector (prompt + response) to a collection/table.
+Expected keys in data:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>“prompt”: str</p></li>
+<li><p>“response”: str</p></li>
+<li><p>“id”: str if the data is from the interface and from a specific message. External data does not have an ID</p></li>
+<li><p>other keys: optional metadata</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to be saved</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Table to save the data to</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-llm_interaction_manager.handlers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-llm_interaction_manager.handlers" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.ChromadbHandler">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.</span></span><span class="sig-name descname"><span class="pre">ChromadbHandler</span></span><a class="headerlink" href="#llm_interaction_manager.handlers.ChromadbHandler" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="source/llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase" title="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorDataHandlerBase</span></code></a></p>
+<p>Handles connection with ChromaDB</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.ChromadbHandler.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.ChromadbHandler.connect" title="Link to this definition"></a></dt>
+<dd><p>Connects to ChromaDB.
+The required keys in <cite>auth</cite> depend on the chosen client type:</p>
+<ul class="simple">
+<li><p>ClientType.VOLATILE: no keys required</p></li>
+<li><p>ClientType.PERSISTENT: requires ‘persistent_client_db_path’</p></li>
+<li><p>ClientType.HTTP_SERVER: no keys required</p></li>
+<li><p>ClientType.CHROMA_CLOUD: requires ‘cloud_tenant’, ‘cloud_database’, ‘cloud_key’</p></li>
+</ul>
+<p>Raises KeyError if ClientType can not be found or the corresponding Keys for the selected ClientType are missing.
+Only connects to HTTP-Server-instances without authentication</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth</strong> – Dictionary containing the required parameters to use ChromaDB.</p></li>
+<li><p><strong>host</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – if using http-service to connect to a ChromaDB instance, supply hostname</p></li>
+<li><p><strong>port</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – same usage as hostname, supply port</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool if connected successfully</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.ChromadbHandler.get_info">
+<span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.ChromadbHandler.get_info" title="Link to this definition"></a></dt>
+<dd><p>Returns the connection information to be saved in the settings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict with the connection information</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.ChromadbHandler.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.ChromadbHandler.get_name" title="Link to this definition"></a></dt>
+<dd><p>Returns the name “chromadb” for dynamic binding purposes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>String “chromadb”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.ChromadbHandler.import_vectors">
+<span class="sig-name descname"><span class="pre">import_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.ChromadbHandler.import_vectors" title="Link to this definition"></a></dt>
+<dd><p>Adds vectors to the vector database, either from a dict structure or a file specified by a path.
+If they are imported without an ID, a special “imported” ID will be added</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Table to import the data into</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to be imported directly</p></li>
+<li><p><strong>path</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Path to the data that should be imported from external files</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.ChromadbHandler.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.ChromadbHandler.is_connected" title="Link to this definition"></a></dt>
+<dd><p>Tries to check for a valid connection to chromaDB</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if chromadb instance can be reached via the builtin heartbeat() function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.ChromadbHandler.load_vector">
+<span class="sig-name descname"><span class="pre">load_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.ChromadbHandler.load_vector" title="Link to this definition"></a></dt>
+<dd><p>finds vector by at least its id, can also provide more data in the query</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – dict with values to query against, must at least contain an id</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – chromadb collection</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>returns the matched vector</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.ChromadbHandler.nearest_search">
+<span class="sig-name descname"><span class="pre">nearest_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.ChromadbHandler.nearest_search" title="Link to this definition"></a></dt>
+<dd><p>Gets vectors from the connected database and specified connection based on the input prompt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Which chromadb collection to search in</p></li>
+<li><p><strong>input</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – prompt that the vector collection is searching against</p></li>
+<li><p><strong>top_k</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – how many results to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>returns</dt><dd><p>list[str]: of Vector ‘document’ values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.ChromadbHandler.save_vector">
+<span class="sig-name descname"><span class="pre">save_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.ChromadbHandler.save_vector" title="Link to this definition"></a></dt>
+<dd><p>Save a single vector (prompt + response) to a collection.</p>
+<dl class="simple">
+<dt>Expected keys in data:</dt><dd><ul class="simple">
+<li><p>“prompt”: str</p></li>
+<li><p>“response”: str</p></li>
+<li><p>“id”: str if the data is from the interface and from a specific message. External data does not have an ID</p></li>
+<li><p>other keys: optional metadata</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>dict</em>)</p></li>
+<li><p><strong>table</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.ClientType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.</span></span><span class="sig-name descname"><span class="pre">ClientType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.ClientType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>different types of Chroma Client locations. Either create a volatile local database, address or create a persistent local database or use webservices
+Attributes:</p>
+<blockquote>
+<div><p>VOLATILE: An in-memory, ephemeral client. Data is not persistent.
+PERSISTENT: A local persistent database on disk, addressed by path.
+HTTP_SERVER: Connects to a self-hosted or otherwise accessible Chroma server over HTTP.
+CHROMA_CLOUD: Connects to the Chroma Cloud service if you have an active subscription.</p>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.ClientType.CHROMA_CLOUD">
+<span class="sig-name descname"><span class="pre">CHROMA_CLOUD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'CHROMA_CLOUD'</span></em><a class="headerlink" href="#llm_interaction_manager.handlers.ClientType.CHROMA_CLOUD" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.ClientType.HTTP_SERVER">
+<span class="sig-name descname"><span class="pre">HTTP_SERVER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'HTTP_SERVER'</span></em><a class="headerlink" href="#llm_interaction_manager.handlers.ClientType.HTTP_SERVER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.ClientType.PERSISTENT">
+<span class="sig-name descname"><span class="pre">PERSISTENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PERSISTENT'</span></em><a class="headerlink" href="#llm_interaction_manager.handlers.ClientType.PERSISTENT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.ClientType.VOLATILE">
+<span class="sig-name descname"><span class="pre">VOLATILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'VOLATILE'</span></em><a class="headerlink" href="#llm_interaction_manager.handlers.ClientType.VOLATILE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.DataHandlerBase">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.</span></span><span class="sig-name descname"><span class="pre">DataHandlerBase</span></span><a class="headerlink" href="#llm_interaction_manager.handlers.DataHandlerBase" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.DataHandlerBase.auth">
+<span class="sig-name descname"><span class="pre">auth</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.DataHandlerBase.auth" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.DataHandlerBase.connect">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.DataHandlerBase.connect" title="Link to this definition"></a></dt>
+<dd><p>Connect to an external DataHander instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Host-URL to connect to</p></li>
+<li><p><strong>port</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – Port to connect to</p></li>
+<li><p><strong>auth</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Additional authentication, for example username or password</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the service is successfully connected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.DataHandlerBase.default_parameters">
+<span class="sig-name descname"><span class="pre">default_parameters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.DataHandlerBase.default_parameters" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.DataHandlerBase.get_info">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.DataHandlerBase.get_info" title="Link to this definition"></a></dt>
+<dd><p>Gets the current specific connection-info, so host, port, and auth for example</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict-Object containing connection information</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.DataHandlerBase.get_name">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.DataHandlerBase.get_name" title="Link to this definition"></a></dt>
+<dd><p>Get the name of the interface to use for dynamic binding (eg. “huggingface”)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.DataHandlerBase.host">
+<span class="sig-name descname"><span class="pre">host</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.DataHandlerBase.host" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.DataHandlerBase.is_connected">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.DataHandlerBase.is_connected" title="Link to this definition"></a></dt>
+<dd><p>Check if the Data-Handler is connected to the external actor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the external actor is connected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.DataHandlerBase.port">
+<span class="sig-name descname"><span class="pre">port</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.DataHandlerBase.port" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.HuggingfaceHandler">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.</span></span><span class="sig-name descname"><span class="pre">HuggingfaceHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.HuggingfaceHandler" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="source/llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase" title="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">LLMHandlerBase</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>dict</em>)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.HuggingfaceHandler.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.HuggingfaceHandler.connect" title="Link to this definition"></a></dt>
+<dd><p>As the model is run locally, create llm and pipeline objects to use for further usage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to instantiate the llm pipeline with. must contain at least “token” and “model”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.HuggingfaceHandler.get_info">
+<span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.HuggingfaceHandler.get_info" title="Link to this definition"></a></dt>
+<dd><p>Returns connection-data to be saved in the Settings-Object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict containing authentication-data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.HuggingfaceHandler.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.HuggingfaceHandler.get_name" title="Link to this definition"></a></dt>
+<dd><p>Returns the name of the Handler for dynamic binding</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>String “huggingface”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.HuggingfaceHandler.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.HuggingfaceHandler.is_connected" title="Link to this definition"></a></dt>
+<dd><p>As the model is run locally, only check if it is instantiated</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if model is instantiated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.HuggingfaceHandler.send_prompt">
+<span class="sig-name descname"><span class="pre">send_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.HuggingfaceHandler.send_prompt" title="Link to this definition"></a></dt>
+<dd><p>Sends the prompt with the optional RAG-Data to the external interface</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prompt</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – String-Object containing the Prompt</p></li>
+<li><p><strong>rag</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span>) – Optional RAG-Data to send</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict containing prompt, response and possibly additional metadata</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.HuggingfaceHandler.validate_model_name">
+<span class="sig-name descname"><span class="pre">validate_model_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.HuggingfaceHandler.validate_model_name" title="Link to this definition"></a></dt>
+<dd><p>Check if the model exists within huggingface. If not, prints a list of 5 close model names</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Model name to check against</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the model exists</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LLMHandlerBase">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.</span></span><span class="sig-name descname"><span class="pre">LLMHandlerBase</span></span><a class="headerlink" href="#llm_interaction_manager.handlers.LLMHandlerBase" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LLMHandlerBase.auth">
+<span class="sig-name descname"><span class="pre">auth</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.LLMHandlerBase.auth" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LLMHandlerBase.connect">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.LLMHandlerBase.connect" title="Link to this definition"></a></dt>
+<dd><p>Connects to the external LLM Service</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to connect to the Service with, must contain at least “token” and “model”</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LLMHandlerBase.default_parameters">
+<span class="sig-name descname"><span class="pre">default_parameters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.LLMHandlerBase.default_parameters" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LLMHandlerBase.get_info">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.LLMHandlerBase.get_info" title="Link to this definition"></a></dt>
+<dd><p>Returns connection-data to be saved in the Settings-Object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict containing authentication-data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LLMHandlerBase.get_name">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.LLMHandlerBase.get_name" title="Link to this definition"></a></dt>
+<dd><p>Get the name of the interface to use for dynamic binding (eg. “huggingface”)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LLMHandlerBase.host">
+<span class="sig-name descname"><span class="pre">host</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.LLMHandlerBase.host" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LLMHandlerBase.is_connected">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.LLMHandlerBase.is_connected" title="Link to this definition"></a></dt>
+<dd><p>Check if the service is connected</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the service is connected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LLMHandlerBase.model_name">
+<span class="sig-name descname"><span class="pre">model_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.LLMHandlerBase.model_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LLMHandlerBase.port">
+<span class="sig-name descname"><span class="pre">port</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><a class="headerlink" href="#llm_interaction_manager.handlers.LLMHandlerBase.port" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LLMHandlerBase.send_prompt">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.LLMHandlerBase.send_prompt" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>prompt</strong> (<em>str</em>)</p></li>
+<li><p><strong>rag</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LLMHandlerBase.validate_model_name">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_model_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.LLMHandlerBase.validate_model_name" title="Link to this definition"></a></dt>
+<dd><p>Check if the model exists within the LLM Service</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Model name to check against</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the model exists</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LangchainHandler">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.</span></span><span class="sig-name descname"><span class="pre">LangchainHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.LangchainHandler" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="source/llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase" title="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">LLMHandlerBase</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>dict</em>)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LangchainHandler.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.LangchainHandler.connect" title="Link to this definition"></a></dt>
+<dd><p>Connects to the external TogetherAI Service over Langchain</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to connect to the Service with, must contain at least “token” and “model”</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LangchainHandler.get_info">
+<span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.LangchainHandler.get_info" title="Link to this definition"></a></dt>
+<dd><p>Returns connection-data to be saved in the Settings-Object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict containing authentication-data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LangchainHandler.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.LangchainHandler.get_name" title="Link to this definition"></a></dt>
+<dd><p>Returns the name of the Handler for dynamic binding</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>String “langchain”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LangchainHandler.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.LangchainHandler.is_connected" title="Link to this definition"></a></dt>
+<dd><p>Check if the service is connected, in which case the llm object will be initialized</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the service is connected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LangchainHandler.send_prompt">
+<span class="sig-name descname"><span class="pre">send_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.LangchainHandler.send_prompt" title="Link to this definition"></a></dt>
+<dd><p>Sends the prompt with the optional RAG-Data to the external interface</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prompt</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – String-Object containing the Prompt</p></li>
+<li><p><strong>rag</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span>) – Optional RAG-Data to send</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict containing prompt, response and possibly additional metadata</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.LangchainHandler.validate_model_name">
+<span class="sig-name descname"><span class="pre">validate_model_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.LangchainHandler.validate_model_name" title="Link to this definition"></a></dt>
+<dd><p>Check if the model exists within TogetherAI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Model name to check against</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the model exists</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.PostgresHandler">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.</span></span><span class="sig-name descname"><span class="pre">PostgresHandler</span></span><a class="headerlink" href="#llm_interaction_manager.handlers.PostgresHandler" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="source/llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase" title="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">PersistentDataHandlerBase</span></code></a>, <a class="reference internal" href="source/llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase" title="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorDataHandlerBase</span></code></a></p>
+<p>Class to connect to a Postgres Instance. Offers persistent Database functionality.
+If PGVector is installed as well, Vector-Embedding functionality is also available.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.PostgresHandler.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.PostgresHandler.connect" title="Link to this definition"></a></dt>
+<dd><p>Connects to PostgreSQL Database server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Hostname of the server</p></li>
+<li><p><strong>port</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – Port of the server</p></li>
+<li><p><strong>auth</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Authentication-Data like username or password</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if connected successfully</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.PostgresHandler.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.PostgresHandler.get_data" title="Link to this definition"></a></dt>
+<dd><p>Get Data from the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filters</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>] | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Which Data to search for, can specify common parameters like message_id or similar</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>any data that matches the filters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.PostgresHandler.get_info">
+<span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.PostgresHandler.get_info" title="Link to this definition"></a></dt>
+<dd><p>Returns the connection information for the interface</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict that contains connection information</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.PostgresHandler.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.PostgresHandler.get_name" title="Link to this definition"></a></dt>
+<dd><p>Returns the name of the interface for dynamic binding purposes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>returns “postgres”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.PostgresHandler.import_vectors">
+<span class="sig-name descname"><span class="pre">import_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lims_embeddings'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.PostgresHandler.import_vectors" title="Link to this definition"></a></dt>
+<dd><p>Imports vectors from outside into the vector database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Which table to import embeddings into, defaults to “lims_embeddings”</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data that should be added</p></li>
+<li><p><strong>path</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Path to data that should be imported</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.PostgresHandler.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.PostgresHandler.is_connected" title="Link to this definition"></a></dt>
+<dd><p>If PostgreSQL is connected and responds to simple queries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if connected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.PostgresHandler.load_vector">
+<span class="sig-name descname"><span class="pre">load_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lims_embeddings'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.PostgresHandler.load_vector" title="Link to this definition"></a></dt>
+<dd><p>Load a specific vector from the vector table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – which vector to search for</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – which table to search in</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>any found vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.PostgresHandler.nearest_search">
+<span class="sig-name descname"><span class="pre">nearest_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lims_embeddings'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.PostgresHandler.nearest_search" title="Link to this definition"></a></dt>
+<dd><p>Do a nearest search on the contents of the vector database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – String to do a nearest search with</p></li>
+<li><p><strong>top_k</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – How many results to find</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – On which table to do the nearest search</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>top_k amount of closest results</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.PostgresHandler.save_record">
+<span class="sig-name descname"><span class="pre">save_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conversation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">messages</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.PostgresHandler.save_record" title="Link to this definition"></a></dt>
+<dd><p>Saves a message linked to a conversation-object and the conversation-object if it does not exist yet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conversation</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – object to link the message to</p></li>
+<li><p><strong>messages</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</span>) – message to save</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.PostgresHandler.save_vector">
+<span class="sig-name descname"><span class="pre">save_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lims_embeddings'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.PostgresHandler.save_vector" title="Link to this definition"></a></dt>
+<dd><p>Saves a vector to the pgvector table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Vector to save</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Table to save the vector to</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.PostgresHandler.select_database">
+<span class="sig-name descname"><span class="pre">select_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.PostgresHandler.select_database" title="Link to this definition"></a></dt>
+<dd><p>Select a specific database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>db_name</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – the name of the database to select</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.VectorDataHandlerBase">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.handlers.</span></span><span class="sig-name descname"><span class="pre">VectorDataHandlerBase</span></span><a class="headerlink" href="#llm_interaction_manager.handlers.VectorDataHandlerBase" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="source/llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.data_handler_base.DataHandlerBase" title="llm_interaction_manager.handlers.data_handler_base.DataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataHandlerBase</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.VectorDataHandlerBase.import_vectors">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">import_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.VectorDataHandlerBase.import_vectors" title="Link to this definition"></a></dt>
+<dd><p>Adds vectors to the vector database, either from a dict structure or a file specified by a path.
+If they are imported without an ID, a special “imported” ID will be added</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Table to import the data into</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to be imported directly</p></li>
+<li><p><strong>path</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Path to the data that should be imported from external files</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.VectorDataHandlerBase.load_vector">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.VectorDataHandlerBase.load_vector" title="Link to this definition"></a></dt>
+<dd><p>finds vector by at least its id, can also provide more data in the query</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – dict with values to query against, must at least contain an id</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – chromadb collection</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>returns the matched vector</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.VectorDataHandlerBase.nearest_search">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nearest_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.VectorDataHandlerBase.nearest_search" title="Link to this definition"></a></dt>
+<dd><p>Gets vectors from the connected database and specified connection based on the input prompt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Which chromadb collection to search in</p></li>
+<li><p><strong>input</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – prompt that the vector collection is searching against</p></li>
+<li><p><strong>top_k</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – how many results to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>returns</dt><dd><p>list[str]: of Vector ‘document’ values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.handlers.VectorDataHandlerBase.save_vector">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.handlers.VectorDataHandlerBase.save_vector" title="Link to this definition"></a></dt>
+<dd><p>Save a single vector (prompt + response) to a collection/table.
+Expected keys in data:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>“prompt”: str</p></li>
+<li><p>“response”: str</p></li>
+<li><p>“id”: str if the data is from the interface and from a specific message. External data does not have an ID</p></li>
+<li><p>other keys: optional metadata</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to be saved</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Table to save the data to</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="llm_interaction_manager.core.html" class="btn btn-neutral float-left" title="llm_interaction_manager.core package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="llm_interaction_manager.utils.html" class="btn btn-neutral float-right" title="llm_interaction_manager.utils package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Marvin Emrich.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,968 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>llm_interaction_manager.core package &mdash; LIMS 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            LIMS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">llm_interaction_manager</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LIMS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">llm_interaction_manager.core package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/llm_interaction_manager.core.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="llm-interaction-manager-core-package">
+<h1>llm_interaction_manager.core package<a class="headerlink" href="#llm-interaction-manager-core-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-llm_interaction_manager.core.conversation">
+<span id="llm-interaction-manager-core-conversation-module"></span><h2>llm_interaction_manager.core.conversation module<a class="headerlink" href="#module-llm_interaction_manager.core.conversation" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.core.conversation.</span></span><span class="sig-name descname"><span class="pre">Conversation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">llm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conversation_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Saves Conversations and their History, sent and received messages aswell as additional metadata</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>llm</strong> (<a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase" title="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase"><em>LLMHandlerBase</em></a>)</p></li>
+<li><p><strong>persistent</strong> (<a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase" title="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase"><em>PersistentDataHandlerBase</em></a>)</p></li>
+<li><p><strong>vector</strong> (<a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase" title="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase"><em>VectorDataHandlerBase</em></a>)</p></li>
+<li><p><strong>settings</strong> (<a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings" title="llm_interaction_manager.utils.settings.Settings"><em>Settings</em></a>)</p></li>
+<li><p><strong>conversation_metadata</strong> (<em>dict</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.add_metadata">
+<span class="sig-name descname"><span class="pre">add_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conversation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.add_metadata" title="Link to this definition"></a></dt>
+<dd><p>Adds Metadata either to the conversation-object or to the last received response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conversation</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – If it should be saved to the conversation or the last response</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – The data that should be updated in the metadata</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.change_comment">
+<span class="sig-name descname"><span class="pre">change_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comment</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.change_comment" title="Link to this definition"></a></dt>
+<dd><p>Changes the comment to the last received response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>comment</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – The comment to be updated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.conversation_history">
+<span class="sig-name descname"><span class="pre">conversation_history</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">]</span></em><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.conversation_history" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.conversation_id">
+<span class="sig-name descname"><span class="pre">conversation_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.conversation_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.conversation_metadata">
+<span class="sig-name descname"><span class="pre">conversation_metadata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></em><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.conversation_metadata" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></em><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.created_at" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.get_conversation_id">
+<span class="sig-name descname"><span class="pre">get_conversation_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.get_conversation_id" title="Link to this definition"></a></dt>
+<dd><p>Returns the current conversation-id
+:rtype: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>
+:return: String-Object containing the current conversation-id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.get_last_response">
+<span class="sig-name descname"><span class="pre">get_last_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.get_last_response" title="Link to this definition"></a></dt>
+<dd><p>Returns the content of the last message-object as a strong, so the last Response from the LLM</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>“Content”-Value of the last Message-Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.get_metadata">
+<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conversation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.get_metadata" title="Link to this definition"></a></dt>
+<dd><p>Returns Metadata for the conversation or for a specific message ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conversation</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – If metadata should be taken from the conversation or one message.</p></li>
+<li><p><strong>id</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – Message ID to filter by</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict of Metadata extracted</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.llm_handler">
+<span class="sig-name descname"><span class="pre">llm_handler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase" title="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">LLMHandlerBase</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.llm_handler" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.persistent_handler">
+<span class="sig-name descname"><span class="pre">persistent_handler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase" title="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">PersistentDataHandlerBase</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.persistent_handler" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.remove_metadata">
+<span class="sig-name descname"><span class="pre">remove_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conversation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.remove_metadata" title="Link to this definition"></a></dt>
+<dd><p>Removes specified metadata from either the conversation or a specific message indicated by the id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conversation</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – True, if the metadata should be removed from the conversation</p></li>
+<li><p><strong>key</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Which metadata-entry should be removed</p></li>
+<li><p><strong>id</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Which message-id the metadata should be removed from</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.send_prompt">
+<span class="sig-name descname"><span class="pre">send_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.send_prompt" title="Link to this definition"></a></dt>
+<dd><p>Sends the prompt to the LLM handler and retrieves the response.
+If the usage of RAG-data is defined in the settings, the specified RAG-Data will also be sent.
+If manual user comments are enabled, the program flow will pause to allow comment input.
+Depending on the setting “send_conversation_history” previous messages in the conversation will also be sent to the LLM</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prompt</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Prompt to be sent to the LLM handler</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dictionary object containing the prompt, response, optional user comment, RAG data, and additional metadata</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.settings">
+<span class="sig-name descname"><span class="pre">settings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings" title="llm_interaction_manager.utils.settings.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.settings" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.vector_handler">
+<span class="sig-name descname"><span class="pre">vector_handler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase" title="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorDataHandlerBase</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.vector_handler" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-llm_interaction_manager.core.interaction_manager">
+<span id="llm-interaction-manager-core-interaction-manager-module"></span><h2>llm_interaction_manager.core.interaction_manager module<a class="headerlink" href="#module-llm_interaction_manager.core.interaction_manager" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.ConnectionType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.core.interaction_manager.</span></span><span class="sig-name descname"><span class="pre">ConnectionType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.ConnectionType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>Which Handler-Type to use for generic methods like connect()</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.ConnectionType.LLM">
+<span class="sig-name descname"><span class="pre">LLM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('llm',)</span></em><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.ConnectionType.LLM" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.ConnectionType.PERSISTENT">
+<span class="sig-name descname"><span class="pre">PERSISTENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'persistent'</span></em><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.ConnectionType.PERSISTENT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.ConnectionType.VECTOR">
+<span class="sig-name descname"><span class="pre">VECTOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('vector',)</span></em><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.ConnectionType.VECTOR" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.core.interaction_manager.</span></span><span class="sig-name descname"><span class="pre">InteractionManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">llm_handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistent_handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector_handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Interaction Keystone for the whole interface. All interaction should be done over the Interaction Manager. If more granular approaches are necessary,
+Individual handlers and classes within the Interface can also be accessed separately, but consistency is not secured</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>llm_handler</strong> (<a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase" title="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase"><em>LLMHandlerBase</em></a>)</p></li>
+<li><p><strong>persistent_handler</strong> (<a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase" title="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase"><em>PersistentDataHandlerBase</em></a>)</p></li>
+<li><p><strong>vector_handler</strong> (<a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase" title="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase"><em>VectorDataHandlerBase</em></a>)</p></li>
+<li><p><strong>settings</strong> (<a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings" title="llm_interaction_manager.utils.settings.Settings"><em>Settings</em></a>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.add_metadata">
+<span class="sig-name descname"><span class="pre">add_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_conversation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.add_metadata" title="Link to this definition"></a></dt>
+<dd><p>Adds metadata to the last message that was sent/received or the current conversation-object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to_conversation</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – If the metadata should be added to the conversation-object or the last message</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to add to the metadata</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.add_persistent_data">
+<span class="sig-name descname"><span class="pre">add_persistent_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conversation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">messages</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.add_persistent_data" title="Link to this definition"></a></dt>
+<dd><p>Adds a new persistent entry into the database handler.
+Must contain a conversation_id and at least one message with messageID. View data_schemas_example.json in utils for reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conversation</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Conversation to be added to the database</p></li>
+<li><p><strong>messages</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</span>) – list of Messages to be added to the database and linked to the conversation</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.add_vector_data">
+<span class="sig-name descname"><span class="pre">add_vector_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.add_vector_data" title="Link to this definition"></a></dt>
+<dd><p>Adds a new entry into the vector database in reference to a persistent data entry</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Dict of data, must at least contain: message_id, prompt, and response</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Table to save the entry into (or collection in chromadb)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.change_comment">
+<span class="sig-name descname"><span class="pre">change_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comment</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.change_comment" title="Link to this definition"></a></dt>
+<dd><p>Changes the comment on the last sent message</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>comment</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Comment to add to the last sent message</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.connect" title="Link to this definition"></a></dt>
+<dd><p>Connect to the specified handlers endpoint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#llm_interaction_manager.core.interaction_manager.ConnectionType" title="llm_interaction_manager.core.interaction_manager.ConnectionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConnectionType</span></code></a></span>) – ConnectionType-Enum, which handler should be checked</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to use for connection (eg. API tokens, routing information)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.conversation">
+<span class="sig-name descname"><span class="pre">conversation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><a class="reference internal" href="#llm_interaction_manager.core.conversation.Conversation" title="llm_interaction_manager.core.conversation.Conversation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Conversation</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.conversation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.delete_rag_data">
+<span class="sig-name descname"><span class="pre">delete_rag_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.delete_rag_data" title="Link to this definition"></a></dt>
+<dd><p>Turns off RAG-Data usage and deletes any RAG-Data, persistent or volatile</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.export_data">
+<span class="sig-name descname"><span class="pre">export_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.export_data" title="Link to this definition"></a></dt>
+<dd><p>Exports data from the persistent database to the specified path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Path to export the data to</p></li>
+<li><p><strong>filters</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>] | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Filters to apply to the data. If no filters are specified, all available data will be exported</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.is_connected" title="Link to this definition"></a></dt>
+<dd><p>Check if the specified handler is connected</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#llm_interaction_manager.core.interaction_manager.ConnectionType" title="llm_interaction_manager.core.interaction_manager.ConnectionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConnectionType</span></code></a></span>) – ConnectionType-Enum, which handler should be checked</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if specified handler is connected, False else</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.llm_handler">
+<span class="sig-name descname"><span class="pre">llm_handler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase" title="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">LLMHandlerBase</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.llm_handler" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.nearest_search_vector">
+<span class="sig-name descname"><span class="pre">nearest_search_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.nearest_search_vector" title="Link to this definition"></a></dt>
+<dd><p>Searches the vector database for close matches of the input and returns the top_k results. May result in a combination of Prompt and Response lines depending on Interface</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – String data to generate an embedding from to use nearest search for on the vector database.</p></li>
+<li><p><strong>top_k</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – How many results should be returned</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Which table to do the nearest search on</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of strings where the embeddings are matched near the input embedding</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.persistent_handler">
+<span class="sig-name descname"><span class="pre">persistent_handler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase" title="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">PersistentDataHandlerBase</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.persistent_handler" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.read_setting">
+<span class="sig-name descname"><span class="pre">read_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.read_setting" title="Link to this definition"></a></dt>
+<dd><p>Reads a setting from the current Settings-Object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Which setting to read</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Requested Object from Settings</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.send_prompt">
+<span class="sig-name descname"><span class="pre">send_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.send_prompt" title="Link to this definition"></a></dt>
+<dd><p>Sends a prompt to the LLM-Handler and thus to the specified LLM. Receives a response, saves the response persistently in the databases</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prompt</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Prompt to send to the LLM-Handler. If RAG-Data is specified, Prompt and RAG-Data will be combined</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Answer from LLM</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.set_rag_data">
+<span class="sig-name descname"><span class="pre">set_rag_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volatile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.set_rag_data" title="Link to this definition"></a></dt>
+<dd><p>Adds new RAG-Data to the current run and sets the RAG-Mode accordingly, if volatile is set to false, RAG-data added will be saved to the config aswell</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – data to be used as RAG-Data</p></li>
+<li><p><strong>volatile</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – If the RAG-Data should be used on the fly or saved in the settings for further use</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.set_rag_mode">
+<span class="sig-name descname"><span class="pre">set_rag_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.set_rag_mode" title="Link to this definition"></a></dt>
+<dd><p>Sets the RAG-Mode of the application</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mode</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.RAGMode" title="llm_interaction_manager.utils.settings.RAGMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">RAGMode</span></code></a></span>) – The mode to set it to</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.settings">
+<span class="sig-name descname"><span class="pre">settings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings" title="llm_interaction_manager.utils.settings.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.settings" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.start_conversation">
+<span class="sig-name descname"><span class="pre">start_conversation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conversation_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.start_conversation" title="Link to this definition"></a></dt>
+<dd><p>Creates a new conversation object and possibly adds conversation-metadata to it</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>conversation_metadata</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – data to add to the conversation-object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.vector_handler">
+<span class="sig-name descname"><span class="pre">vector_handler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase" title="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorDataHandlerBase</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.vector_handler" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.write_setting">
+<span class="sig-name descname"><span class="pre">write_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.write_setting" title="Link to this definition"></a></dt>
+<dd><p>Updates a setting in the Settings Object and propagates to config.json</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Key to write into the settings</p></li>
+<li><p><strong>value</strong> – Value to be changed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-llm_interaction_manager.core">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-llm_interaction_manager.core" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.core.</span></span><span class="sig-name descname"><span class="pre">Conversation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">llm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conversation_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.Conversation" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Saves Conversations and their History, sent and received messages aswell as additional metadata</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>llm</strong> (<a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase" title="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase"><em>LLMHandlerBase</em></a>)</p></li>
+<li><p><strong>persistent</strong> (<a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase" title="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase"><em>PersistentDataHandlerBase</em></a>)</p></li>
+<li><p><strong>vector</strong> (<a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase" title="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase"><em>VectorDataHandlerBase</em></a>)</p></li>
+<li><p><strong>settings</strong> (<a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings" title="llm_interaction_manager.utils.settings.Settings"><em>Settings</em></a>)</p></li>
+<li><p><strong>conversation_metadata</strong> (<em>dict</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.add_metadata">
+<span class="sig-name descname"><span class="pre">add_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conversation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.Conversation.add_metadata" title="Link to this definition"></a></dt>
+<dd><p>Adds Metadata either to the conversation-object or to the last received response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conversation</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – If it should be saved to the conversation or the last response</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – The data that should be updated in the metadata</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.change_comment">
+<span class="sig-name descname"><span class="pre">change_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comment</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.Conversation.change_comment" title="Link to this definition"></a></dt>
+<dd><p>Changes the comment to the last received response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>comment</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – The comment to be updated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.conversation_history">
+<span class="sig-name descname"><span class="pre">conversation_history</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">]</span></em><a class="headerlink" href="#llm_interaction_manager.core.Conversation.conversation_history" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.conversation_id">
+<span class="sig-name descname"><span class="pre">conversation_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#llm_interaction_manager.core.Conversation.conversation_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.conversation_metadata">
+<span class="sig-name descname"><span class="pre">conversation_metadata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></em><a class="headerlink" href="#llm_interaction_manager.core.Conversation.conversation_metadata" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></em><a class="headerlink" href="#llm_interaction_manager.core.Conversation.created_at" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.get_conversation_id">
+<span class="sig-name descname"><span class="pre">get_conversation_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.Conversation.get_conversation_id" title="Link to this definition"></a></dt>
+<dd><p>Returns the current conversation-id
+:rtype: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>
+:return: String-Object containing the current conversation-id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.get_last_response">
+<span class="sig-name descname"><span class="pre">get_last_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.Conversation.get_last_response" title="Link to this definition"></a></dt>
+<dd><p>Returns the content of the last message-object as a strong, so the last Response from the LLM</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>“Content”-Value of the last Message-Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.get_metadata">
+<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conversation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.Conversation.get_metadata" title="Link to this definition"></a></dt>
+<dd><p>Returns Metadata for the conversation or for a specific message ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conversation</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – If metadata should be taken from the conversation or one message.</p></li>
+<li><p><strong>id</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – Message ID to filter by</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict of Metadata extracted</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.llm_handler">
+<span class="sig-name descname"><span class="pre">llm_handler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase" title="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">LLMHandlerBase</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.Conversation.llm_handler" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.persistent_handler">
+<span class="sig-name descname"><span class="pre">persistent_handler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase" title="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">PersistentDataHandlerBase</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.Conversation.persistent_handler" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.remove_metadata">
+<span class="sig-name descname"><span class="pre">remove_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conversation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.Conversation.remove_metadata" title="Link to this definition"></a></dt>
+<dd><p>Removes specified metadata from either the conversation or a specific message indicated by the id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conversation</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – True, if the metadata should be removed from the conversation</p></li>
+<li><p><strong>key</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Which metadata-entry should be removed</p></li>
+<li><p><strong>id</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Which message-id the metadata should be removed from</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.send_prompt">
+<span class="sig-name descname"><span class="pre">send_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.Conversation.send_prompt" title="Link to this definition"></a></dt>
+<dd><p>Sends the prompt to the LLM handler and retrieves the response.
+If the usage of RAG-data is defined in the settings, the specified RAG-Data will also be sent.
+If manual user comments are enabled, the program flow will pause to allow comment input.
+Depending on the setting “send_conversation_history” previous messages in the conversation will also be sent to the LLM</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prompt</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Prompt to be sent to the LLM handler</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dictionary object containing the prompt, response, optional user comment, RAG data, and additional metadata</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.settings">
+<span class="sig-name descname"><span class="pre">settings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings" title="llm_interaction_manager.utils.settings.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.Conversation.settings" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.vector_handler">
+<span class="sig-name descname"><span class="pre">vector_handler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase" title="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorDataHandlerBase</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.Conversation.vector_handler" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.core.</span></span><span class="sig-name descname"><span class="pre">InteractionManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">llm_handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistent_handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector_handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Interaction Keystone for the whole interface. All interaction should be done over the Interaction Manager. If more granular approaches are necessary,
+Individual handlers and classes within the Interface can also be accessed separately, but consistency is not secured</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>llm_handler</strong> (<a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase" title="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase"><em>LLMHandlerBase</em></a>)</p></li>
+<li><p><strong>persistent_handler</strong> (<a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase" title="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase"><em>PersistentDataHandlerBase</em></a>)</p></li>
+<li><p><strong>vector_handler</strong> (<a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase" title="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase"><em>VectorDataHandlerBase</em></a>)</p></li>
+<li><p><strong>settings</strong> (<a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings" title="llm_interaction_manager.utils.settings.Settings"><em>Settings</em></a>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.add_metadata">
+<span class="sig-name descname"><span class="pre">add_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_conversation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.add_metadata" title="Link to this definition"></a></dt>
+<dd><p>Adds metadata to the last message that was sent/received or the current conversation-object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to_conversation</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – If the metadata should be added to the conversation-object or the last message</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to add to the metadata</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.add_persistent_data">
+<span class="sig-name descname"><span class="pre">add_persistent_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conversation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">messages</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.add_persistent_data" title="Link to this definition"></a></dt>
+<dd><p>Adds a new persistent entry into the database handler.
+Must contain a conversation_id and at least one message with messageID. View data_schemas_example.json in utils for reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conversation</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Conversation to be added to the database</p></li>
+<li><p><strong>messages</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</span>) – list of Messages to be added to the database and linked to the conversation</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.add_vector_data">
+<span class="sig-name descname"><span class="pre">add_vector_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.add_vector_data" title="Link to this definition"></a></dt>
+<dd><p>Adds a new entry into the vector database in reference to a persistent data entry</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Dict of data, must at least contain: message_id, prompt, and response</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Table to save the entry into (or collection in chromadb)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.change_comment">
+<span class="sig-name descname"><span class="pre">change_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comment</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.change_comment" title="Link to this definition"></a></dt>
+<dd><p>Changes the comment on the last sent message</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>comment</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Comment to add to the last sent message</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.connect" title="Link to this definition"></a></dt>
+<dd><p>Connect to the specified handlers endpoint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#llm_interaction_manager.core.interaction_manager.ConnectionType" title="llm_interaction_manager.core.interaction_manager.ConnectionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConnectionType</span></code></a></span>) – ConnectionType-Enum, which handler should be checked</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to use for connection (eg. API tokens, routing information)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.conversation">
+<span class="sig-name descname"><span class="pre">conversation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><a class="reference internal" href="#llm_interaction_manager.core.conversation.Conversation" title="llm_interaction_manager.core.conversation.Conversation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Conversation</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.conversation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.delete_rag_data">
+<span class="sig-name descname"><span class="pre">delete_rag_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.delete_rag_data" title="Link to this definition"></a></dt>
+<dd><p>Turns off RAG-Data usage and deletes any RAG-Data, persistent or volatile</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.export_data">
+<span class="sig-name descname"><span class="pre">export_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.export_data" title="Link to this definition"></a></dt>
+<dd><p>Exports data from the persistent database to the specified path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Path to export the data to</p></li>
+<li><p><strong>filters</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>] | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Filters to apply to the data. If no filters are specified, all available data will be exported</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.is_connected" title="Link to this definition"></a></dt>
+<dd><p>Check if the specified handler is connected</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#llm_interaction_manager.core.interaction_manager.ConnectionType" title="llm_interaction_manager.core.interaction_manager.ConnectionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConnectionType</span></code></a></span>) – ConnectionType-Enum, which handler should be checked</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if specified handler is connected, False else</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.llm_handler">
+<span class="sig-name descname"><span class="pre">llm_handler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase" title="llm_interaction_manager.handlers.llm_handler_base.LLMHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">LLMHandlerBase</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.llm_handler" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.nearest_search_vector">
+<span class="sig-name descname"><span class="pre">nearest_search_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.nearest_search_vector" title="Link to this definition"></a></dt>
+<dd><p>Searches the vector database for close matches of the input and returns the top_k results. May result in a combination of Prompt and Response lines depending on Interface</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – String data to generate an embedding from to use nearest search for on the vector database.</p></li>
+<li><p><strong>top_k</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – How many results should be returned</p></li>
+<li><p><strong>table</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Which table to do the nearest search on</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of strings where the embeddings are matched near the input embedding</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.persistent_handler">
+<span class="sig-name descname"><span class="pre">persistent_handler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase" title="llm_interaction_manager.handlers.persistent_data_handler_base.PersistentDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">PersistentDataHandlerBase</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.persistent_handler" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.read_setting">
+<span class="sig-name descname"><span class="pre">read_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.read_setting" title="Link to this definition"></a></dt>
+<dd><p>Reads a setting from the current Settings-Object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Which setting to read</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Requested Object from Settings</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.send_prompt">
+<span class="sig-name descname"><span class="pre">send_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.send_prompt" title="Link to this definition"></a></dt>
+<dd><p>Sends a prompt to the LLM-Handler and thus to the specified LLM. Receives a response, saves the response persistently in the databases</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prompt</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Prompt to send to the LLM-Handler. If RAG-Data is specified, Prompt and RAG-Data will be combined</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Answer from LLM</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.set_rag_data">
+<span class="sig-name descname"><span class="pre">set_rag_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volatile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.set_rag_data" title="Link to this definition"></a></dt>
+<dd><p>Adds new RAG-Data to the current run and sets the RAG-Mode accordingly, if volatile is set to false, RAG-data added will be saved to the config aswell</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – data to be used as RAG-Data</p></li>
+<li><p><strong>volatile</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – If the RAG-Data should be used on the fly or saved in the settings for further use</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.set_rag_mode">
+<span class="sig-name descname"><span class="pre">set_rag_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.set_rag_mode" title="Link to this definition"></a></dt>
+<dd><p>Sets the RAG-Mode of the application</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mode</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.RAGMode" title="llm_interaction_manager.utils.settings.RAGMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">RAGMode</span></code></a></span>) – The mode to set it to</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.settings">
+<span class="sig-name descname"><span class="pre">settings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.Settings" title="llm_interaction_manager.utils.settings.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.settings" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.start_conversation">
+<span class="sig-name descname"><span class="pre">start_conversation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conversation_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.start_conversation" title="Link to this definition"></a></dt>
+<dd><p>Creates a new conversation object and possibly adds conversation-metadata to it</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>conversation_metadata</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – data to add to the conversation-object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.vector_handler">
+<span class="sig-name descname"><span class="pre">vector_handler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="llm_interaction_manager.handlers.html#llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase" title="llm_interaction_manager.handlers.vector_data_handler_base.VectorDataHandlerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorDataHandlerBase</span></code></a></em><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.vector_handler" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.write_setting">
+<span class="sig-name descname"><span class="pre">write_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.write_setting" title="Link to this definition"></a></dt>
+<dd><p>Updates a setting in the Settings Object and propagates to config.json</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Key to write into the settings</p></li>
+<li><p><strong>value</strong> – Value to be changed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Marvin Emrich.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
