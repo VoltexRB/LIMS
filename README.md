@@ -3,6 +3,10 @@
 A Python module for managing interactions with large language models (LLMs).  
 Supports use as a library in Python scripts and integration with JupyterLab notebooks.
 
+## Documentation
+A German End-User Documentation is available in the folder "Documentation" under:
+https://github.com/VoltexRB/LIMS/blob/main/Documentation/Endnutzerdokumentation%20LIMS.pdf
+
 ## Installation
 ### From GitHub (public repository)
 
