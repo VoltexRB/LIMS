@@ -1,5 +1,5 @@
 from llm_interaction_manager.handlers.llm_handler_base import LLMHandlerBase
-from transformers import *
+from transformers import pipeline
 from huggingface_hub import list_models, login
 import huggingface_hub, logging, transformers
 
