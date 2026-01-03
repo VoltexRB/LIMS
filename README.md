@@ -5,6 +5,7 @@ Supports use as a library in Python scripts and integration with JupyterLab note
 
 ## Documentation
 A German End-User Documentation is available in the folder "Documentation" under:
+
 https://github.com/VoltexRB/LIMS/blob/main/Documentation/Endnutzerdokumentation%20LIMS.pdf
 
 ## Installation
