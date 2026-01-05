@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="solved huggingface dependencies">
+    <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="added version to __init__">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -484,7 +483,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767457712734</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="added version to __init__">
+      <option name="closed" value="true" />
+      <created>1767458258197</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1767458258197</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -519,7 +526,8 @@
     <MESSAGE value="reformatted comments, various small fixes" />
     <MESSAGE value="added documentation folder" />
     <MESSAGE value="solved huggingface dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="solved huggingface dependencies" />
+    <MESSAGE value="added version to __init__" />
+    <option name="LAST_COMMIT_MESSAGE" value="added version to __init__" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -546,11 +554,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
-          <line>178</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
           <line>193</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
@@ -568,11 +571,6 @@
           <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
           <line>230</line>
           <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
-          <line>161</line>
-          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py</url>
