@@ -71,12 +71,13 @@ class ChromadbHandler(VectorDataHandlerBase):
         vectors = [vector_content]
         ids_list = [id_value] if id_value else None
 
-        return self._add_to_collection(
+        added = self._add_to_collection(
             _vectors=vectors,
             _collection_name=table,
             _metadata=metadatas,
             ids=ids_list
         )
+        return added
 
     def load_vector(self, query: dict, table: str) -> dict:
         """

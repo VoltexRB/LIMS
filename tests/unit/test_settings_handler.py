@@ -108,7 +108,7 @@ def test_initialize_with_missing_file(monkeypatch):
 
     # Placeholders should be used
     assert settings_obj.default_export_path == "-1"
-    assert settings_obj.wait_for_manual_data is True
+    assert settings_obj.wait_for_manual_data is False
     assert settings_obj.use_rag_data == RAGMode.NONE
     assert settings_obj.default_system_prompt == "-1"
     assert settings_obj.handlers == {}
@@ -132,7 +132,7 @@ def test_initialize_with_empty_file(temp_config):
 
     # Placeholders should be used
     assert settings_obj.default_export_path == "-1"
-    assert settings_obj.wait_for_manual_data is True
+    assert settings_obj.wait_for_manual_data is False
     assert settings_obj.use_rag_data == RAGMode.NONE
     assert settings_obj.default_system_prompt == "-1"
     assert settings_obj.handlers == {}

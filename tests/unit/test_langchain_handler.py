@@ -19,13 +19,15 @@ def langchain_handler():
         config = json.load(f)
 
     token = config["handlers"]["langchain"]["token"]
+    model = config["handlers"]["langchain"]["model"]
     if not token:
         pytest.skip("No token found in config.json, skipping integration test.")
-
+    if not model:
+        pytest.skip("No model found in config.json, skipping integration test.")
     handler = LangchainHandler()
     connected = handler.connect({
         "token": token,
-        "model": "meta-llama/Llama-3-70b-chat-hf"
+        "model": model,
     })
     if not connected:
         pytest.skip("Connection to TogetherAI failed.")
@@ -39,7 +41,7 @@ def test_is_connected(langchain_handler):
 
 def test_validate_model_name(langchain_handler):
     try:
-        assert langchain_handler.validate_model_name("meta-llama/Llama-3-70b-chat-hf")
+        assert langchain_handler.validate_model_name("Prism-ML/Ternary-Bonsai-27B")
     except Exception:
         pytest.skip("Skipped: TogetherAI service not reachable or model unavailable.")
 

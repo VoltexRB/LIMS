@@ -2,7 +2,7 @@ import pytest
 from pathlib import Path
 import json
 from unittest.mock import patch
-import llm_interaction_manager.api.lims_interface as api
+from llm_interaction_manager.api import lims_interface as api
 from llm_interaction_manager.api.interaction_manager_factory import LLMEnum, PersistentEnum, VectorEnum
 from llm_interaction_manager.core.interaction_manager import ConnectionType
 
@@ -15,9 +15,13 @@ def setup_api():
     api.initialize(llm=LLMEnum.HUGGINGFACE, vector=VectorEnum.CHROMADB, persistent=PersistentEnum.MONGODB)
 
     # Connection data
+    config_path = Path(__file__).parent / "test_config.json"
+    with config_path.open("r", encoding="utf-8") as file:
+        config = json.load(file)
+    llm_config = config["handlers"]["huggingface"]
     llm_data = {
-        "model": "meta-llama/Llama-3.1-8B-Instruct",
-        "token": "[Removed]"
+        "model": llm_config["model"],
+        "token": llm_config["token"]
     }
     vector_data = {
         "client_type": "PERSISTENT",

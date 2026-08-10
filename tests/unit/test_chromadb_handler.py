@@ -26,8 +26,8 @@ def test_save_and_load_vector(chroma_handler):
     # Load the vector
     result = chroma_handler.load_vector({"id": "vec_001"}, table=table)
     assert result["id"] == "vec_001"
-    assert "PROMPT: Hello" in result["vector"]
-    assert "RESPONSE: World" in result["vector"]
+    assert result["prompt"] == "Hello"
+    assert result["response"] == "World"
     assert result["metadata"]["extra_meta"] == "meta_value"
 
 def test_nearest_search(chroma_handler):
@@ -81,5 +81,5 @@ def test_metadata_preservation(chroma_handler):
     assert result["metadata"] is not None
     assert result["metadata"]["category"] == "test"
     assert result["metadata"]["source"] == "unit_test"
-    assert result["vector"].startswith("PROMPT: Check")
-    assert "RESPONSE: Metadata" in result["vector"]
+    assert result["prompt"].startswith("Check")
+    assert result["response"].startswith("Metadata")

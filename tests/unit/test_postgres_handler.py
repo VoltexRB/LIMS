@@ -12,7 +12,7 @@ def pg_handler():
     handler.connect(
         host="localhost",
         port=5432,
-        auth={"database": "promptDB", "user": "postgres", "password": "postgres"}
+        auth={"database": "promptDB", "username": "postgres", "password": "postgres"}
     )
     return handler
 

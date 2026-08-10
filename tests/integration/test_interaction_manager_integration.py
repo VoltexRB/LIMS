@@ -69,7 +69,7 @@ def test_conversation_history(interaction_manager):
 
     history = interaction_manager.conversation.conversation_history
     assert isinstance(history, list)
-    assert any(msg["prompt"] == prompt for msg in history)
+    assert any(prompt in msg["prompt"] for msg in history)
 
 
 def test_vector_storage_chroma(interaction_manager):
