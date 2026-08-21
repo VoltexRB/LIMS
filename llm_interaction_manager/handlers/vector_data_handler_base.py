@@ -7,11 +7,13 @@ class VectorDataHandlerBase (DataHandlerBase, ABC):
     def save_vector(self, data: dict, table: str):
         """
         Save a single vector (prompt + response) to a collection/table.
+
         Expected keys in data:
-            - "prompt": str
-            - "response": str
-            - "id": str if the data is from the interface and from a specific message. External data does not have an ID
-            - other keys: optional metadata
+
+        - "prompt": str
+        - "response": str
+        - "id": str if the data is from the interface and from a specific message. External data does not have an ID
+        - other keys: optional metadata
 
         :param data: Data to be saved
         :param table: Table to save the data to

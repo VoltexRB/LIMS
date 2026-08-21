@@ -20,9 +20,11 @@ class PersistentDataHandlerBase (DataHandlerBase, ABC):
         Gets one or more records from the database.
 
         :param filters: Optional filters to select specific records.
-                        Example:
+                        Example::
+
                             {"conversation_id": "conv123"}
                             {"created_at": {"$gte": "2025-01-01"}}
+
                         If None, all records are returned.
         :type filters: dict[str, Any] | None
         :return: A list of recovered records.

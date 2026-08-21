@@ -213,7 +213,7 @@
 <dt class="sig sig-object py" id="llm_interaction_manager.core.conversation.Conversation.send_prompt">
 <span class="sig-name descname"><span class="pre">send_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.conversation.Conversation.send_prompt" title="Link to this definition"></a></dt>
 <dd><p>Sends the prompt to the LLM handler and retrieves the response.
-If the usage of RAG-data is defined in the settings, the specified RAG-Data will also be sent.
+If the usage of context data is defined in the settings, the specified context Data will also be sent.
 If manual user comments are enabled, the program flow will pause to allow comment input.
 Depending on the setting “send_conversation_history” previous messages in the conversation will also be sent to the LLM</p>
 <dl class="field-list simple">
@@ -224,7 +224,7 @@ Depending on the setting “send_conversation_history” previous messages in th
 <dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Dictionary object containing the prompt, response, optional user comment, RAG data, and additional metadata</p>
+<dd class="field-odd"><p>Dictionary object containing the prompt, response, optional user comment, context data, and additional metadata</p>
 </dd>
 </dl>
 </dd></dl>
@@ -356,9 +356,9 @@ Must contain a conversation_id and at least one message with messageID. View dat
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.delete_rag_data">
-<span class="sig-name descname"><span class="pre">delete_rag_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.delete_rag_data" title="Link to this definition"></a></dt>
-<dd><p>Turns off RAG-Data usage and deletes any RAG-Data, persistent or volatile</p>
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.delete_context_data">
+<span class="sig-name descname"><span class="pre">delete_context_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.delete_context_data" title="Link to this definition"></a></dt>
+<dd><p>Turns off Context Data usage and deletes any Context Data, persistent and volatile</p>
 </dd></dl>
 
 <dl class="py method">
@@ -443,7 +443,7 @@ Must contain a conversation_id and at least one message with messageID. View dat
 <dd><p>Sends a prompt to the LLM-Handler and thus to the specified LLM. Receives a response, saves the response persistently in the databases</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>prompt</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Prompt to send to the LLM-Handler. If RAG-Data is specified, Prompt and RAG-Data will be combined</p>
+<dd class="field-odd"><p><strong>prompt</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Prompt to send to the LLM-Handler. If Context Data is specified, Prompt and Context Data will be combined</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
@@ -455,26 +455,26 @@ Must contain a conversation_id and at least one message with messageID. View dat
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.set_rag_data">
-<span class="sig-name descname"><span class="pre">set_rag_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volatile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.set_rag_data" title="Link to this definition"></a></dt>
-<dd><p>Adds new RAG-Data to the current run and sets the RAG-Mode accordingly, if volatile is set to false, RAG-data added will be saved to the config aswell</p>
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.set_context_data">
+<span class="sig-name descname"><span class="pre">set_context_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volatile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.set_context_data" title="Link to this definition"></a></dt>
+<dd><p>Adds new Context Data to the current run and sets the ContextMode accordingly, if volatile is set to false, Context data added will be saved to the config aswell</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – data to be used as RAG-Data</p></li>
-<li><p><strong>volatile</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – If the RAG-Data should be used on the fly or saved in the settings for further use</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – data to be used as Context Data</p></li>
+<li><p><strong>volatile</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – If the Context Data should be used on the fly or saved in the settings for further use</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.set_rag_mode">
-<span class="sig-name descname"><span class="pre">set_rag_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.set_rag_mode" title="Link to this definition"></a></dt>
-<dd><p>Sets the RAG-Mode of the application</p>
+<dt class="sig sig-object py" id="llm_interaction_manager.core.interaction_manager.InteractionManager.set_context_mode">
+<span class="sig-name descname"><span class="pre">set_context_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.interaction_manager.InteractionManager.set_context_mode" title="Link to this definition"></a></dt>
+<dd><p>Sets the Context Mode of the application</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>mode</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.RAGMode" title="llm_interaction_manager.utils.settings.RAGMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">RAGMode</span></code></a></span>) – The mode to set it to</p>
+<dd class="field-odd"><p><strong>mode</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.ContextMode" title="llm_interaction_manager.utils.settings.ContextMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContextMode</span></code></a></span>) – The mode to set it to</p>
 </dd>
 </dl>
 </dd></dl>
@@ -656,7 +656,7 @@ Must contain a conversation_id and at least one message with messageID. View dat
 <dt class="sig sig-object py" id="llm_interaction_manager.core.Conversation.send_prompt">
 <span class="sig-name descname"><span class="pre">send_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.Conversation.send_prompt" title="Link to this definition"></a></dt>
 <dd><p>Sends the prompt to the LLM handler and retrieves the response.
-If the usage of RAG-data is defined in the settings, the specified RAG-Data will also be sent.
+If the usage of context data is defined in the settings, the specified context Data will also be sent.
 If manual user comments are enabled, the program flow will pause to allow comment input.
 Depending on the setting “send_conversation_history” previous messages in the conversation will also be sent to the LLM</p>
 <dl class="field-list simple">
@@ -667,7 +667,7 @@ Depending on the setting “send_conversation_history” previous messages in th
 <dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Dictionary object containing the prompt, response, optional user comment, RAG data, and additional metadata</p>
+<dd class="field-odd"><p>Dictionary object containing the prompt, response, optional user comment, context data, and additional metadata</p>
 </dd>
 </dl>
 </dd></dl>
@@ -774,9 +774,9 @@ Must contain a conversation_id and at least one message with messageID. View dat
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.delete_rag_data">
-<span class="sig-name descname"><span class="pre">delete_rag_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.delete_rag_data" title="Link to this definition"></a></dt>
-<dd><p>Turns off RAG-Data usage and deletes any RAG-Data, persistent or volatile</p>
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.delete_context_data">
+<span class="sig-name descname"><span class="pre">delete_context_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.delete_context_data" title="Link to this definition"></a></dt>
+<dd><p>Turns off Context Data usage and deletes any Context Data, persistent and volatile</p>
 </dd></dl>
 
 <dl class="py method">
@@ -861,7 +861,7 @@ Must contain a conversation_id and at least one message with messageID. View dat
 <dd><p>Sends a prompt to the LLM-Handler and thus to the specified LLM. Receives a response, saves the response persistently in the databases</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>prompt</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Prompt to send to the LLM-Handler. If RAG-Data is specified, Prompt and RAG-Data will be combined</p>
+<dd class="field-odd"><p><strong>prompt</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Prompt to send to the LLM-Handler. If Context Data is specified, Prompt and Context Data will be combined</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
@@ -873,26 +873,26 @@ Must contain a conversation_id and at least one message with messageID. View dat
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.set_rag_data">
-<span class="sig-name descname"><span class="pre">set_rag_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volatile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.set_rag_data" title="Link to this definition"></a></dt>
-<dd><p>Adds new RAG-Data to the current run and sets the RAG-Mode accordingly, if volatile is set to false, RAG-data added will be saved to the config aswell</p>
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.set_context_data">
+<span class="sig-name descname"><span class="pre">set_context_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volatile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.set_context_data" title="Link to this definition"></a></dt>
+<dd><p>Adds new Context Data to the current run and sets the ContextMode accordingly, if volatile is set to false, Context data added will be saved to the config aswell</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – data to be used as RAG-Data</p></li>
-<li><p><strong>volatile</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – If the RAG-Data should be used on the fly or saved in the settings for further use</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – data to be used as Context Data</p></li>
+<li><p><strong>volatile</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – If the Context Data should be used on the fly or saved in the settings for further use</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.set_rag_mode">
-<span class="sig-name descname"><span class="pre">set_rag_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.set_rag_mode" title="Link to this definition"></a></dt>
-<dd><p>Sets the RAG-Mode of the application</p>
+<dt class="sig sig-object py" id="llm_interaction_manager.core.InteractionManager.set_context_mode">
+<span class="sig-name descname"><span class="pre">set_context_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.core.InteractionManager.set_context_mode" title="Link to this definition"></a></dt>
+<dd><p>Sets the Context Mode of the application</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>mode</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.RAGMode" title="llm_interaction_manager.utils.settings.RAGMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">RAGMode</span></code></a></span>) – The mode to set it to</p>
+<dd class="field-odd"><p><strong>mode</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.ContextMode" title="llm_interaction_manager.utils.settings.ContextMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContextMode</span></code></a></span>) – The mode to set it to</p>
 </dd>
 </dl>
 </dd></dl>

@@ -4,25 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="added username column to filter data by user">
+    <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="changed RAG-Mode to ContextMode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/api/lims_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/api/lims_interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/core/conversation.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/core/conversation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/huggingface_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/huggingface_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/langchain_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/langchain_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/llm_handler_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/llm_handler_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/postgres_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/postgres_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/utils/config_example.json" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/utils/config_example.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/utils/data_schemas_example.json" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/utils/data_schemas_example.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/utils/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/utils/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/utils/settings_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/utils/settings_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/integration/test_end_to_end.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration/test_end_to_end.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/integration/test_interaction_manager_integration.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration/test_interaction_manager_integration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/test_conversation.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/test_conversation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/test_interaction_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/test_interaction_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/test_settings_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/test_settings_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/llm_interaction_manager.api.html" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/llm_interaction_manager.api.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/llm_interaction_manager.core.html" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/llm_interaction_manager.core.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/llm_interaction_manager.handlers.html" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/llm_interaction_manager.handlers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/llm_interaction_manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/llm_interaction_manager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/llm_interaction_manager.utils.html" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/llm_interaction_manager.utils.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/source/llm_interaction_manager.api.html" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/source/llm_interaction_manager.api.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/source/llm_interaction_manager.core.html" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/source/llm_interaction_manager.core.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/source/llm_interaction_manager.handlers.html" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/source/llm_interaction_manager.handlers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/source/llm_interaction_manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/source/llm_interaction_manager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/source/llm_interaction_manager.utils.html" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Entwicklerdokumentation LIMS HTML/source/llm_interaction_manager.utils.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/persistent_data_handler_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/persistent_data_handler_base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/vector_data_handler_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/vector_data_handler_base.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -544,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1787323268270</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="changed RAG-Mode to ContextMode">
+      <option name="closed" value="true" />
+      <created>1787339730528</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1787339730528</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -584,7 +590,8 @@
     <MESSAGE value="import fixes" />
     <MESSAGE value="added CW" />
     <MESSAGE value="added username column to filter data by user" />
-    <option name="LAST_COMMIT_MESSAGE" value="added username column to filter data by user" />
+    <MESSAGE value="changed RAG-Mode to ContextMode" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed RAG-Mode to ContextMode" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

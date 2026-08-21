@@ -93,42 +93,42 @@
 <section id="module-llm_interaction_manager.utils.settings">
 <span id="llm-interaction-manager-utils-settings-module"></span><h2>llm_interaction_manager.utils.settings module<a class="headerlink" href="#module-llm_interaction_manager.utils.settings" title="Link to this heading"></a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.RAGMode">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.utils.settings.</span></span><span class="sig-name descname"><span class="pre">RAGMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.utils.settings.RAGMode" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.ContextMode">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.utils.settings.</span></span><span class="sig-name descname"><span class="pre">ContextMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.utils.settings.ContextMode" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.RAGMode.DYNAMIC">
-<span class="sig-name descname"><span class="pre">DYNAMIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.RAGMode.DYNAMIC" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.ContextMode.DYNAMIC">
+<span class="sig-name descname"><span class="pre">DYNAMIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.ContextMode.DYNAMIC" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.RAGMode.NONE">
-<span class="sig-name descname"><span class="pre">NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.RAGMode.NONE" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.ContextMode.NONE">
+<span class="sig-name descname"><span class="pre">NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.ContextMode.NONE" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.RAGMode.PERSISTENT">
-<span class="sig-name descname"><span class="pre">PERSISTENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.RAGMode.PERSISTENT" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.ContextMode.PERSISTENT">
+<span class="sig-name descname"><span class="pre">PERSISTENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.ContextMode.PERSISTENT" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.RAGMode.VOLATILE">
-<span class="sig-name descname"><span class="pre">VOLATILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.RAGMode.VOLATILE" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.ContextMode.VOLATILE">
+<span class="sig-name descname"><span class="pre">VOLATILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.ContextMode.VOLATILE" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.Settings">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.utils.settings.</span></span><span class="sig-name descname"><span class="pre">Settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handlers=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_handlers=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_rag_data=RAGMode.NONE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_the_fly_data=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_rag_data=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_system_prompt='-1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_for_manual_data=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_export_path='-1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">send_conversation_history=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.utils.settings.Settings" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.utils.settings.</span></span><span class="sig-name descname"><span class="pre">Settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handlers=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_handlers=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_context_data=ContextMode.NONE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_the_fly_data=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_context_data=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">system_prompt='-1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_for_manual_data=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_export_path='-1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">send_conversation_history=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.utils.settings.Settings" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Defaults or fallbacks if keys not found:
 - handlers: {}                 # No handler configurations have been defined yet
 - default_handlers: {}         # No default handler selections made
-- use_rag_data: RAGMode.NONE   # No RAG mode selected
+- use_context_data: ContextMode.NONE   # No Context mode selected
 - on_the_fly_data: {}          # No on-the-fly data paths or keys defined
-- default_rag_data: {}         # No default RAG data configured
-- default_system_prompt: “-1”  # Default prompt not yet specified
+- default_context_data: {}         # No default Context data configured
+- system_prompt: “-1”  # Default prompt not yet specified
 - wait_for_manual_data: False   # Default is bypassing comments
 - default_export_path: “-1”    # Export path not yet set by the user</p>
 <dl class="field-list simple">
@@ -136,16 +136,21 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>handlers</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>dict</em><em>]</em>)</p></li>
 <li><p><strong>default_handlers</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>)</p></li>
-<li><p><strong>use_rag_data</strong> (<a class="reference internal" href="source/llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.RAGMode" title="llm_interaction_manager.utils.settings.RAGMode"><em>RAGMode</em></a>)</p></li>
+<li><p><strong>use_context_data</strong> (<a class="reference internal" href="source/llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.ContextMode" title="llm_interaction_manager.utils.settings.ContextMode"><em>ContextMode</em></a>)</p></li>
 <li><p><strong>on_the_fly_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>List</em><em>[</em><em>str</em><em>]</em>)</p></li>
-<li><p><strong>default_rag_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>List</em><em>[</em><em>str</em><em>]</em>)</p></li>
-<li><p><strong>default_system_prompt</strong> (<em>str</em>)</p></li>
+<li><p><strong>default_context_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>List</em><em>[</em><em>str</em><em>]</em>)</p></li>
+<li><p><strong>system_prompt</strong> (<em>str</em>)</p></li>
 <li><p><strong>wait_for_manual_data</strong> (<em>bool</em>)</p></li>
 <li><p><strong>default_export_path</strong> (<em>str</em>)</p></li>
 <li><p><strong>send_conversation_history</strong> (<em>bool</em>)</p></li>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.Settings.default_context_data">
+<span class="sig-name descname"><span class="pre">default_context_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">],</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]]</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.Settings.default_context_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.Settings.default_export_path">
 <span class="sig-name descname"><span class="pre">default_export_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'-1'</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.Settings.default_export_path" title="Link to this definition"></a></dt>
@@ -154,16 +159,6 @@
 <dl class="py attribute">
 <dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.Settings.default_handlers">
 <span class="sig-name descname"><span class="pre">default_handlers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.Settings.default_handlers" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.Settings.default_rag_data">
-<span class="sig-name descname"><span class="pre">default_rag_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">],</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]]</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.Settings.default_rag_data" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.Settings.default_system_prompt">
-<span class="sig-name descname"><span class="pre">default_system_prompt</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'-1'</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.Settings.default_system_prompt" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -182,8 +177,13 @@
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.Settings.use_rag_data">
-<span class="sig-name descname"><span class="pre">use_rag_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="source/llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.RAGMode" title="llm_interaction_manager.utils.settings.RAGMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">RAGMode</span></code></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.Settings.use_rag_data" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.Settings.system_prompt">
+<span class="sig-name descname"><span class="pre">system_prompt</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'-1'</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.Settings.system_prompt" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.settings.Settings.use_context_data">
+<span class="sig-name descname"><span class="pre">use_context_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="source/llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.ContextMode" title="llm_interaction_manager.utils.settings.ContextMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContextMode</span></code></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#llm_interaction_manager.utils.settings.Settings.use_context_data" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -310,42 +310,42 @@ Creates the file if it does not exist.</p>
 <section id="module-llm_interaction_manager.utils">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-llm_interaction_manager.utils" title="Link to this heading"></a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.RAGMode">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.utils.</span></span><span class="sig-name descname"><span class="pre">RAGMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.utils.RAGMode" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.ContextMode">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.utils.</span></span><span class="sig-name descname"><span class="pre">ContextMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.utils.ContextMode" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.RAGMode.DYNAMIC">
-<span class="sig-name descname"><span class="pre">DYNAMIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#llm_interaction_manager.utils.RAGMode.DYNAMIC" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.ContextMode.DYNAMIC">
+<span class="sig-name descname"><span class="pre">DYNAMIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#llm_interaction_manager.utils.ContextMode.DYNAMIC" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.RAGMode.NONE">
-<span class="sig-name descname"><span class="pre">NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#llm_interaction_manager.utils.RAGMode.NONE" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.ContextMode.NONE">
+<span class="sig-name descname"><span class="pre">NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#llm_interaction_manager.utils.ContextMode.NONE" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.RAGMode.PERSISTENT">
-<span class="sig-name descname"><span class="pre">PERSISTENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#llm_interaction_manager.utils.RAGMode.PERSISTENT" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.ContextMode.PERSISTENT">
+<span class="sig-name descname"><span class="pre">PERSISTENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#llm_interaction_manager.utils.ContextMode.PERSISTENT" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.RAGMode.VOLATILE">
-<span class="sig-name descname"><span class="pre">VOLATILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#llm_interaction_manager.utils.RAGMode.VOLATILE" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.ContextMode.VOLATILE">
+<span class="sig-name descname"><span class="pre">VOLATILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#llm_interaction_manager.utils.ContextMode.VOLATILE" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="llm_interaction_manager.utils.Settings">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.utils.</span></span><span class="sig-name descname"><span class="pre">Settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handlers=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_handlers=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_rag_data=RAGMode.NONE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_the_fly_data=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_rag_data=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_system_prompt='-1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_for_manual_data=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_export_path='-1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">send_conversation_history=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.utils.Settings" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.utils.</span></span><span class="sig-name descname"><span class="pre">Settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handlers=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_handlers=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_context_data=ContextMode.NONE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_the_fly_data=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_context_data=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">system_prompt='-1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_for_manual_data=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_export_path='-1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">send_conversation_history=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.utils.Settings" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Defaults or fallbacks if keys not found:
 - handlers: {}                 # No handler configurations have been defined yet
 - default_handlers: {}         # No default handler selections made
-- use_rag_data: RAGMode.NONE   # No RAG mode selected
+- use_context_data: ContextMode.NONE   # No Context mode selected
 - on_the_fly_data: {}          # No on-the-fly data paths or keys defined
-- default_rag_data: {}         # No default RAG data configured
-- default_system_prompt: “-1”  # Default prompt not yet specified
+- default_context_data: {}         # No default Context data configured
+- system_prompt: “-1”  # Default prompt not yet specified
 - wait_for_manual_data: False   # Default is bypassing comments
 - default_export_path: “-1”    # Export path not yet set by the user</p>
 <dl class="field-list simple">
@@ -353,16 +353,21 @@ Creates the file if it does not exist.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>handlers</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>dict</em><em>]</em>)</p></li>
 <li><p><strong>default_handlers</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>)</p></li>
-<li><p><strong>use_rag_data</strong> (<a class="reference internal" href="source/llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.RAGMode" title="llm_interaction_manager.utils.settings.RAGMode"><em>RAGMode</em></a>)</p></li>
+<li><p><strong>use_context_data</strong> (<a class="reference internal" href="source/llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.ContextMode" title="llm_interaction_manager.utils.settings.ContextMode"><em>ContextMode</em></a>)</p></li>
 <li><p><strong>on_the_fly_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>List</em><em>[</em><em>str</em><em>]</em>)</p></li>
-<li><p><strong>default_rag_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>List</em><em>[</em><em>str</em><em>]</em>)</p></li>
-<li><p><strong>default_system_prompt</strong> (<em>str</em>)</p></li>
+<li><p><strong>default_context_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>List</em><em>[</em><em>str</em><em>]</em>)</p></li>
+<li><p><strong>system_prompt</strong> (<em>str</em>)</p></li>
 <li><p><strong>wait_for_manual_data</strong> (<em>bool</em>)</p></li>
 <li><p><strong>default_export_path</strong> (<em>str</em>)</p></li>
 <li><p><strong>send_conversation_history</strong> (<em>bool</em>)</p></li>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.Settings.default_context_data">
+<span class="sig-name descname"><span class="pre">default_context_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">],</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]]</span></em><a class="headerlink" href="#llm_interaction_manager.utils.Settings.default_context_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="llm_interaction_manager.utils.Settings.default_export_path">
 <span class="sig-name descname"><span class="pre">default_export_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'-1'</span></em><a class="headerlink" href="#llm_interaction_manager.utils.Settings.default_export_path" title="Link to this definition"></a></dt>
@@ -371,16 +376,6 @@ Creates the file if it does not exist.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="llm_interaction_manager.utils.Settings.default_handlers">
 <span class="sig-name descname"><span class="pre">default_handlers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]</span></em><a class="headerlink" href="#llm_interaction_manager.utils.Settings.default_handlers" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.Settings.default_rag_data">
-<span class="sig-name descname"><span class="pre">default_rag_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">],</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]]</span></em><a class="headerlink" href="#llm_interaction_manager.utils.Settings.default_rag_data" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.Settings.default_system_prompt">
-<span class="sig-name descname"><span class="pre">default_system_prompt</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'-1'</span></em><a class="headerlink" href="#llm_interaction_manager.utils.Settings.default_system_prompt" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -399,8 +394,13 @@ Creates the file if it does not exist.</p>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="llm_interaction_manager.utils.Settings.use_rag_data">
-<span class="sig-name descname"><span class="pre">use_rag_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="source/llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.RAGMode" title="llm_interaction_manager.utils.settings.RAGMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">RAGMode</span></code></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#llm_interaction_manager.utils.Settings.use_rag_data" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.Settings.system_prompt">
+<span class="sig-name descname"><span class="pre">system_prompt</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'-1'</span></em><a class="headerlink" href="#llm_interaction_manager.utils.Settings.system_prompt" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="llm_interaction_manager.utils.Settings.use_context_data">
+<span class="sig-name descname"><span class="pre">use_context_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="source/llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.ContextMode" title="llm_interaction_manager.utils.settings.ContextMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContextMode</span></code></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#llm_interaction_manager.utils.Settings.use_context_data" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">

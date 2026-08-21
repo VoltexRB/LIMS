@@ -240,9 +240,9 @@ Conversations must contain a conversation_id, messages must each contain a messa
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="llm_interaction_manager.api.lims_interface.delete_rag_data">
-<span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.api.lims_interface.</span></span><span class="sig-name descname"><span class="pre">delete_rag_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.api.lims_interface.delete_rag_data" title="Link to this definition"></a></dt>
-<dd><p>Stops using RAG-Data in conversations with the LLMs from now on and deletes any RAG-Data, persistent or volatile</p>
+<dt class="sig sig-object py" id="llm_interaction_manager.api.lims_interface.delete_context_data">
+<span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.api.lims_interface.</span></span><span class="sig-name descname"><span class="pre">delete_context_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.api.lims_interface.delete_context_data" title="Link to this definition"></a></dt>
+<dd><p>Stops using context data in conversations with the LLMs from now on and deletes any Context Data, persistent or volatile</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p>
@@ -339,7 +339,7 @@ Conversations must contain a conversation_id, messages must each contain a messa
 <span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.api.lims_interface.</span></span><span class="sig-name descname"><span class="pre">send_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.api.lims_interface.send_prompt" title="Link to this definition"></a></dt>
 <dd><p>Sends a prompt to the LLM-Handler and thus to the specified LLM. Receives a response, saves the response persistently in the databases
 :type prompt: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>
-:param prompt: Prompt to send to the LLM-Handler. If RAG-Data is specified, Prompt and RAG-Data will be combined
+:param prompt: Prompt to send to the LLM-Handler. If Context Data is specified, Prompt and Context Data will be combined
 :rtype: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>
 :return: Answer from LLM</p>
 <dl class="field-list simple">
@@ -353,13 +353,13 @@ Conversations must contain a conversation_id, messages must each contain a messa
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="llm_interaction_manager.api.lims_interface.set_rag_data">
-<span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.api.lims_interface.</span></span><span class="sig-name descname"><span class="pre">set_rag_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volatile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.api.lims_interface.set_rag_data" title="Link to this definition"></a></dt>
-<dd><p>Adds new RAG data to use for sending prompts. RAD-Data can either be saved in the config or just be used in the current session</p>
+<dt class="sig sig-object py" id="llm_interaction_manager.api.lims_interface.set_context_data">
+<span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.api.lims_interface.</span></span><span class="sig-name descname"><span class="pre">set_context_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volatile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.api.lims_interface.set_context_data" title="Link to this definition"></a></dt>
+<dd><p>Adds new context data to use for sending prompts. Context data can either be saved in the config or just be used in the current session</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to be used as RAG data</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span>) – Data to be used as context data</p></li>
 <li><p><strong>volatile</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – If the data should just persist for the current session</p></li>
 </ul>
 </dd>
@@ -367,12 +367,12 @@ Conversations must contain a conversation_id, messages must each contain a messa
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="llm_interaction_manager.api.lims_interface.set_rag_mode">
-<span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.api.lims_interface.</span></span><span class="sig-name descname"><span class="pre">set_rag_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.api.lims_interface.set_rag_mode" title="Link to this definition"></a></dt>
-<dd><p>Sets the RAG-Mode of the application</p>
+<dt class="sig sig-object py" id="llm_interaction_manager.api.lims_interface.set_context_mode">
+<span class="sig-prename descclassname"><span class="pre">llm_interaction_manager.api.lims_interface.</span></span><span class="sig-name descname"><span class="pre">set_context_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#llm_interaction_manager.api.lims_interface.set_context_mode" title="Link to this definition"></a></dt>
+<dd><p>Sets the Context Mode of the application</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>mode</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.RAGMode" title="llm_interaction_manager.utils.settings.RAGMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">RAGMode</span></code></a></span>) – The mode to set it to</p>
+<dd class="field-odd"><p><strong>mode</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="llm_interaction_manager.utils.html#llm_interaction_manager.utils.settings.ContextMode" title="llm_interaction_manager.utils.settings.ContextMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContextMode</span></code></a></span>) – The mode to set it to</p>
 </dd>
 </dl>
 </dd></dl>
