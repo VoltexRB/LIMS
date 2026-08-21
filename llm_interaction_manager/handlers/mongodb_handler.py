@@ -40,6 +40,9 @@ class MongodbHandler(PersistentDataHandlerBase):
         if not conv_id:
             raise ValueError("conversation dict must have 'conversation_id'")
 
+        # Store the authenticated username with the conversation.
+        # If no username was provided, store None.
+        conversation["username"] = self.auth.get("username") if hasattr(self, "auth") else None
         self.db["conversations"].update_one(
             {"_id": conv_id},
             {"$set": conversation},
@@ -86,13 +89,19 @@ class MongodbHandler(PersistentDataHandlerBase):
                 "MongoDB client/database not initialized. Call connect() first and select a database."
             )
 
-        mongo_filter = {}
+        conv_filter = {}
+
+        # If a username is configured, only retrieve conversations belonging to that user.
+        # If no username is configured, ignore the username field completely.
+        username = self.auth.get("username") if hasattr(self, "auth") else None
+        if username is not None:
+            conv_filter["username"] = username
 
         # Top-level (conversation-level) filters
         if filters and "conversation_id" in filters:
-            mongo_filter["_id"] = filters["conversation_id"]
+            conv_filter["_id"] = filters["conversation_id"]
 
-        cursor = self.db["conversations"].find(mongo_filter)
+        cursor = self.db["conversations"].find(conv_filter)
         conversations = list(cursor)
         results = []
 
