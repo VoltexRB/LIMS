@@ -39,24 +39,24 @@ def start_conversation(conversation_metadata: dict = None):
     if not _check_initialized(): return
     interaction_manager.start_conversation()
 
-def set_rag_data(data: dict, volatile: bool):
+def set_context_data(data: dict, volatile: bool):
     """
-    Adds new RAG data to use for sending prompts. RAD-Data can either be saved in the config or just be used in the current session
+    Adds new context data to use for sending prompts. Context data can either be saved in the config or just be used in the current session
 
-    :param data: Data to be used as RAG data
+    :param data: Data to be used as context data
     :param volatile: If the data should just persist for the current session
     """
     if not _check_initialized(): return
-    interaction_manager.set_rag_data(data, volatile)
+    interaction_manager.set_context_data(data, volatile)
 
-def delete_rag_data():
+def delete_context_data():
     """
-    Stops using RAG-Data in conversations with the LLMs from now on and deletes any RAG-Data, persistent or volatile
+    Stops using context data in conversations with the LLMs from now on and deletes any Context Data, persistent or volatile
 
     :return:
     """
     if not _check_initialized(): return
-    interaction_manager.delete_rag_data()
+    interaction_manager.delete_context_data()
 
 def nearest_search_vector(input: str, top_k: int, table: str) -> list[str]:
     """
@@ -143,14 +143,14 @@ def write_setting(key: str, value):
     if not _check_initialized(): return
     interaction_manager.write_setting(key, value)
 
-def set_rag_mode(mode: RAGMode):
+def set_context_mode(mode: ContextMode):
     """
-    Sets the RAG-Mode of the application
+    Sets the Context Mode of the application
 
     :param mode: The mode to set it to
     """
     if not _check_initialized(): return
-    interaction_manager.set_rag_mode(mode)
+    interaction_manager.set_context_mode(mode)
 
 
 
@@ -166,7 +166,7 @@ def add_metadata(to_conversation: bool, data: dict):
 def send_prompt(prompt: str) -> dict:
     """
     Sends a prompt to the LLM-Handler and thus to the specified LLM. Receives a response, saves the response persistently in the databases
-    :param prompt: Prompt to send to the LLM-Handler. If RAG-Data is specified, Prompt and RAG-Data will be combined
+    :param prompt: Prompt to send to the LLM-Handler. If Context Data is specified, Prompt and Context Data will be combined
     :return: Answer from LLM
     """
     if not _check_initialized(): return field(default_factory=dict)

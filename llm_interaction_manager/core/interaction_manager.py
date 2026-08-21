@@ -13,7 +13,7 @@ from llm_interaction_manager.handlers.vector_data_handler_base import VectorData
 from llm_interaction_manager.utils.settings import Settings
 from llm_interaction_manager.utils.settings_handler import SettingsHandler, SettingsSection
 from .conversation import Conversation
-from ..utils import RAGMode
+from ..utils import ContextMode
 
 
 class ConnectionType(Enum):
@@ -176,44 +176,44 @@ class InteractionManager:
         except Exception as e:
             raise RuntimeError(f"Conversation could not be initialized: {e}")
 
-    def set_rag_data(self, data: dict, volatile: bool):
+    def set_context_data(self, data: dict, volatile: bool):
         """
-        Adds new RAG-Data to the current run and sets the RAG-Mode accordingly, if volatile is set to false, RAG-data added will be saved to the config aswell
+        Adds new Context Data to the current run and sets the ContextMode accordingly, if volatile is set to false, Context data added will be saved to the config aswell
 
-        :param data: data to be used as RAG-Data
-        :param volatile: If the RAG-Data should be used on the fly or saved in the settings for further use
+        :param data: data to be used as Context Data
+        :param volatile: If the Context Data should be used on the fly or saved in the settings for further use
         """
         if volatile:
             self.settings.on_the_fly_data = data
-            self.settings.use_rag_data = RAGMode.VOLATILE
+            self.settings.use_context_data = ContextMode.VOLATILE
         else:
-            self.settings.default_rag_data = data
-            self.settings.use_rag_data = RAGMode.PERSISTENT
-            SettingsHandler.write_setting(SettingsSection.GENERAL, {"default_rag_data": data})
+            self.settings.default_context_data = data
+            self.settings.use_context_data = ContextMode.PERSISTENT
+            SettingsHandler.write_setting(SettingsSection.GENERAL, {"default_context_data": data})
 
-    def set_rag_mode(self, mode: RAGMode):
+    def set_context_mode(self, mode: ContextMode):
         """
-        Sets the RAG-Mode of the application
+        Sets the Context Mode of the application
 
         :param mode: The mode to set it to
         """
-        if mode == RAGMode.VOLATILE:
+        if mode == ContextMode.VOLATILE:
             if not self.settings.on_the_fly_data:
-                raise ValueError("Cannot set RAG mode to VOLATILE because no on-the-fly RAG data is available. Use set_rag_data() instead.")
+                raise ValueError("Cannot set Context mode to VOLATILE because no on-the-fly context data is available. Use set_context_data() instead.")
 
-        elif mode == RAGMode.PERSISTENT:
-            if not self.settings.default_rag_data:
-                raise ValueError("Cannot set RAG mode to PERSISTENT because no persistent RAG data is available. Use set_rag_data() instead.")
-        self.settings.use_rag_data = mode
+        elif mode == ContextMode.PERSISTENT:
+            if not self.settings.default_context_data:
+                raise ValueError("Cannot set context mode to PERSISTENT because no persistent context data is available. Use set_context_data() instead.")
+        self.settings.use_context_data = mode
 
-    def delete_rag_data(self):
+    def delete_context_data(self):
         """
-        Turns off RAG-Data usage and deletes any RAG-Data, persistent and volatile
+        Turns off Context Data usage and deletes any Context Data, persistent and volatile
         """
-        self.settings.use_rag_data = RAGMode.NONE
+        self.settings.use_context_data = ContextMode.NONE
         self.settings.on_the_fly_data = {}
-        self.settings.default_rag_data = {}
-        SettingsHandler.write_setting(SettingsSection.GENERAL, {"default_rag_data": {}})
+        self.settings.default_context_data = {}
+        SettingsHandler.write_setting(SettingsSection.GENERAL, {"default_context_data": {}})
 
     def nearest_search_vector(self, input: str, top_k: int, table: str) -> list[str]:
         """
@@ -365,15 +365,15 @@ class InteractionManager:
         """
         Sends a prompt to the LLM-Handler and thus to the specified LLM. Receives a response, saves the response persistently in the databases
 
-        :param prompt: Prompt to send to the LLM-Handler. If RAG-Data is specified, Prompt and RAG-Data will be combined
+        :param prompt: Prompt to send to the LLM-Handler. If Context Data is specified, Prompt and Context Data will be combined
         :return: Answer from LLM
         """
         full_prompt = prompt
         if self.conversation is None:
             raise RuntimeError("No conversation initialized yet. Use start_conversation() first.")
 
-        if self.settings.default_system_prompt != "-1":
-            full_prompt = "SYSTEM PROMPT: " + self.settings.default_system_prompt + " PROMPT: " + prompt
+        if self.settings.system_prompt != "-1":
+            full_prompt = "SYSTEM PROMPT: " + self.settings.system_prompt + " PROMPT: " + prompt
         return self.conversation.send_prompt(full_prompt)
 
     def change_comment(self, comment: str):

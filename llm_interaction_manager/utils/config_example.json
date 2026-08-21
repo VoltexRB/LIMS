@@ -2,9 +2,9 @@
     "general": {
         "default_export_path": "/tmp/export",
         "wait_for_manual_data": false,
-        "use_rag_data": "VOLATILE",
-        "default_rag_data": {},
-        "default_system_prompt": "Hello",
+        "use_context_data": "VOLATILE",
+        "default_context_data": {},
+        "system_prompt": "Hello",
         "send_conversation_history": false
     },
     "handlers": {

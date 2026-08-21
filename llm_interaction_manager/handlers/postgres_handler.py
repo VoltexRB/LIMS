@@ -88,13 +88,14 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
                     ts = datetime.fromtimestamp(ts, tz=timezone.utc)
 
                 cur.execute("""
-                    INSERT INTO messages (message_id, conversation_id, user_prompt, llm_response, timestamp, user_comment, metadata)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                    INSERT INTO messages (message_id, conversation_id, user_prompt, llm_response, timestamp, user_comment, context_data, metadata)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                     ON CONFLICT (message_id) DO UPDATE
                     SET user_prompt = EXCLUDED.user_prompt,
                         llm_response = EXCLUDED.llm_response,
                         timestamp = EXCLUDED.timestamp,
                         user_comment = EXCLUDED.user_comment,
+                        context_data = EXCLUDED.context_data,
                         metadata = EXCLUDED.metadata;
                 """, (
                     msg_id,
@@ -103,6 +104,7 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
                     msg.get("llm_response"),
                     ts,
                     msg.get("user_comment"),
+                    json.dumps(msg.get("context_data")) if msg.get("context_data") is not None else None,
                     json.dumps(msg.get("metadata") or {})
                 ))
 
@@ -133,6 +135,7 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
                         m.llm_response,
                         m.timestamp AS message_timestamp,
                         m.user_comment,
+                        m.context_data AS message_context_data,
                         m.metadata AS message_metadata
                     FROM conversations c
                     LEFT JOIN messages m ON c.conversation_id = m.conversation_id
@@ -140,7 +143,7 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
                 conditions = []
                 params = []
 
-                #username always gets applied as a filter if it is used
+                # username always gets applied as a filter if it is used
                 username = self.auth.get("username") if hasattr(self, "auth") else None
                 if username is not None:
                     conditions.append("c.username = %s")
@@ -187,6 +190,7 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
                             "llm_response": row["llm_response"],
                             "timestamp": row["message_timestamp"],
                             "user_comment": row["user_comment"],
+                            "context_data": row["message_context_data"],
                             "metadata": row["message_metadata"]
                         }
                         conversations[conv_id]["messages"].append(message)
@@ -488,8 +492,15 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
                     llm_response TEXT,
                     timestamp TIMESTAMP DEFAULT NOW(),
                     user_comment TEXT,
+                    context_data JSONB,
                     metadata JSONB
                 );
+            """)
+
+            # legacy proofing
+            cur.execute("""
+                ALTER TABLE messages
+                ADD COLUMN IF NOT EXISTS context_data JSONB;
             """)
 
             if self._vector_extension():

@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from enum import Enum
 from typing import Any, Dict, Optional
-from llm_interaction_manager.utils.settings import Settings, RAGMode
+from llm_interaction_manager.utils.settings import Settings, ContextMode
 
 
 class SettingsSection(Enum):
@@ -159,10 +159,10 @@ class SettingsHandler:
 
         # Initialize any missing general settings
         placeholders = {
-            "use_rag_data": RAGMode.NONE,
+            "use_context_data": ContextMode.NONE,
             "on_the_fly_data": {},
-            "default_rag_data": {},
-            "default_system_prompt": "-1",
+            "default_context_data": {},
+            "system_prompt": "-1",
             "wait_for_manual_data": False,
             "default_export_path": "-1"
         }
@@ -170,12 +170,12 @@ class SettingsHandler:
             if key not in general_block:
                 general_block[key] = default_value
 
-        # Convert use_rag_data string to RAGMode if necessary
-        if isinstance(general_block.get("use_rag_data"), str):
+        # Convert use_context_data string to ContextMode if necessary
+        if isinstance(general_block.get("use_context_data"), str):
             try:
-                general_block["use_rag_data"] = RAGMode[general_block["use_rag_data"].upper()]
+                general_block["use_context_data"] = ContextMode[general_block["use_context_data"].upper()]
             except KeyError:
-                general_block["use_rag_data"] = RAGMode.NONE
+                general_block["use_context_data"] = ContextMode.NONE
 
         return Settings(
             handlers=handlers_block,

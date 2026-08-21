@@ -2,7 +2,7 @@ import pytest
 from pathlib import Path
 import json
 from llm_interaction_manager.core.interaction_manager import InteractionManager
-from llm_interaction_manager.utils import RAGMode
+from llm_interaction_manager.utils import ContextMode
 
 
 @pytest.fixture(scope="module")
@@ -46,7 +46,7 @@ def test_rag_data_integration(interaction_manager):
     """
     # Add some on-the-fly RAG data
     interaction_manager.settings.on_the_fly_data = {"doc1": "Test vector content"}
-    interaction_manager.settings.use_rag_data = RAGMode.VOLATILE
+    interaction_manager.settings.use_context_data = ContextMode.VOLATILE
 
     prompt = "Test RAG prompt"
     interaction_manager.start_conversation()

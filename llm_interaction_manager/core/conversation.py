@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 from llm_interaction_manager.handlers.persistent_data_handler_base import PersistentDataHandlerBase
 from llm_interaction_manager.handlers.vector_data_handler_base import VectorDataHandlerBase
 from llm_interaction_manager.handlers.llm_handler_base import LLMHandlerBase
-from llm_interaction_manager.utils.settings import Settings, RAGMode
+from llm_interaction_manager.utils.settings import Settings, ContextMode
 import uuid
 
 class Conversation:
@@ -42,15 +42,15 @@ class Conversation:
     def send_prompt(self, prompt: str) -> dict:
         """
         Sends the prompt to the LLM handler and retrieves the response.
-        If the usage of RAG-data is defined in the settings, the specified RAG-Data will also be sent.
+        If the usage of context data is defined in the settings, the specified context Data will also be sent.
         If manual user comments are enabled, the program flow will pause to allow comment input.
         Depending on the setting "send_conversation_history" previous messages in the conversation will also be sent to the LLM
 
         :param prompt: Prompt to be sent to the LLM handler
-        :return: Dictionary object containing the prompt, response, optional user comment, RAG data, and additional metadata
+        :return: Dictionary object containing the prompt, response, optional user comment, context data, and additional metadata
         """
-        #Since Rag-Data can be saved as both dict or list of strings, make sure both are handed over as a list
-        def _normalize_rag_data(data):
+        #Since context data can be saved as both dict or list of strings, make sure both are handed over as a list
+        def _normalize_context_data(data):
             if isinstance(data, dict):
                 return list(data.values())
             elif isinstance(data, list):
@@ -58,32 +58,32 @@ class Conversation:
             else:
                 return []
 
-        rag_list = []
+        context_list = []
         # Include previous conversation messages if enabled
         if self.settings.send_conversation_history:
             for msg in self.conversation_history[-10:]:
                 # Add both user prompt and LLM response to context
-                rag_list.append("PREVIOUS PROMPT: " + msg["prompt"])
-                rag_list.append("PREVIOUS RESPONSE: " + msg["content"])
+                context_list.append("PREVIOUS PROMPT: " + msg["prompt"])
+                context_list.append("PREVIOUS RESPONSE: " + msg["content"])
 
-        # Include other RAG data if enabled
-        if self.settings.use_rag_data == RAGMode.VOLATILE:
-            rag_list += _normalize_rag_data(self.settings.on_the_fly_data)
+        # Include other context data if enabled
+        if self.settings.use_context_data == ContextMode.VOLATILE:
+            context_list += _normalize_context_data(self.settings.on_the_fly_data)
 
-        elif self.settings.use_rag_data == RAGMode.PERSISTENT:
-            rag_list += _normalize_rag_data(self.settings.default_rag_data)
+        elif self.settings.use_context_data == ContextMode.PERSISTENT:
+            context_list += _normalize_context_data(self.settings.default_context_data)
 
-        elif self.settings.use_rag_data == RAGMode.DYNAMIC:
+        elif self.settings.use_context_data == ContextMode.DYNAMIC:
             #get the 10 nearest vectors to the prompt that are saved in the "lims_embeddings" Table of the Vector Database
-            rag_list += self.vector_handler.nearest_search(prompt, 10, "lims_embeddings")
+            context_list += self.vector_handler.nearest_search(prompt, 10, "lims_embeddings")
             self.vector_handler.get_info()
 
         #use system prompt from settings
 
 
         # Send to LLM
-        if rag_list:
-            response = self.llm_handler.send_prompt(prompt, rag_list)
+        if context_list:
+            response = self.llm_handler.send_prompt(prompt, context_list)
         else:
             response = self.llm_handler.send_prompt(prompt)
 
@@ -106,13 +106,9 @@ class Conversation:
             "prompt": prompt,
             "content": response["response"],
             "comment": comment,
+            "context-data": context_list if context_list else None,
             "metadata": {k: v for k, v in response.items() if k not in ("response", "prompt")}
         }
-        if self.settings.use_rag_data == RAGMode.VOLATILE:
-            response_obj["RAG-Data"] = _normalize_rag_data(self.settings.on_the_fly_data)
-
-        elif self.settings.use_rag_data == RAGMode.PERSISTENT:
-            response_obj["RAG-Data"] = _normalize_rag_data(self.settings.default_rag_data)
 
         # Saving the Data in the conversation History
         self.conversation_history.append(response_obj)
@@ -223,6 +219,7 @@ class Conversation:
                 "llm_response": last_msg["content"],
                 "timestamp": datetime.now(timezone.utc).timestamp(),
                 "user_comment": last_msg.get("comment", ""),
+                "context_data": last_msg["context_data"],
                 "metadata": last_msg["metadata"]
             }]
         )
@@ -230,5 +227,6 @@ class Conversation:
             "message_id": last_msg["message_id"],
             "prompt": last_msg["prompt"],
             "response": last_msg["content"],
-            **last_msg["metadata"]
+            "context_data": last_msg["context_cata"],
+            **last_msg["metadata"],
         }, "lims_embeddings")

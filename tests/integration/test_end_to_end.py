@@ -50,7 +50,7 @@ def test_conversation_workflow():
     Full conversation test: start conversation, send prompt, store and retrieve message.
     """
     api.start_conversation()
-    api.set_rag_data({"doc1": "Test vector content"}, volatile=True)
+    api.set_context_data({"doc1": "Test vector content"}, volatile=True)
 
     prompt = "Hello from end-to-end test"
 
@@ -65,7 +65,7 @@ def test_conversation_workflow():
     api.add_metadata(to_conversation=False, data={"test_meta": "meta_value"})
 
     # Remove RAG data
-    api.delete_rag_data()
+    api.delete_context_data()
 
 
 def test_persistent_storage(tmp_path):

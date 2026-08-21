@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import MagicMock
 from llm_interaction_manager.core.conversation import Conversation
-from llm_interaction_manager.utils.settings import Settings, RAGMode
+from llm_interaction_manager.utils.settings import Settings, ContextMode
 
 
 @pytest.fixture
@@ -15,9 +15,9 @@ def mock_handlers():
 @pytest.fixture
 def default_settings():
     return Settings(
-        use_rag_data=RAGMode.NONE,
+        use_context_data=ContextMode.NONE,
         on_the_fly_data={"doc1": "text1"},
-        default_rag_data={"doc2": "text2"},
+        default_context_data={"doc2": "text2"},
         wait_for_manual_data=False
     )
 
@@ -40,24 +40,24 @@ def test_send_prompt_basic(mock_handlers, default_settings):
     assert "RAG-Data" not in response
 
 
-@pytest.mark.parametrize("rag_mode", [RAGMode.VOLATILE, RAGMode.PERSISTENT])
+@pytest.mark.parametrize("rag_mode", [ContextMode.VOLATILE, ContextMode.PERSISTENT])
 def test_send_prompt_rag_modes(mock_handlers, default_settings, rag_mode):
     llm, persistent, vector = mock_handlers
     llm.send_prompt.return_value = {"response": "RAG Response"}
 
     settings = default_settings
-    settings.use_rag_data = rag_mode
+    settings.use_context_data = rag_mode
 
     conv = Conversation(llm, persistent, vector, settings)
     response = conv.send_prompt("Query")
 
     # LLM called with rag_list
-    if rag_mode == RAGMode.VOLATILE:
+    if rag_mode == ContextMode.VOLATILE:
         llm.send_prompt.assert_called_with("Query", list(settings.on_the_fly_data.values()))
         assert response["RAG-Data"] == list(settings.on_the_fly_data.values())
     else:
-        llm.send_prompt.assert_called_with("Query", list(settings.default_rag_data.values()))
-        assert response["RAG-Data"] == list(settings.default_rag_data.values())
+        llm.send_prompt.assert_called_with("Query", list(settings.default_context_data.values()))
+        assert response["RAG-Data"] == list(settings.default_context_data.values())
 
 
 def test_metadata_add_remove(mock_handlers, default_settings):

@@ -26,7 +26,7 @@ class LLMHandlerBase (ABC):
         pass
 
     @abstractmethod
-    def send_prompt(self, prompt: str, rag: list[str] =None) -> dict:
+    def send_prompt(self, prompt: str, context: list[str] =None) -> dict:
         pass
 
     @abstractmethod

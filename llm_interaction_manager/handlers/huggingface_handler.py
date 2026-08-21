@@ -54,22 +54,22 @@ class HuggingfaceHandler(LLMHandlerBase):
         except Exception as e:
             raise RuntimeError("The model you are trying to access might be private or restricted. Please provide an access token in your connection data")
 
-    def send_prompt(self, prompt: str, rag: list[str] =None) -> dict:
+    def send_prompt(self, prompt: str, context: list[str] =None) -> dict:
         """
-        Sends the prompt with the optional RAG-Data to the external interface
+        Sends the prompt with the optional context-Data to the external interface
 
         :param prompt: String-Object containing the Prompt
-        :param rag: Optional RAG-Data to send
+        :param context: Optional Context Data to send
         :return: Dict containing prompt, response and possibly additional metadata
         """
         if self.llm is None:
             raise ValueError("No LLM initiated. Use 'connect' first")
 
-        # Merge RAG documents into the prompt if provided
+        # Merge context documents into the prompt if provided
         full_prompt = prompt
-        if rag:
-            rag_text = "\n\n".join(rag)  # combine snippets
-            full_prompt = f"System Prompt: Use the following documents or previous conversation pieces to answer the question. Documents: \n{rag_text}\n\n Question: {prompt}\n"
+        if context:
+            context_text = "\n\n".join(context)  # combine snippets
+            full_prompt = f"System Prompt: Use the following documents or previous conversation pieces to answer the question. Documents: \n{context_text}\n\n Question: {prompt}\n"
 
         # Call the LLM pipeline
         result = self.llm(full_prompt)

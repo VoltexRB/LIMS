@@ -91,11 +91,11 @@ def test_rag_data_settings_applied(mock_handlers):
         vector_handler=vector
     )
 
-    im.set_rag_data({"key": "value"}, volatile=True)
-    assert im.settings.use_rag_data.name == "VOLATILE"
+    im.set_context_data({"key": "value"}, volatile=True)
+    assert im.settings.use_context_data.name == "VOLATILE"
 
-    im.set_rag_data({"key2": "value2"}, volatile=False)
-    assert im.settings.use_rag_data.name == "PERSISTENT"
+    im.set_context_data({"key2": "value2"}, volatile=False)
+    assert im.settings.use_context_data.name == "PERSISTENT"
 
 
 def test_delete_rag_data(mock_handlers):
@@ -106,9 +106,9 @@ def test_delete_rag_data(mock_handlers):
         vector_handler=vector
     )
 
-    im.set_rag_data({"key": "value"}, volatile=True)
-    im.delete_rag_data()
-    assert im.settings.use_rag_data.name == "NONE"
+    im.set_context_data({"key": "value"}, volatile=True)
+    im.delete_context_data()
+    assert im.settings.use_context_data.name == "NONE"
 
 
 def test_connection_methods(mock_handlers):

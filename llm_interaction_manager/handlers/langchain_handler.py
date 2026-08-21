@@ -26,21 +26,21 @@ class LangchainHandler(LLMHandlerBase):
         """
         return "langchain"
 
-    def send_prompt(self, prompt: str, rag: list[str] =None) -> dict:
+    def send_prompt(self, prompt: str, context: list[str] =None) -> dict:
         """
-        Sends the prompt with the optional RAG-Data to the external interface
+        Sends the prompt with the optional context Data to the external interface
 
         :param prompt: String-Object containing the Prompt
-        :param rag: Optional RAG-Data to send
+        :param context: Optional Context Data to send
         :return: Dict containing prompt, response and possibly additional metadata
         """
         if self.llm is None:
             raise ValueError("LLM not initialized, use 'connect' first")
 
         full_prompt = prompt
-        if rag:
-            rag_text = "\n\n".join(rag)
-            full_prompt = f"System Prompt: Use the following documents or previous conversation pieces to answer the question. Documents: \n{rag_text}\n\n Question: {prompt}\n"
+        if context:
+            context_text = "\n\n".join(context)
+            full_prompt = f"System Prompt: Use the following documents or previous conversation pieces to answer the question. Documents: \n{context_text}\n\n Question: {prompt}\n"
         try:
             response = self.llm.invoke(full_prompt)
             content = getattr(response, "content", str(response))

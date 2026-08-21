@@ -2,7 +2,7 @@ import pytest
 import tempfile
 from pathlib import Path
 from llm_interaction_manager.utils.settings_handler import SettingsHandler, SettingsSection
-from llm_interaction_manager.utils.settings import Settings, RAGMode
+from llm_interaction_manager.utils.settings import Settings, ContextMode
 
 
 @pytest.fixture
@@ -86,8 +86,8 @@ def test_initialize_settings_object(temp_config):
     # Assertions
     assert settings_obj.default_export_path == "/tmp/export"
     assert settings_obj.wait_for_manual_data is False
-    assert settings_obj.use_rag_data == RAGMode.VOLATILE
-    assert settings_obj.default_system_prompt == "Hello"
+    assert settings_obj.use_context_data == ContextMode.VOLATILE
+    assert settings_obj.system_prompt == "Hello"
     assert "huggingface" in settings_obj.handlers
     assert "postgres" in settings_obj.handlers
     assert settings_obj.default_handlers["llm"] == "huggingface"
@@ -109,12 +109,12 @@ def test_initialize_with_missing_file(monkeypatch):
     # Placeholders should be used
     assert settings_obj.default_export_path == "-1"
     assert settings_obj.wait_for_manual_data is False
-    assert settings_obj.use_rag_data == RAGMode.NONE
-    assert settings_obj.default_system_prompt == "-1"
+    assert settings_obj.use_context_data == ContextMode.NONE
+    assert settings_obj.system_prompt == "-1"
     assert settings_obj.handlers == {}
     assert settings_obj.default_handlers == {}
     assert settings_obj.on_the_fly_data == {}
-    assert settings_obj.default_rag_data == {}
+    assert settings_obj.default_context_data == {}
 
     # Cleanup
     temp_path.unlink(missing_ok=True)
@@ -133,12 +133,12 @@ def test_initialize_with_empty_file(temp_config):
     # Placeholders should be used
     assert settings_obj.default_export_path == "-1"
     assert settings_obj.wait_for_manual_data is False
-    assert settings_obj.use_rag_data == RAGMode.NONE
-    assert settings_obj.default_system_prompt == "-1"
+    assert settings_obj.use_context_data == ContextMode.NONE
+    assert settings_obj.system_prompt == "-1"
     assert settings_obj.handlers == {}
     assert settings_obj.default_handlers == {}
     assert settings_obj.on_the_fly_data == {}
-    assert settings_obj.default_rag_data == {}
+    assert settings_obj.default_context_data == {}
 
 def test_read_missing_section_returns_empty(temp_config):
     """

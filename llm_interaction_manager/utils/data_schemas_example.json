@@ -16,6 +16,7 @@
       "llm_response": "I am doing well, thank you!",
       "timestamp": "1730994923.123456",
       "user_comment": "Initial greeting",
+      "context_data": null,
       "metadata": {
         "temperature": 0.7,
         "max_tokens": 150,
@@ -27,6 +28,7 @@
       "user_prompt": "What's the weather like?",
       "llm_response": "It looks sunny today.",
       "timestamp": "1730994923.123456",
+      "context_data": null,
       "metadata": {
         "temperature": 0.7,
         "runtime": 0.210
