@@ -8,3 +8,4 @@ docs/_build/
 docs/html/
 docs/.doctrees/
 tests/integration/test_config.json
+Documentation/Nutzungstest/test_config.json
