@@ -372,7 +372,7 @@ class InteractionManager:
         if self.conversation is None:
             raise RuntimeError("No conversation initialized yet. Use start_conversation() first.")
 
-        if self.settings.system_prompt != "-1":
+        if not (self.settings.system_prompt == "-1" or self.settings.system_prompt==""):
             full_prompt = "SYSTEM PROMPT: " + self.settings.system_prompt + " PROMPT: " + prompt
         return self.conversation.send_prompt(full_prompt)
 

@@ -78,7 +78,7 @@ class Conversation:
             context_list += self.vector_handler.nearest_search(prompt, 10, "lims_embeddings")
             self.vector_handler.get_info()
 
-        #use system prompt from settings
+
 
 
         # Send to LLM
@@ -106,7 +106,7 @@ class Conversation:
             "prompt": prompt,
             "content": response["response"],
             "comment": comment,
-            "context-data": context_list if context_list else None,
+            "context_data": context_list if context_list else None,
             "metadata": {k: v for k, v in response.items() if k not in ("response", "prompt")}
         }
 
@@ -227,6 +227,5 @@ class Conversation:
             "message_id": last_msg["message_id"],
             "prompt": last_msg["prompt"],
             "response": last_msg["content"],
-            "context_data": last_msg["context_cata"],
             **last_msg["metadata"],
         }, "lims_embeddings")

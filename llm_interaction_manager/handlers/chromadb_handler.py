@@ -336,6 +336,16 @@ class ChromadbHandler(VectorDataHandlerBase):
             new_key = f"{parent_key}{sep}{k}" if parent_key else k
             if isinstance(v, dict):
                 flat.update(self._flatten_metadata(v, new_key, sep))
+            elif isinstance(v, list):
+                for i, item in enumerate(v):
+                    if isinstance(item, dict):
+                        flat.update(
+                            self._flatten_metadata(
+                                item,
+                                f"{new_key}_{i}",
+                                sep
+                            )
+                        )
             elif v is not None:  # Skip None values
                 flat[new_key] = v
         return flat
