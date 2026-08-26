@@ -9,7 +9,6 @@ A German End-User Documentation is available in the folder "Documentation" under
 https://github.com/VoltexRB/LIMS/blob/main/Documentation/Endnutzerdokumentation%20LIMS.pdf
 
 ## Installation
-### From GitHub (public repository)
 
 ```bash
 pip install git+https://github.com/VoltexRB/LIMS.git
@@ -61,3 +60,5 @@ api.connect(ConnectionType.LLM, llm_data)
 api.connect(ConnectionType.VECTOR, vector_data)
 api.connect(ConnectionType.PERSISTENT, persistent_data)
 ```
+
+Fore more usage examples a usage preview is available [in the Documentation folder](Documentation/UsagePreview.ipynb)
