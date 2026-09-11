@@ -163,6 +163,17 @@ def add_metadata(to_conversation: bool, data: dict):
     if not _check_initialized(): return
     interaction_manager.add_metadata(to_conversation, data)
 
+
+def get_metadata(from_conversation: bool, id = None) -> dict:
+    """
+    Gets metadata from a message in the conversation or the conversation-object
+    :param from_conversation: If the metadata should be taken from the conversation-object or the messages
+    :param id: An id of a message the metadata should be taken from, or None if it should be the last message added
+    :return: Returns a metadata dict
+    """
+    if not _check_initialized(): return {}
+    return interaction_manager.conversation.get_metadata(from_conversation, id)
+
 def send_prompt(prompt: str) -> dict:
     """
     Sends a prompt to the LLM-Handler and thus to the specified LLM. Receives a response, saves the response persistently in the databases

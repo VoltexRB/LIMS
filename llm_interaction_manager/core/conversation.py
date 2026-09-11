@@ -159,21 +159,26 @@ class Conversation:
             raise IndexError("No message sent or received yet")
         self.conversation_history[-1]["comment"] = comment
 
-    def get_metadata(self, conversation: bool, id: int = None) -> dict:
+    def get_metadata(self, conversation: bool, m_id: int = None) -> dict:
         """
         Returns Metadata for the conversation or for a specific message ID
 
         :param conversation: If metadata should be taken from the conversation or one message.
-        :param id: Message ID to filter by
+        :param m_id: Message ID to filter by
         :return: dict of Metadata extracted
         """
         if conversation:
             return self.conversation_metadata
         else:
-            for item in self.conversation_history:
-                if item["id"] == id:
-                    return item["metadata"]
-            raise ValueError(f"No item found with id {id}")
+            if m_id:
+                for item in self.conversation_history:
+                    if item["id"] == m_id:
+                        return item["metadata"]
+                raise ValueError(f"No item found with id {m_id}")
+            else:
+                last_msg = self.conversation_history[-1]
+                return last_msg["metadata"]
+
 
     def remove_metadata(self, conversation: bool,key: str,  id: str = None):
         """

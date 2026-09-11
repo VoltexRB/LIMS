@@ -361,6 +361,17 @@ class InteractionManager:
             raise RuntimeError("No conversation initialized yet. Use start_conversation() first.")
         self.conversation.add_metadata(to_conversation, data)
 
+    def get_metadata(self, from_conversation: bool, id = None) -> dict:
+        """
+        Gets metadata from a message in the conversation or the conversation-object
+        :param from_conversation: If the metadata should be taken from the conversation-object or the messages
+        :param id: An id of a message the metadata should be taken from, or None if it should be the last message added
+        :return: Returns a metadata dict
+        """
+        if self.conversation is None:
+            raise RuntimeError("No conversation initialized yet. Use start_conversation() first.")
+        return self.conversation.get_metadata(from_conversation, id)
+
     def send_prompt(self, prompt: str) -> dict:
         """
         Sends a prompt to the LLM-Handler and thus to the specified LLM. Receives a response, saves the response persistently in the databases

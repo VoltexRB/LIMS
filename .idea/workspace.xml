@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="updated gitignore">
-      <change afterPath="$PROJECT_DIR$/Documentation/Nutzungstest/Nutzungstest Ergebnisse.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documentation/Nutzungstest/Nutzungstest Prompts.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documentation/Nutzungstest/chroma/2d6e851a-5cc7-4f51-bf51-7a9e07f7d9df/data_level0.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documentation/Nutzungstest/chroma/2d6e851a-5cc7-4f51-bf51-7a9e07f7d9df/header.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documentation/Nutzungstest/chroma/2d6e851a-5cc7-4f51-bf51-7a9e07f7d9df/length.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documentation/Nutzungstest/chroma/2d6e851a-5cc7-4f51-bf51-7a9e07f7d9df/link_lists.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documentation/Nutzungstest/chroma/chroma.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documentation/Nutzungstest/nutzungstest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documentation/Nutzungstest/roentgen_dta.txt" afterDir="false" />
+    <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="Added Nutzungstest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/api/lims_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/api/lims_interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm_interaction_manager/core/conversation.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/core/conversation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/core/interaction_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/chromadb_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/chromadb_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -582,7 +573,23 @@
       <option name="project" value="LOCAL" />
       <updated>1787757505334</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Added Nutzungstest">
+      <option name="closed" value="true" />
+      <created>1787767179525</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1787767179525</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Added Nutzungstest">
+      <option name="closed" value="true" />
+      <created>1787767565362</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1787767565362</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -600,7 +607,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Initial Commit" />
     <MESSAGE value="Add Sphinx documentation config and sources" />
     <MESSAGE value="Finalized Unit Tests, started Integration Tests" />
     <MESSAGE value="Finalized Integration_Test for interaction_manager.py" />
@@ -625,7 +631,8 @@
     <MESSAGE value="changed RAG-Mode to ContextMode in documentation" />
     <MESSAGE value="added usage preview" />
     <MESSAGE value="updated gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated gitignore" />
+    <MESSAGE value="Added Nutzungstest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Nutzungstest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
