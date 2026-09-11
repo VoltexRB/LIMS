@@ -336,7 +336,7 @@ class InteractionManager:
         """
         if not hasattr(self.settings, key):
             raise KeyError(f"Setting {key} does not exist in Settings")
-        return getattr(self, key)
+        return getattr(self.settings, key)
 
     def write_setting(self, key: str, value):
         """
