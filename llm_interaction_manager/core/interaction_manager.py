@@ -334,7 +334,7 @@ class InteractionManager:
         :param key: Which setting to read
         :return: Requested Object from Settings
         """
-        if not hasattr(Settings, key):
+        if not hasattr(self.settings, key):
             raise KeyError(f"Setting {key} does not exist in Settings")
         return getattr(self, key)
 
@@ -345,8 +345,6 @@ class InteractionManager:
         :param key: Key to write into the settings
         :param value: Value to be changed
         """
-        if not hasattr(Settings, key):
-            raise KeyError(f"Setting {key} does not exist in Settings")
         setattr(self.settings, key, value)
         SettingsHandler.write_setting(SettingsSection.GENERAL, {key: value})
 
