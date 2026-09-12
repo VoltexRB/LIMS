@@ -61,4 +61,4 @@ api.connect(ConnectionType.VECTOR, vector_data)
 api.connect(ConnectionType.PERSISTENT, persistent_data)
 ```
 
-Fore more usage examples a usage preview is available [in the Documentation folder](Documentation/UsagePreview.ipynb)
+Fore more usage examples a JupyterLab usage preview is available [in the Documentation folder](Documentation/UsagePreview.ipynb)

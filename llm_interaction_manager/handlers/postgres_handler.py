@@ -470,7 +470,7 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
             cur.execute("""
                 CREATE TABLE IF NOT EXISTS conversations (
                     conversation_id TEXT PRIMARY KEY,
-                    created_at TIMESTAMP DEFAULT NOW(),
+                    created_at TIMESTAMPTZ DEFAULT NOW(),
                     name TEXT,
                     description TEXT,
                     username TEXT,
@@ -490,7 +490,7 @@ class PostgresHandler(PersistentDataHandlerBase, VectorDataHandlerBase):
                     conversation_id TEXT REFERENCES conversations(conversation_id) ON DELETE CASCADE,
                     user_prompt TEXT,
                     llm_response TEXT,
-                    timestamp TIMESTAMP DEFAULT NOW(),
+                    timestamp TIMESTAMPTZ DEFAULT NOW(),
                     user_comment TEXT,
                     context_data JSONB,
                     metadata JSONB

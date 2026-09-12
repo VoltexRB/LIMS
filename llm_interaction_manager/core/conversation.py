@@ -12,7 +12,7 @@ class Conversation:
     conversation_id: str
     conversation_metadata: dict
     conversation_history: list[dict]
-    created_at: float
+    created_at: str
     llm_handler: LLMHandlerBase
     persistent_handler: PersistentDataHandlerBase
     vector_handler: VectorDataHandlerBase
@@ -37,7 +37,7 @@ class Conversation:
         self.conversation_metadata = conversation_metadata or {}
         self.conversation_id = "conv_" + str(uuid.uuid4())[5:]
         self.conversation_history = []
-        self.created_at = datetime.now(timezone.utc).timestamp()
+        self.created_at = self._get_time_string()
 
     def send_prompt(self, prompt: str) -> dict:
         """
@@ -78,9 +78,6 @@ class Conversation:
             context_list += self.vector_handler.nearest_search(prompt, 10, "lims_embeddings")
             self.vector_handler.get_info()
 
-
-
-
         # Send to LLM
         if context_list:
             response = self.llm_handler.send_prompt(prompt, context_list)
@@ -95,8 +92,8 @@ class Conversation:
         if self.settings.wait_for_manual_data:
             print("LLM Response:\n", response["response"])
             try:
-                comment = input("Comment: ").strip()
-            except EOFError:
+                comment = input("Comment to save in the database with this message: ").strip()
+            except Exception:
                 comment = ""
 
         # IDs and Metadata
@@ -179,7 +176,6 @@ class Conversation:
                 last_msg = self.conversation_history[-1]
                 return last_msg["metadata"]
 
-
     def remove_metadata(self, conversation: bool,key: str,  id: str = None):
         """
         Removes specified metadata from either the conversation or a specific message indicated by the id
@@ -210,7 +206,6 @@ class Conversation:
                     return  # exit after removing
             raise ValueError(f"No item found with id {id}")
 
-
     def _save_last_message_in_data(self):
         """
         Saves the last message in the conversation's message list in the databases
@@ -222,7 +217,7 @@ class Conversation:
                 "message_id": last_msg["message_id"],
                 "user_prompt": last_msg["prompt"],
                 "llm_response": last_msg["content"],
-                "timestamp": datetime.now(timezone.utc).timestamp(),
+                "timestamp": self._get_time_string(),
                 "user_comment": last_msg.get("comment", ""),
                 "context_data": last_msg["context_data"],
                 "metadata": last_msg["metadata"]
@@ -234,3 +229,6 @@ class Conversation:
             "response": last_msg["content"],
             **last_msg["metadata"],
         }, "lims_embeddings")
+
+    def _get_time_string(self) -> str:
+        return datetime.now().astimezone().isoformat(timespec="milliseconds")
