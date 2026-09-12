@@ -1,6 +1,7 @@
 import uuid
 import pytest
 from llm_interaction_manager.handlers.postgres_handler import PostgresHandler
+from datetime import datetime
 
 @pytest.fixture
 def pg_handler():
@@ -25,6 +26,7 @@ def test_save_and_get_record(pg_handler):
     conversation = {
         "conversation_id": "test_conv_001",
         "name": "test_llm",
+        "created_at": "2026-09-12 17:06:23.421",
         "description": "Test conversation",
         "metadata": {}
     }
@@ -33,12 +35,14 @@ def test_save_and_get_record(pg_handler):
             "message_id": "test_msg_001",
             "user_prompt": "Hello",
             "llm_response": "Hi!",
+            "timestamp": "2026-09-12 17:06:23.421",
             "metadata": {}
         },
         {
             "message_id": "test_msg_002",
             "user_prompt": "How are you?",
             "llm_response": "I am good, thanks!",
+            "timestamp": "2026-09-12 17:06:23.621",
             "metadata": {}
         }
     ]
@@ -57,6 +61,14 @@ def test_save_and_get_record(pg_handler):
     message_ids = {msg["message_id"] for msg in conv["messages"]}
     assert "test_msg_001" in message_ids
     assert "test_msg_002" in message_ids
+
+    messages_by_id = {
+        msg["message_id"]: msg
+        for msg in conv["messages"]
+    }
+
+    assert messages_by_id["test_msg_001"]["timestamp"] == datetime(2026, 9, 12, 17, 6, 23, 421000)
+    assert messages_by_id["test_msg_002"]["timestamp"] == datetime(2026, 9, 12, 17, 6, 23, 621000)
 
 def test_save_vector_and_load(pg_handler):
     """Test saving a vector and loading it"""

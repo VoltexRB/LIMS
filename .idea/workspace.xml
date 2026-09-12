@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="updated UsagePreview.ipynb">
+    <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="changed timestamp format to a more readable one">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/core/conversation.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/core/conversation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_interaction_manager/handlers/postgres_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_interaction_manager/handlers/postgres_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/unit/test_postgres_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/test_postgres_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +134,7 @@
       <recent name="C:\Users\Shuff\PycharmProjects\LIMS" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.nutzungstest">
+  <component name="RunManager" selected="Python tests.Python tests for test_postgres_handler.test_save_and_get_record">
     <configuration name="nutzungstest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LIMS" />
       <option name="ENV_FILES" value="" />
@@ -174,19 +172,19 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_interaction_manager_integration.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_postgres_handler.test_save_and_get_record" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="LIMS" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/integration" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/unit" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/integration/test_interaction_manager_integration.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;test_postgres_handler.test_save_and_get_record&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Python tests in test_mongodb_handler.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
@@ -221,11 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_postgres_handler.test_save_and_get_record" />
         <item itemvalue="Python.nutzungstest" />
         <item itemvalue="Python tests.Python tests in test_postgres_handler.py" />
         <item itemvalue="Python tests.Python tests in test_mongodb_handler.py" />
         <item itemvalue="Python tests.Python tests for test_interaction_manager_integration.test_conversation_history" />
-        <item itemvalue="Python tests.Python tests in test_interaction_manager_integration.py" />
       </list>
     </recent_temporary>
   </component>
@@ -629,7 +627,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789155617400</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="changed timestamp format to a more readable one">
+      <option name="closed" value="true" />
+      <created>1789226880920</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1789226880920</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -659,7 +665,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Finalized Integration_Test for interaction_manager.py" />
     <MESSAGE value="Finalized end_to_end test" />
     <MESSAGE value="More end_to_end testing for all interfaces." />
     <MESSAGE value="Added dynamic RAG-Data fetching from existing vectors" />
@@ -684,7 +689,8 @@
     <MESSAGE value="Added Nutzungstest" />
     <MESSAGE value="Added get_metadata method" />
     <MESSAGE value="updated UsagePreview.ipynb" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated UsagePreview.ipynb" />
+    <MESSAGE value="changed timestamp format to a more readable one" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed timestamp format to a more readable one" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
