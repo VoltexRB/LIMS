@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="changed timestamp format to a more readable one">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/test_postgres_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/test_postgres_handler.py" afterDir="false" />
-    </list>
+    <list default="true" id="b0dfbdff-4689-408f-b369-2b3a4474e233" name="Changes" comment="changed timestamp format to a more readable one" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -242,14 +239,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1761055109577</updated>
-    </task>
-    <task id="LOCAL-00001" summary="structure">
-      <option name="closed" value="true" />
-      <created>1761055850550</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1761055850550</updated>
     </task>
     <task id="LOCAL-00002" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -635,7 +624,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789226880920</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="changed timestamp format to a more readable one">
+      <option name="closed" value="true" />
+      <created>1789227178836</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1789227178836</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
