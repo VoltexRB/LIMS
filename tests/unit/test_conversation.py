@@ -36,28 +36,28 @@ def test_send_prompt_basic(mock_handlers, default_settings):
     # Handlers called
     persistent.save_record.assert_called_once()
     vector.save_vector.assert_called_once()
-    # RAG data not added
-    assert "RAG-Data" not in response
+    # Context data not added
+    assert "Context-Data" not in response
 
 
-@pytest.mark.parametrize("rag_mode", [ContextMode.VOLATILE, ContextMode.PERSISTENT])
-def test_send_prompt_rag_modes(mock_handlers, default_settings, rag_mode):
+@pytest.mark.parametrize("context_mode", [ContextMode.VOLATILE, ContextMode.PERSISTENT])
+def test_send_prompt_context_modes(mock_handlers, default_settings, context_mode):
     llm, persistent, vector = mock_handlers
-    llm.send_prompt.return_value = {"response": "RAG Response"}
+    llm.send_prompt.return_value = {"response": "Context Response"}
 
     settings = default_settings
-    settings.use_context_data = rag_mode
+    settings.use_context_data = context_mode
 
     conv = Conversation(llm, persistent, vector, settings)
     response = conv.send_prompt("Query")
 
     # LLM called with rag_list
-    if rag_mode == ContextMode.VOLATILE:
+    if context_mode == ContextMode.VOLATILE:
         llm.send_prompt.assert_called_with("Query", list(settings.on_the_fly_data.values()))
-        assert response["RAG-Data"] == list(settings.on_the_fly_data.values())
+        assert response["context_data"] == list(settings.on_the_fly_data.values())
     else:
         llm.send_prompt.assert_called_with("Query", list(settings.default_context_data.values()))
-        assert response["RAG-Data"] == list(settings.default_context_data.values())
+        assert response["context_data"] == list(settings.default_context_data.values())
 
 
 def test_metadata_add_remove(mock_handlers, default_settings):

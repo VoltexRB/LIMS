@@ -63,16 +63,16 @@ def test_send_prompt_basic(langchain_handler):
         pytest.xfail(f"Model gave a valid but unexpected response: {response}")
 
 
-def test_send_prompt_with_rag(langchain_handler):
-    """Ensure the RAG context is incorporated in the response."""
-    rag_docs = [
+def test_send_prompt_with_context(langchain_handler):
+    """Ensure the context is incorporated in the response."""
+    context_docs = [
         "Die Hauptstadt von Deutschland ist Berlin.",
         "Deutschland liegt in Europa."
     ]
     try:
         result = langchain_handler.send_prompt(
             "Was ist die Hauptstadt von Deutschland?",
-            rag=rag_docs
+            context=context_docs
         )
     except Exception as e:
         pytest.skip(f"Skipped: TogetherAI service not reachable ({e})")

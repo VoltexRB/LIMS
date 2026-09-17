@@ -64,8 +64,8 @@ def test_initialize_settings_object(temp_config):
     general_data = {
         "default_export_path": "/tmp/export",
         "wait_for_manual_data": False,
-        "use_rag_data": "VOLATILE",
-        "default_system_prompt": "Hello"
+        "use_context_data": "VOLATILE",
+        "system_prompt": "Hello"
     }
     SettingsHandler.write_setting(SettingsSection.GENERAL, general_data)
 

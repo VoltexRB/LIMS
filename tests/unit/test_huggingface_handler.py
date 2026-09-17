@@ -17,10 +17,10 @@ def test_send_prompt_basic(hf_handler):
     assert isinstance(result["response"], str)
     assert len(result["response"]) > 0
 
-def test_send_prompt_with_rag(hf_handler):
+def test_send_prompt_with_context(hf_handler):
     prompt = "Summarize the content."
-    rag_docs = ["AI is the field of creating intelligent machines.", "It can perform tasks that normally require human intelligence."]
-    result = hf_handler.send_prompt(prompt, rag=rag_docs)
+    context_docs = ["AI is the field of creating intelligent machines.", "It can perform tasks that normally require human intelligence."]
+    result = hf_handler.send_prompt(prompt, context=context_docs)
     response = result["response"]
     assert isinstance(response, str)
     assert len(response.strip()) > 0

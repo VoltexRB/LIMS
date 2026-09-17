@@ -40,22 +40,22 @@ def test_send_prompt_with_llm(interaction_manager):
     assert isinstance(response["content"], str)
 
 
-def test_rag_data_integration(interaction_manager):
+def test_context_data_integration(interaction_manager):
     """
-    Checks that RAG data is correctly included in the LLM prompt.
+    Checks that context data is correctly included in the LLM prompt.
     """
     # Add some on-the-fly RAG data
     interaction_manager.settings.on_the_fly_data = {"doc1": "Test vector content"}
     interaction_manager.settings.use_context_data = ContextMode.VOLATILE
 
-    prompt = "Test RAG prompt"
+    prompt = "Test context prompt"
     interaction_manager.start_conversation()
     response = interaction_manager.send_prompt(prompt)
 
     assert isinstance(response, dict)
     assert "content" in response
-    assert "RAG-Data" in response
-    assert isinstance(response["RAG-Data"], list)
+    assert "context_data" in response
+    assert isinstance(response["context_data"], list)
     assert isinstance(response["content"], str)
 
 
